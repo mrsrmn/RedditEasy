@@ -1,0 +1,73 @@
+import requests
+import json
+import random
+
+
+class Random:
+    def __init__(self, sub):
+        self.subreddit = sub
+
+    def get_title(self):
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
+        meme = json.loads(request.content)
+
+        if meme["message"]:
+            if meme["message"] == "Too Many Requests":
+                raise KeyError("Too many requests. Please wait a little.")
+        else:
+            return meme["data"]["children"][random.randint(1, 25)]["data"]["title"]
+
+    def get_author(self):
+        """
+        :return: (str) The name of the author
+        """
+
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
+        meme = json.loads(request.content)
+
+        if meme["message"]:
+            if meme["message"] == "Too Many Requests":
+                raise KeyError("Too many requests. Please wait a little.")
+            else:
+                raise KeyError
+        else:
+            return meme["data"]["children"][random.randint(1, 25)]["data"]["title"]
+
+    def get_image(self):
+        """
+        :return: (str) The URL of the image
+        """
+
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
+        meme = json.loads(request.content)
+
+        if meme["message"]:
+            if meme["message"] == "Too Many Requests":
+                raise KeyError("Too many requests. Please wait a little.")
+            else:
+                raise KeyError
+        else:
+            return meme["data"]["children"][random.randint(1, 25)]["data"]["url_overridden_by_dest"]
+
+    def get_post(self):
+        """
+        :return: (str) The URL of the image
+        """
+
+        randompost = random.randint(1, 25)
+
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
+        meme = json.loads(request.content)
+
+        if meme["message"]:
+            if meme["message"] == "Too Many Requests":
+                raise KeyError("Too many requests. Please wait a little.")
+            else:
+                raise KeyError
+        else:
+            image_link = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            title = meme["data"]["children"][randompost]["data"]["title"]
+            upvote_ratio = meme["data"]["children"][randompost]["data"]["upvote_ratio"]
+            total_awards = meme["data"]["children"][randompost]["data"]["total_awards_received"]
+            score = meme["data"]["children"][randompost]["data"]["score"]
+
