@@ -1,6 +1,7 @@
 import requests
 import json
 import random
+import datetime
 
 
 class Random:
@@ -59,6 +60,8 @@ class Random:
         request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
         meme = json.loads(request.content)
 
+        time = meme["data"]["children"][randompost]["data"]["created"] / 1000.0
+
         if meme["message"]:
             if meme["message"] == "Too Many Requests":
                 raise KeyError("Too many requests. Please wait a little.")
@@ -70,4 +73,21 @@ class Random:
             upvote_ratio = meme["data"]["children"][randompost]["data"]["upvote_ratio"]
             total_awards = meme["data"]["children"][randompost]["data"]["total_awards_received"]
             score = meme["data"]["children"][randompost]["data"]["score"]
+            downvotes = meme["data"]["children"][randompost]["data"]["downs"]
+            updated = datetime.datetime.fromtimestamp(time).strftime("%d-%m-%Y %I:%M:%S UTC")
+            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            pinned = meme["data"]["children"][randompost]["data"]["pinned"]
 
+            if nsfw == "false":
+                nsfw = False
+            elif nsfw == "true":
+                nsfw = True
+
+            if pinned == "false":
+                pinned = False
+            elif pinned == "true":
+                pinned = True
+
+            return f"['image_link': '{image_link}', 'title': '{title}', 'upvote_ratio': '{upvote_ratio}'," \
+                   f"'total_awards': '{total_awards}', 'score': '{score}', 'downvotes': '{downvotes}'," \
+                   f"'created_at': '{updated}', 'nsfw': '{nsfw}', 'pinned': '{pinned}']"
