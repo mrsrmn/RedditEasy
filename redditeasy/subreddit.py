@@ -9,12 +9,6 @@ class Subreddit:
     def __init__(self, sub):
         self.subreddit = sub
 
-    def get_title(self):
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
-        meme = json.loads(request.content)
-
-        return meme["data"]["children"][random.randint(1, 25)]["data"]["title"]
-
     def get_image(self):
         """
         :return: (str) The image URL of a random post
