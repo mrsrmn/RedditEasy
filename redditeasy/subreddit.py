@@ -2,9 +2,10 @@ import requests
 import json
 import random
 from .reddit import Reddit
+import datetime
 
 
-class Random:
+class Subreddit:
     def __init__(self, sub):
         self.subreddit = sub
 
@@ -34,6 +35,8 @@ class Random:
         meme = json.loads(request.content)
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+        s = meme["data"]["children"][randompost]["data"]["created"]
+        updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
         if nsfw == "true":
             nsfw = True
@@ -53,7 +56,8 @@ class Random:
             score=meme["data"]["children"][randompost]["data"]["score"],
             downvotes=meme["data"]["children"][randompost]["data"]["downs"],
             nsfw=nsfw,
-            pinned=pinned
+            pinned=pinned,
+            created_at=updated
         )
 
     def get_top_post(self):
@@ -66,6 +70,8 @@ class Random:
         meme = json.loads(request.content)
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+        s = meme["data"]["children"][randompost]["data"]["created"]
+        updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
         if nsfw == "true":
             nsfw = True
@@ -85,7 +91,8 @@ class Random:
             score=meme["data"]["children"][randompost]["data"]["score"],
             downvotes=meme["data"]["children"][randompost]["data"]["downs"],
             nsfw=nsfw,
-            pinned=pinned
+            pinned=pinned,
+            created_at=updated
         )
 
     def get_new_post(self):
@@ -98,6 +105,8 @@ class Random:
         meme = json.loads(request.content)
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+        s = meme["data"]["children"][randompost]["data"]["created"]
+        updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
         if nsfw == "true":
             nsfw = True
@@ -117,7 +126,8 @@ class Random:
             score=meme["data"]["children"][randompost]["data"]["score"],
             downvotes=meme["data"]["children"][randompost]["data"]["downs"],
             nsfw=nsfw,
-            pinned=pinned
+            pinned=pinned,
+            created_at=updated
         )
 
     def get_controversial_post(self):
@@ -130,6 +140,8 @@ class Random:
         meme = json.loads(request.content)
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+        s = meme["data"]["children"][randompost]["data"]["created"]
+        updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
         if nsfw == "true":
             nsfw = True
@@ -149,5 +161,6 @@ class Random:
             score=meme["data"]["children"][randompost]["data"]["score"],
             downvotes=meme["data"]["children"][randompost]["data"]["downs"],
             nsfw=nsfw,
-            pinned=pinned
+            pinned=pinned,
+            created_at=updated
         )
