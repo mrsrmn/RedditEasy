@@ -13,43 +13,17 @@ class Random:
         request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
         meme = json.loads(request.content)
 
-        if meme["message"]:
-            if meme["message"] == "Too Many Requests":
-                raise KeyError("Too many requests. Please wait a little.")
-        else:
-            return meme["data"]["children"][random.randint(1, 25)]["data"]["title"]
-
-    def get_author(self):
-        """
-        :return: (str) The name of the author
-        """
-
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
-        meme = json.loads(request.content)
-
-        if meme["message"]:
-            if meme["message"] == "Too Many Requests":
-                raise KeyError("Too many requests. Please wait a little.")
-            else:
-                raise KeyError
-        else:
-            return meme["data"]["children"][random.randint(1, 25)]["data"]["title"]
+        return meme["data"]["children"][random.randint(1, 25)]["data"]["title"]
 
     def get_image(self):
         """
-        :return: (str) The URL of the image
+        :return: (str) The image URL of a random post
         """
 
         request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
         meme = json.loads(request.content)
 
-        if meme["message"]:
-            if meme["message"] == "Too Many Requests":
-                raise KeyError("Too many requests. Please wait a little.")
-            else:
-                raise KeyError
-        else:
-            return meme["data"]["children"][random.randint(1, 25)]["data"]["url_overridden_by_dest"]
+        return meme["data"]["children"][random.randint(1, 25)]["data"]["url_overridden_by_dest"]
 
     def get_post(self):
         randompost = random.randint(1, 25)
@@ -69,4 +43,3 @@ class Random:
             nsfw=meme["data"]["children"][randompost]["data"]["over_18"],
             pinned=meme["data"]["children"][randompost]["data"]["pinned"]
         )
-

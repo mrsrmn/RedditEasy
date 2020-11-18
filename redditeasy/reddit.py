@@ -1,5 +1,6 @@
 class Reddit:
-    def __init__(self, time, image_link, title, upvote_ratio, total_awards, score, downvotes, updated, nsfw, pinned):
+    def __init__(self, time, image_link, title, upvote_ratio,
+                 total_awards, score, downvotes, updated, nsfw, pinned):
         self.time = time
         self.image_link = image_link
         self.title = title
