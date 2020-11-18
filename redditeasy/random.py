@@ -1,7 +1,6 @@
 import requests
 import json
 import random
-import datetime
 from .reddit import Reddit
 
 
@@ -33,7 +32,18 @@ class Random:
         randompost = random.randint(1, 25)
         request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json")
         meme = json.loads(request.content)
-        time = meme["data"]["children"][randompost]["data"]["created"] / 1000.0
+        nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+        pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+
+        if nsfw == "true":
+            nsfw = True
+        elif nsfw == "false":
+            nsfw = False
+
+        if pinned == "true":
+            pinned = True
+        elif pinned == "false":
+            pinned = False
 
         return Reddit(
             image_link=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
@@ -42,9 +52,8 @@ class Random:
             total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
             score=meme["data"]["children"][randompost]["data"]["score"],
             downvotes=meme["data"]["children"][randompost]["data"]["downs"],
-            created_at=datetime.datetime.fromtimestamp(time).strftime("%d-%m-%Y %I:%M:%S UTC"),
-            nsfw=meme["data"]["children"][randompost]["data"]["over_18"],
-            pinned=meme["data"]["children"][randompost]["data"]["pinned"]
+            nsfw=nsfw,
+            pinned=pinned
         )
 
     def get_top_post(self):
@@ -55,7 +64,18 @@ class Random:
         randompost = random.randint(1, 25)
         request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json")
         meme = json.loads(request.content)
-        time = meme["data"]["children"][randompost]["data"]["created"] / 1000.0
+        nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+        pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+
+        if nsfw == "true":
+            nsfw = True
+        elif nsfw == "false":
+            nsfw = False
+
+        if pinned == "true":
+            pinned = True
+        elif pinned == "false":
+            pinned = False
 
         return Reddit(
             image_link=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
@@ -64,7 +84,6 @@ class Random:
             total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
             score=meme["data"]["children"][randompost]["data"]["score"],
             downvotes=meme["data"]["children"][randompost]["data"]["downs"],
-            created_at=datetime.datetime.fromtimestamp(time).strftime("%d-%m-%Y %I:%M:%S UTC"),
-            nsfw=meme["data"]["children"][randompost]["data"]["over_18"],
-            pinned=meme["data"]["children"][randompost]["data"]["pinned"]
+            nsfw=nsfw,
+            pinned=pinned
         )
