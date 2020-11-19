@@ -1,7 +1,7 @@
 import redditeasy
 
-post = redditeasy.User("IAmThe2ndHuman")
-postoutput = post.get_top_post()
+post = redditeasy.User("emirsurmen")
+postoutput = post.get_post()
 
 print(f"Posts Title: {postoutput.title}\n"
       f"Posts Content Link: {postoutput.content}\n"

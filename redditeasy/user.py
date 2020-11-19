@@ -87,7 +87,7 @@ class User:
         try:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
+            randompost = 1
             nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
@@ -117,7 +117,7 @@ class User:
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
+            randompost = 1
             nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
@@ -220,7 +220,7 @@ class User:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json",
                                    headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
+            randompost = 1
             nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
@@ -251,7 +251,7 @@ class User:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
+            randompost = 1
             nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
