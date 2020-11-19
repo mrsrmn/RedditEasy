@@ -20,6 +20,7 @@ Usage
 
 .. code-block:: python
   :linenos:
+
   import redditeasy
 
   post = redditeasy.Subreddit("memes")
