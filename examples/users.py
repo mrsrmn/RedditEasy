@@ -1,6 +1,6 @@
 import redditeasy
 
-post = redditeasy.User("darko")
+post = redditeasy.User("iamthe2ndhuman")
 postoutput = post.get_post()
 
 print(f"Posts Title: {postoutput.title}\n"

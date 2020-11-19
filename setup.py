@@ -12,7 +12,7 @@ setuptools.setup(
     description="RedditEasy is an API wrapper for the Reddit JSON API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/MakufonSkifto/redditeasy",
+    url="https://github.com/MakufonSkifto/RedditEasy",
     packages=setuptools.find_packages(),
     install_requires=["requests"],
     classifiers=[
