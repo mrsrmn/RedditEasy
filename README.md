@@ -11,6 +11,9 @@ OR
 
 ``python -m pip install redditeasy``
 
+## Documentation
+Docs can be found [here]()
+
 ## Usage
 
 ```python
