@@ -3,6 +3,10 @@ import json
 import random
 from .reddit import Reddit
 import datetime
+import requests.auth
+
+client_auth = requests.auth.HTTPBasicAuth('isLVlpKPAs1cBQ', 'S5HrQV1oLjXDvs7YPdJ8hkFCN8f0oQ')
+headers = {"Authorization": "bearer fhTdafZI-0ClEzzYORfBSCR7x3M", "User-Agent": "Meon/0.1 by emirsurmen"}
 
 
 class User:
@@ -14,9 +18,10 @@ class User:
         :return: (str) Info about the randomly selected post from the user
         """
 
-        randompost = random.randint(1, 25)
-        request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json")
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
         meme = json.loads(request.content)
+        randompost = random.randint(0, meme["data"]["dist"])
+        print(len(meme["data"]["children"]))
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
         s = meme["data"]["children"][randompost]["data"]["created"]
@@ -50,9 +55,9 @@ class User:
         :return: (str) Info about the randomly selected top post from the user
         """
 
-        randompost = random.randint(1, 25)
-        request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json")
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
         meme = json.loads(request.content)
+        randompost = random.randint(0, meme["data"]["dist"])
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
         s = meme["data"]["children"][randompost]["data"]["created"]
@@ -85,9 +90,9 @@ class User:
         :return: (str) Info about the randomly selected post (new)
         """
 
-        randompost = random.randint(1, 25)
-        request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json")
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
         meme = json.loads(request.content)
+        randompost = random.randint(0, meme["data"]["dist"])
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
         s = meme["data"]["children"][randompost]["data"]["created"]
@@ -120,9 +125,10 @@ class User:
         :return: (str) Info about the randomly selected post (new)
         """
 
-        randompost = random.randint(1, 25)
-        request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json")
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
+                               auth=client_auth)
         meme = json.loads(request.content)
+        randompost = random.randint(0, meme["data"]["dist"])
         nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
         pinned = meme["data"]["children"][randompost]["data"]["pinned"]
         s = meme["data"]["children"][randompost]["data"]["created"]
