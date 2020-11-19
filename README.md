@@ -2,5 +2,33 @@
 
 RedditEasy is an API wrapper for the Reddit JSON API
 
-# Functions
-your mom :joy: :rofl: :100: :ok_hand:
+## Install
+To install RedditEasy, do:
+
+``pip install redditeasy`` 
+
+OR
+
+``python -m pip install redditeasy``
+
+## Usage
+
+```python
+import redditeasy
+
+post = redditeasy.Subreddit("memes")
+postoutput = post.get_post()
+
+print(f"Posts Title: {postoutput.title}\n"
+      f"Posts Content: {postoutput.content}\n"
+      f"Post Created At: {postoutput.created_at}\n"
+      f"Posts Upvote Count: {postoutput.score}\n"
+      f"Posts Award Count: {postoutput.total_awards}\n"
+      f"NSFW?: {postoutput.nsfw}")
+```
+
+More examples are in the [examples folder]()
+
+## Errors
+
+The module will raise ``IndexError`` if the given user / subreddit is not found

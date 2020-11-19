@@ -21,8 +21,12 @@ class User:
         try:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -51,8 +55,12 @@ class User:
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -88,8 +96,12 @@ class User:
         try:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = 1
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -118,8 +130,12 @@ class User:
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = 1
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -154,8 +170,12 @@ class User:
         try:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -184,8 +204,12 @@ class User:
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = random.randint(0, meme["data"]["dist"])
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -221,8 +245,12 @@ class User:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json",
                                    headers=headers, auth=client_auth)
             meme = json.loads(request.content)
-            randompost = 1
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -252,8 +280,12 @@ class User:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
-            randompost = 1
-            nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            try:
+                randompost = random.randint(0, meme["data"]["dist"])
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+            except IndexError:
+                randompost = 0
+                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
