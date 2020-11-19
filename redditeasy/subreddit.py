@@ -94,7 +94,8 @@ class Subreddit:
 
     def get_top_post(self):
         """
-        :return: (str) Info about the randomly selected post (top)
+        :return: (str) Info about the randomly selected post (This will return the TOP POST OF TODAY, not the top post
+         of all time)
         """
 
         try:
