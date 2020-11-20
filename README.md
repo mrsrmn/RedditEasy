@@ -1,3 +1,8 @@
+[![Documentation Status](https://readthedocs.org/projects/redditeasy/badge/?version=latest)](https://redditeasy.readthedocs.io/en/latest/?badge=latest)
+[![License](https://img.shields.io/github/license/MakufonSkifto/redditeasy)](LICENSE.md)
+[![GitHub stars](https://img.shields.io/github/stars/MakufonSkifto/redditeasy)](https://github.com/ExpDev07/coronavirus-tracker-api/stargazers) 
+[![PyPI version](https://badge.fury.io/py/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
+
 # RedditEasy
 
 RedditEasy is an API wrapper for the Reddit JSON API
@@ -12,7 +17,7 @@ OR
 ``python -m pip install redditeasy``
 
 ## Documentation
-Docs can be found [here]()
+Docs can be found [here](https://redditeasy.readthedocs.io/en/latest/)
 
 ## Usage
 
@@ -30,7 +35,7 @@ print(f"Posts Title: {postoutput.title}\n"
       f"NSFW?: {postoutput.nsfw}")
 ```
 
-More examples are in the [examples folder]()
+More examples are in the [examples folder](https://github.com/MakufonSkifto/RedditEasy/tree/main/examples)
 
 ## Errors
 
