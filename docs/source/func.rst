@@ -21,6 +21,105 @@ A List of Classes
 class: Subreddit()
 ---------------------
 
+.. code-block::
+  :linenos:
+
+  get_image()
+
+* Parameter: None
+
+* Returns: (str) Post content of the randomly selected post from the subreddit
+
+.. code-block::
+  :linenos:
+
+  get_post()
+
+* Parameter: None
+
+* Returns: (str) Info about the randomly selected post from the subreddit
+
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``pinned``: This will return True or False if the post is pinned or not
+
+   ``created_at``: The time the randomly selected post got created
+
+
+.. code-block::
+  :linenos:
+
+  get_new_post()
+
+* Parameter: None
+
+* Returns: (str) Info about the randomly selected post (new)
+
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``pinned``: This will return True or False if the post is pinned or not
+
+   ``created_at``: The time the randomly selected post got created
+
+
+
+.. code-block::
+  :linenos:
+
+  get_controversial_post()
+
+* Parameter: None
+
+* Returns: (str) Info about the randomly selected post (new)
+
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``pinned``: This will return True or False if the post is pinned or not
+
+   ``created_at``: The time the randomly selected post got created
+
 
 class: User()
 ---------------------
@@ -34,6 +133,27 @@ class: User()
 
 * Returns: (str) Info about the randomly selected post from the user
 
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``pinned``: This will return True or False if the post is pinned or not
+
+   ``created_at``: The time the randomly selected post got created
+
+
 
 .. code-block::
   :linenos:
@@ -44,6 +164,27 @@ class: User()
 
 * Returns: (str) Info about the randomly selected post (new)
 
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``pinned``: This will return True or False if the post is pinned or not
+
+   ``created_at``: The time the randomly selected post got created
+
+
 
 .. code-block::
   :linenos:
@@ -53,3 +194,23 @@ class: User()
 * Parameter: None
 
 * Returns: (str) Info about the randomly selected post (new)
+
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``pinned``: This will return True or False if the post is pinned or not
+
+   ``created_at``: The time the randomly selected post got created
