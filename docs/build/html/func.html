@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions &#8212; RedditEasy 0.1.5 documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="License" href="license.html" />
+    <link rel="prev" title="Getting Started" href="start.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="a-list-of-classes">
+<h2>A List of Classes<a class="headerlink" href="#a-list-of-classes" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Subreddit</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Parameter: subreddit (str) - The name of the subreddit</p></li>
+</ul>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">User</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Parameter: user (str) - The name of the user</p></li>
+</ul>
+</div>
+<div class="section" id="class-subreddit">
+<h2>class: Subreddit()<a class="headerlink" href="#class-subreddit" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_image</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul class="simple">
+<li><p>Parameter: None</p></li>
+<li><p>Returns: (str) Post content of the randomly selected post from the subreddit</p></li>
+</ul>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_post</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul>
+<li><p>Parameter: None</p></li>
+<li><p>Returns: (str) Info about the randomly selected post from the subreddit</p></li>
+<li><p>Attributes:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">pinned</span></code>: This will return True or False if the post is pinned or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_new_post</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul>
+<li><p>Parameter: None</p></li>
+<li><p>Returns: (str) Info about the randomly selected post (new)</p></li>
+<li><p>Attributes:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">pinned</span></code>: This will return True or False if the post is pinned or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_controversial_post</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul>
+<li><p>Parameter: None</p></li>
+<li><p>Returns: (str) Info about the randomly selected post (new)</p></li>
+<li><p>Attributes:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">pinned</span></code>: This will return True or False if the post is pinned or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="class-user">
+<h2>class: User()<a class="headerlink" href="#class-user" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_post</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul>
+<li><p>Parameter: None</p></li>
+<li><p>Returns: (str) Info about the randomly selected post from the user</p></li>
+<li><p>Attributes:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">pinned</span></code>: This will return True or False if the post is pinned or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_new_post</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul>
+<li><p>Parameter: None</p></li>
+<li><p>Returns: (str) Info about the randomly selected post (new)</p></li>
+<li><p>Attributes:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">pinned</span></code>: This will return True or False if the post is pinned or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_controversial_post</span><span class="p">()</span>
+</pre></div>
+</td></tr></table></div>
+<ul>
+<li><p>Parameter: None</p></li>
+<li><p>Returns: (str) Info about the randomly selected post (new)</p></li>
+<li><p>Attributes:</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
+<p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">pinned</span></code>: This will return True or False if the post is pinned or not</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RedditEasy</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-list-of-classes">A List of Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-subreddit">class: Subreddit()</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-user">class: User()</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="start.html" title="previous chapter">Getting Started</a></li>
+      <li>Next: <a href="license.html" title="next chapter">License</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, MakufonSkifto.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/func.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
