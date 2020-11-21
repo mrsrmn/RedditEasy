@@ -43,6 +43,7 @@ class Subreddit:
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -65,8 +66,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
@@ -93,7 +99,9 @@ class Subreddit:
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -116,8 +124,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["selftext"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
@@ -152,6 +165,7 @@ class Subreddit:
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -174,8 +188,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
@@ -203,6 +222,7 @@ class Subreddit:
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -225,8 +245,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["selftext"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
@@ -260,6 +285,7 @@ class Subreddit:
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -282,8 +308,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
@@ -311,6 +342,7 @@ class Subreddit:
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -333,8 +365,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["selftext"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
@@ -368,6 +405,7 @@ class Subreddit:
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -390,8 +428,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
@@ -419,6 +462,7 @@ class Subreddit:
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
+            media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             if nsfw == "true":
@@ -441,8 +485,13 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
+            if media is None:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            else:
+                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
             return Reddit(
-                content=meme["data"]["children"][randompost]["data"]["selftext"],
+                content=contenttext,
                 title=meme["data"]["children"][randompost]["data"]["title"],
                 upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
                 total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
