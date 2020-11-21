@@ -1,18 +1,19 @@
+
 import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="corona_python",
-    version="1.0.0",
+    name="redditeasy",
+    version="0.2.0",
     author="MakufonSkifto",
     author_email="emirsurmen@gmail.com",
     license="MIT",
-    description="A Python 3 wrapper for the COVID-19 API",
+    description="RedditEasy is an API wrapper for the Reddit JSON API",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/MakufonSkifto/corona-python",
+    url="https://github.com/MakufonSkifto/RedditEasy",
     packages=setuptools.find_packages(),
     install_requires=["requests"],
     classifiers=[
