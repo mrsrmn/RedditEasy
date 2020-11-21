@@ -50,7 +50,8 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
@@ -84,7 +85,8 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )
 
     def get_top_post(self):
@@ -125,7 +127,8 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
@@ -159,7 +162,8 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )
 
     def get_new_post(self):
@@ -199,7 +203,8 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
@@ -233,7 +238,8 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )
 
     def get_controversial_post(self):
@@ -274,7 +280,8 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
@@ -309,5 +316,6 @@ class User:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"]
             )

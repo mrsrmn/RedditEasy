@@ -40,6 +40,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -53,6 +55,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -62,7 +74,11 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
@@ -75,6 +91,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -88,6 +106,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["selftext"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -97,7 +125,11 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
 
     def get_top_post(self):
@@ -117,6 +149,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -130,6 +164,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -139,7 +183,11 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
@@ -152,6 +200,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -165,6 +215,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["selftext"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -174,7 +234,11 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
 
     def get_new_post(self):
@@ -193,6 +257,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -206,6 +272,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -215,7 +291,11 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
@@ -228,6 +308,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -241,6 +323,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["selftext"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -250,7 +342,11 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
 
     def get_controversial_post(self):
@@ -269,6 +365,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -282,6 +380,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -291,7 +399,11 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
@@ -304,6 +416,8 @@ class Subreddit:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
@@ -317,6 +431,16 @@ class Subreddit:
             elif pinned == "false":
                 pinned = False
 
+            if stickied == "true":
+                stickied = True
+            elif stickied == "false":
+                stickied = False
+
+            if spoiler == "true":
+                spoiler = True
+            elif spoiler == "false":
+                spoiler = False
+
             return Reddit(
                 content=meme["data"]["children"][randompost]["data"]["selftext"],
                 title=meme["data"]["children"][randompost]["data"]["title"],
@@ -326,5 +450,9 @@ class Subreddit:
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
                 pinned=pinned,
-                created_at=updated
+                created_at=updated,
+                author=meme["data"]["children"][randompost]["data"]["author"],
+                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                stickied=stickied,
+                spoiler=spoiler
             )
