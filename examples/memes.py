@@ -12,4 +12,3 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Posts Upvote Count: {postoutput.score}\n"
       f"Posts Award Count: {postoutput.total_awards}\n"
       f"NSFW?: {postoutput.nsfw}")
-

@@ -59,6 +59,13 @@ class: Subreddit()
 
    ``created_at``: The time the randomly selected post got created
 
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
 
 .. code-block::
   :linenos:
@@ -88,6 +95,14 @@ class: Subreddit()
    ``pinned``: This will return True or False if the post is pinned or not
 
    ``created_at``: The time the randomly selected post got created
+
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
 
 
 
@@ -119,6 +134,14 @@ class: Subreddit()
    ``pinned``: This will return True or False if the post is pinned or not
 
    ``created_at``: The time the randomly selected post got created
+
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
 
 
 class: User()
@@ -153,6 +176,14 @@ class: User()
 
    ``created_at``: The time the randomly selected post got created
 
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
+
 
 
 .. code-block::
@@ -184,6 +215,14 @@ class: User()
 
    ``created_at``: The time the randomly selected post got created
 
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
+
 
 
 .. code-block::
@@ -214,3 +253,11 @@ class: User()
    ``pinned``: This will return True or False if the post is pinned or not
 
    ``created_at``: The time the randomly selected post got created
+
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
