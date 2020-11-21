@@ -64,7 +64,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
@@ -114,7 +114,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
@@ -171,7 +171,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
@@ -221,7 +221,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
@@ -277,7 +277,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
@@ -327,7 +327,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
@@ -384,7 +384,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
@@ -435,7 +435,7 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=meme["data"]["children"][randompost]["data"]["url"],
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler
             )
