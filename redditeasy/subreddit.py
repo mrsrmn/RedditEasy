@@ -4,9 +4,17 @@ import random
 from .reddit import Reddit
 import datetime
 import requests.auth
+from dotenv import load_dotenv
+import os
 
-client_auth = requests.auth.HTTPBasicAuth('isLVlpKPAs1cBQ', 'S5HrQV1oLjXDvs7YPdJ8hkFCN8f0oQ')
-headers = {"Authorization": "bearer fhTdafZI-0ClEzzYORfBSCR7x3M", "User-Agent": "Meon/0.1 by emirsurmen"}
+load_dotenv(".env")
+client_id = os.getenv("CLIENT_ID")
+client_secret = os.getenv("CLIENT_SECRET")
+auth = os.getenv("AUTH")
+user_agent = os.getenv("USER_AGENT")
+
+client_auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
+headers = {"Authorization": auth, "User-Agent": user_agent}
 
 
 class Subreddit:
