@@ -33,12 +33,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
@@ -90,12 +92,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
@@ -155,12 +159,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
@@ -212,12 +218,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
@@ -275,12 +283,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
@@ -332,12 +342,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
@@ -395,12 +407,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
@@ -452,12 +466,14 @@ class Subreddit:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
                                    auth=client_auth)
             meme = json.loads(request.content)
+
             try:
                 randompost = random.randint(0, meme["data"]["dist"])
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+
             pinned = meme["data"]["children"][randompost]["data"]["pinned"]
             stickied = meme["data"]["children"][randompost]["data"]["stickied"]
             spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
