@@ -15,3 +15,5 @@ class Reddit:
         self.post_url = post_url
         self.stickied = stickied
         self.spoiler = spoiler
+        self.post_flair = post_flair
+        self.author_flair = author_flair

@@ -82,7 +82,9 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
@@ -140,7 +142,9 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
 
     def get_top_post(self):
@@ -205,7 +209,9 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
@@ -263,7 +269,9 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
 
     def get_new_post(self):
@@ -327,7 +335,9 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
@@ -385,7 +395,9 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
 
     def get_controversial_post(self):
@@ -450,7 +462,9 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
@@ -509,5 +523,7 @@ class User:
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
-                spoiler=spoiler
+                spoiler=spoiler,
+                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
+                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
             )
