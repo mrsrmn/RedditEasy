@@ -67,6 +67,10 @@ class: Subreddit()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
+   ``post_flair``: This will return the post's flair in a JSON format
+
+   ``author_flair``: This will return the post's author's flair in a JSON format
+
 .. code-block::
   :linenos:
 
@@ -103,6 +107,10 @@ class: Subreddit()
    ``stickied``: This will return True or False if the post is stickied or not
 
    ``spoiler``: This will return True or False if the post is spoiler or not
+
+   ``post_flair``: This will return the post's flair in a JSON format
+
+   ``author_flair``: This will return the post's author's flair in a JSON format
 
 
 
@@ -142,6 +150,10 @@ class: Subreddit()
    ``stickied``: This will return True or False if the post is stickied or not
 
    ``spoiler``: This will return True or False if the post is spoiler or not
+
+   ``post_flair``: This will return the post's flair in a JSON format
+
+   ``author_flair``: This will return the post's author's flair in a JSON format
 
 
 class: User()
@@ -184,6 +196,10 @@ class: User()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
+   ``post_flair``: This will return the post's flair in a JSON format
+
+   ``author_flair``: This will return the post's author's flair in a JSON format
+
 
 
 .. code-block::
@@ -223,6 +239,10 @@ class: User()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
+   ``post_flair``: This will return the post's flair in a JSON format
+
+   ``author_flair``: This will return the post's author's flair in a JSON format
+
 
 
 .. code-block::
@@ -261,3 +281,7 @@ class: User()
    ``stickied``: This will return True or False if the post is stickied or not
 
    ``spoiler``: This will return True or False if the post is spoiler or not
+
+   ``post_flair``: This will return the post's flair in a JSON format
+
+   ``author_flair``: This will return the post's author's flair in a JSON format
