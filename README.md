@@ -35,7 +35,9 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Post Created At: {postoutput.created_at}\n"
       f"Posts Upvote Count: {postoutput.score}\n"
       f"Posts Award Count: {postoutput.total_awards}\n"
-      f"NSFW?: {postoutput.nsfw}")
+      f"NSFW?: {postoutput.nsfw}\n"
+      f"Post Flair: {postoutput.post_flair}\n"
+      f"User Flair: {postoutput.author_flair}")
 
 ```
 
