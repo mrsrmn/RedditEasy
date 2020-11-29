@@ -11,10 +11,6 @@ OR
 
 ``python -m pip install redditeasy``
 
-Documentation
--------------
-Docs can be found [here]()
-
 Usage
 -------------
 
@@ -34,7 +30,9 @@ Usage
         f"Post Created At: {postoutput.created_at}\n"
         f"Posts Upvote Count: {postoutput.score}\n"
         f"Posts Award Count: {postoutput.total_awards}\n"
-        f"NSFW?: {postoutput.nsfw}")
+        f"NSFW?: {postoutput.nsfw}\n"
+        f"Post Flair: {postoutput.post_flair}\n"
+        f"User Flair: {postoutput.author_flair}")
 
 
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_

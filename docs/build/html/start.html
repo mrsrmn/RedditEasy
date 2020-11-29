@@ -15,7 +15,7 @@
     <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="License" href="license.html" />
+    <link rel="next" title="Functions" href="func.html" />
     <link rel="prev" title="Welcome to RedditEasy’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -58,24 +58,34 @@
  8
  9
 10
-11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">redditeasy</span>
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">redditeasy</span>
 
 <span class="n">post</span> <span class="o">=</span> <span class="n">redditeasy</span><span class="o">.</span><span class="n">Subreddit</span><span class="p">(</span><span class="s2">&quot;memes&quot;</span><span class="p">)</span>
 <span class="n">postoutput</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">get_post</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Posts Title: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;Posts Content: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;Post Created At: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;Posts Upvote Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;Posts Award Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">total_awards</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-    <span class="sa">f</span><span class="s2">&quot;NSFW?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">nsfw</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+      <span class="sa">f</span><span class="s2">&quot;Posts Content: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Posts Author: u/</span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Posts URL: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Spoiler?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">spoiler</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Post Created At: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Posts Upvote Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Posts Award Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">total_awards</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;NSFW?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">nsfw</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;Post Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+      <span class="sa">f</span><span class="s2">&quot;User Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author_flair</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
 <p>More examples are in the <a class="reference external" href="https://github.com/MakufonSkifto/RedditEasy/tree/main/examples">examples folder</a></p>
 </div>
 <div class="section" id="errors">
 <h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
-<p>The module will raise <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> if the given user / subreddit is not found</p>
+<p>The module will raise <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> if the given user / subreddit is not found</p>
 </div>
 </div>
 
@@ -104,6 +114,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#errors">Errors</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="func.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
@@ -112,7 +123,7 @@
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Welcome to RedditEasy’s documentation!</a></li>
-      <li>Next: <a href="license.html" title="next chapter">License</a></li>
+      <li>Next: <a href="func.html" title="next chapter">Functions</a></li>
   </ul></li>
 </ul>
 </div>
