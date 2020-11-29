@@ -44,6 +44,13 @@ class User:
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
+
             if nsfw == "true":
                 nsfw = True
             elif nsfw == "false":
@@ -83,8 +90,8 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
@@ -103,6 +110,13 @@ class User:
             media = meme["data"]["children"][randompost]["data"]["media"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
 
             if nsfw == "true":
                 nsfw = True
@@ -143,8 +157,8 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
 
     def get_top_post(self):
@@ -171,6 +185,13 @@ class User:
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
+
             if nsfw == "true":
                 nsfw = True
             elif nsfw == "false":
@@ -210,8 +231,8 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
@@ -230,6 +251,13 @@ class User:
             media = meme["data"]["children"][randompost]["data"]["media"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
 
             if nsfw == "true":
                 nsfw = True
@@ -270,8 +298,8 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
 
     def get_new_post(self):
@@ -297,6 +325,13 @@ class User:
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
+
             if nsfw == "true":
                 nsfw = True
             elif nsfw == "false":
@@ -336,8 +371,8 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
@@ -356,6 +391,13 @@ class User:
             media = meme["data"]["children"][randompost]["data"]["media"]
             s = meme["data"]["children"][randompost]["data"]["created"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
 
             if nsfw == "true":
                 nsfw = True
@@ -396,8 +438,8 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
 
     def get_controversial_post(self):
@@ -424,6 +466,13 @@ class User:
             media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
+
             if nsfw == "true":
                 nsfw = True
             elif nsfw == "false":
@@ -463,8 +512,8 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
@@ -484,6 +533,13 @@ class User:
             s = meme["data"]["children"][randompost]["data"]["created"]
             media = meme["data"]["children"][randompost]["data"]["media"]
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+
+            try:
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+            except IndexError:
+                flair_author = None
+                flair_post = None
 
             if nsfw == "true":
                 nsfw = True
@@ -524,6 +580,6 @@ class User:
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
                 stickied=stickied,
                 spoiler=spoiler,
-                author_flair=meme["data"]["children"][randompost]["data"]["author_flair_richtext"],
-                post_flair=meme["data"]["children"][randompost]["data"]["link_flair_richtext"]
+                author_flair=flair_author,
+                post_flair=flair_post
             )
