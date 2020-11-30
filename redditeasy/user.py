@@ -91,7 +91,8 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
@@ -158,7 +159,8 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
 
     def get_top_post(self):
@@ -232,7 +234,8 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
@@ -299,7 +302,8 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
 
     def get_new_post(self):
@@ -372,7 +376,8 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
@@ -439,7 +444,8 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
 
     def get_controversial_post(self):
@@ -513,7 +519,8 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
             request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
@@ -581,5 +588,6 @@ class User:
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
-                post_flair=flair_post
+                post_flair=flair_post,
+                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
