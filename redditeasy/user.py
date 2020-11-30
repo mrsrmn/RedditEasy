@@ -87,7 +87,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
@@ -155,7 +156,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
@@ -230,7 +232,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
@@ -298,7 +301,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
@@ -372,7 +376,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
@@ -440,7 +445,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
@@ -515,7 +521,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
@@ -584,7 +591,8 @@ class User:
                 pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
+                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
                 stickied=stickied,
                 spoiler=spoiler,
                 author_flair=flair_author,
