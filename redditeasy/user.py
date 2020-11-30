@@ -45,8 +45,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
@@ -113,8 +113,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
@@ -188,8 +188,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
@@ -256,8 +256,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
@@ -330,8 +330,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
@@ -398,8 +398,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
@@ -473,8 +473,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
@@ -542,8 +542,8 @@ class User:
             updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
             try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_richtext"][0]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_richtext"][0]
+                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
             except IndexError:
                 flair_author = None
                 flair_post = None
