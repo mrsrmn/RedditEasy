@@ -67,9 +67,9 @@ class: Subreddit()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
-   ``post_flair``: This will return the post's flair in a JSON format
+   ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair in a JSON format
+   ``author_flair``: This will return the post's author's flair 
 
    ``subreddit_subscribers`` The number of people in the subreddit
 
@@ -110,9 +110,9 @@ class: Subreddit()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
-   ``post_flair``: This will return the post's flair in a JSON format
+   ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair in a JSON format
+   ``author_flair``: This will return the post's author's flair 
 
    ``subreddit_subscribers`` The number of people in the subreddit
 
@@ -155,9 +155,9 @@ class: Subreddit()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
-   ``post_flair``: This will return the post's flair in a JSON format
+   ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair in a JSON format
+   ``author_flair``: This will return the post's author's flair 
 
    ``subreddit_subscribers`` The number of people in the subreddit
 
@@ -202,9 +202,9 @@ class: User()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
-   ``post_flair``: This will return the post's flair in a JSON format
+   ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair in a JSON format
+   ``author_flair``: This will return the post's author's flair 
 
 
 
@@ -245,9 +245,9 @@ class: User()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
-   ``post_flair``: This will return the post's flair in a JSON format
+   ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair in a JSON format
+   ``author_flair``: This will return the post's author's flair 
 
 
 
@@ -288,6 +288,6 @@ class: User()
 
    ``spoiler``: This will return True or False if the post is spoiler or not
 
-   ``post_flair``: This will return the post's flair in a JSON format
+   ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair in a JSON format
+   ``author_flair``: This will return the post's author's flair 
