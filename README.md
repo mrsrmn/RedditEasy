@@ -24,7 +24,7 @@ Docs can be found [here](https://redditeasy.readthedocs.io/en/latest/)
 ```python
 import redditeasy
 
-post = redditeasy.Subreddit("memes")
+post = redditeasy.Subreddit("dankmemes")
 postoutput = post.get_post()
 
 print(f"Posts Title: {postoutput.title}\n"
@@ -37,7 +37,8 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Posts Award Count: {postoutput.total_awards}\n"
       f"NSFW?: {postoutput.nsfw}\n"
       f"Post Flair: {postoutput.post_flair}\n"
-      f"User Flair: {postoutput.author_flair}")
+      f"User Flair: {postoutput.author_flair}\n"
+      f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 
 ```
 

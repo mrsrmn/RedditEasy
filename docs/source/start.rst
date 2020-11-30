@@ -19,7 +19,7 @@ Usage
 
   import redditeasy
 
-  post = redditeasy.Subreddit("memes")
+  post = redditeasy.Subreddit("dankmemes")
   postoutput = post.get_post()
 
   print(f"Posts Title: {postoutput.title}\n"
@@ -32,7 +32,8 @@ Usage
         f"Posts Award Count: {postoutput.total_awards}\n"
         f"NSFW?: {postoutput.nsfw}\n"
         f"Post Flair: {postoutput.post_flair}\n"
-        f"User Flair: {postoutput.author_flair}")
+        f"User Flair: {postoutput.author_flair}\n"
+        f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 
 
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_
