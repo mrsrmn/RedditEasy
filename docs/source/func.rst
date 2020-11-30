@@ -71,6 +71,8 @@ class: Subreddit()
 
    ``author_flair``: This will return the post's author's flair in a JSON format
 
+   ``subreddit_subscribers`` The number of people in the subreddit
+
 .. code-block::
   :linenos:
 
@@ -111,6 +113,8 @@ class: Subreddit()
    ``post_flair``: This will return the post's flair in a JSON format
 
    ``author_flair``: This will return the post's author's flair in a JSON format
+
+   ``subreddit_subscribers`` The number of people in the subreddit
 
 
 
@@ -154,6 +158,8 @@ class: Subreddit()
    ``post_flair``: This will return the post's flair in a JSON format
 
    ``author_flair``: This will return the post's author's flair in a JSON format
+
+   ``subreddit_subscribers`` The number of people in the subreddit
 
 
 class: User()
