@@ -1,6 +1,6 @@
 import redditeasy
 
-post = redditeasy.Subreddit("dankmemes")
+post = redditeasy.Subreddit("beansinthings")
 postoutput = post.get_post()
 
 print(f"Posts Title: {postoutput.title}\n"

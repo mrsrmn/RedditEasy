@@ -71,8 +71,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
@@ -140,8 +142,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
@@ -216,8 +220,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
@@ -285,8 +291,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
@@ -360,8 +368,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
@@ -429,8 +439,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
@@ -505,8 +517,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
@@ -575,8 +589,10 @@ class User:
             elif spoiler == "false":
                 spoiler = False
 
-            if media is None:
+            if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            elif media:
+                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
                 contenttext = meme["data"]["children"][randompost]["data"]["url"]
 
