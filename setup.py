@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="redditeasy",
-    version="1.8.0",
+    version="1.9.0",
     author="MakufonSkifto",
     author_email="emirsurmen@gmail.com",
     license="MIT",

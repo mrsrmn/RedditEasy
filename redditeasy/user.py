@@ -31,7 +31,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -102,7 +102,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -180,7 +180,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -251,7 +251,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -328,7 +328,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -399,7 +399,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -477,7 +477,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -549,7 +549,7 @@ class User:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0

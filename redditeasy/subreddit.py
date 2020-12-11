@@ -28,7 +28,7 @@ class Subreddit:
 
         request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers, auth=client_auth)
         meme = json.loads(request.content)
-        randompost = random.randint(0, meme["data"]["dist"])
+        randompost = random.randint(0, meme["data"]["dist"] - 1)
 
         return meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
 
@@ -43,7 +43,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -114,7 +114,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -193,7 +193,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -264,7 +264,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -341,7 +341,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -412,7 +412,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -489,7 +489,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
@@ -560,7 +560,7 @@ class Subreddit:
             meme = json.loads(request.content)
 
             try:
-                randompost = random.randint(0, meme["data"]["dist"])
+                randompost = random.randint(0, meme["data"]["dist"] - 1)
                 nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
