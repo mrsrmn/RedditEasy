@@ -4,27 +4,23 @@ import random
 from .reddit import Reddit
 import datetime
 import requests.auth
-from dotenv import load_dotenv
 import os
-
-load_dotenv(".env")
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
-auth = os.getenv("AUTH")
-user_agent = os.getenv("USER_AGENT")
-
-client_auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
-headers = {"Authorization": auth, "User-Agent": user_agent}
 
 
 class Subreddit:
-    def __init__(self, sub):
+    def __init__(self, user_agent, sub, client_id, client_secret):
         self.subreddit = sub
+        self.user_agent = user_agent
+        self.client_id = client_id
+        self.client_secret = client_secret
 
     def get_image(self):
         """
         :return: (str) The image URL of a random post
         """
+
+        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+        headers = {"User-Agent": self.user_agent}
 
         request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers, auth=client_auth)
         meme = json.loads(request.content)
@@ -37,6 +33,8 @@ class Subreddit:
         :return: (str) Info about the randomly selected post from the subreddit (hot)
         """
 
+        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+        headers = {"User-Agent": self.user_agent}
         try:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
                                    auth=client_auth)
@@ -187,6 +185,8 @@ class Subreddit:
          of all time)
         """
 
+        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+        headers = {"User-Agent": self.user_agent}
         try:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
                                    auth=client_auth)
@@ -335,6 +335,8 @@ class Subreddit:
         :return: (str) Info about the randomly selected post (new)
         """
 
+        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+        headers = {"User-Agent": self.user_agent}
         try:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
                                    auth=client_auth)
@@ -483,6 +485,8 @@ class Subreddit:
         :return: (str) Info about the randomly selected post (new)
         """
 
+        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+        headers = {"User-Agent": self.user_agent}
         try:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
                                    auth=client_auth)

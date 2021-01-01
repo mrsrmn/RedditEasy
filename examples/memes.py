@@ -1,6 +1,16 @@
 import redditeasy
 
-post = redditeasy.Subreddit("dankmemes")
+"""
+To get your client ID, auth, client secret and user agent follow this tutorial:
+https://github.com/reddit-archive/reddit/wiki/OAuth2
+"""
+
+post = redditeasy.Subreddit(sub="dankmemes",   #Subreddit name
+                            client_id="",      #Your client ID
+                            client_secret="",  #Your client secret
+                            user_agent=""      #Your user agent (ex: ClientName/0.1 by YourUsername")
+                            )
+
 postoutput = post.get_post()
 
 print(f"Posts Title: {postoutput.title}\n"
