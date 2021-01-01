@@ -4,7 +4,6 @@ import random
 from .reddit import Reddit
 import datetime
 import requests.auth
-import os
 
 
 class Subreddit:

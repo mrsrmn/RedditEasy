@@ -4,12 +4,11 @@ import random
 from .reddit import Reddit
 import datetime
 import requests.auth
-import os
 
 
 class User:
     def __init__(self, user_agent, user, client_id, client_secret):
-        self.subreddit = user
+        self.user = user
         self.user_agent = user_agent
         self.client_id = client_id
         self.client_secret = client_secret
