@@ -18,11 +18,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'RedditEasy'
-copyright = '2020, MakufonSkifto'
+copyright = '2020 - 2021, MakufonSkifto'
 author = 'MakufonSkifto'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1.5'
+release = '2.0.0'
 
 
 # -- General configuration ---------------------------------------------------
