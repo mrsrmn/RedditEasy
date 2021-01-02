@@ -1,9 +1,11 @@
 import redditeasy
 
 """
-To get your client ID, auth, client secret and user agent follow this tutorial:
-https://github.com/reddit-archive/reddit/wiki/OAuth2
+To get your client ID, client secret and user agent go to:
+https://www.reddit.com/prefs/apps
+and create an app
 """
+
 
 post = redditeasy.Subreddit(sub="dankmemes",   #Subreddit name
                             client_id="",      #Your client ID

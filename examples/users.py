@@ -1,14 +1,15 @@
 import redditeasy
 
 """
-To get your client ID, auth, client secret and user agent follow this tutorial:
-https://github.com/reddit-archive/reddit/wiki/OAuth2
+To get your client ID, client secret and user agent go to:
+https://www.reddit.com/prefs/apps
+and create an app
 """
 
-post = redditeasy.User(user="dankmemes",   #Subreddit name
-                       client_id="",      #Your client ID
-                       client_secret="",  #Your client secret
-                       user_agent=""      #Your user agent (ex: ClientName/0.1 by YourUsername")
+post = redditeasy.User(user="gallowboob",  #Username
+                       client_id="",       #Your client ID
+                       client_secret="",   #Your client secret
+                       user_agent=""       #Your user agent (ex: ClientName/0.1 by YourUsername")
                        )
 
 postoutput = post.get_post()

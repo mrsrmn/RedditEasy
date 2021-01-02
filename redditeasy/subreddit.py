@@ -7,11 +7,11 @@ import requests.auth
 
 
 class Subreddit:
-    def __init__(self, user_agent, sub, client_id, client_secret):
+    def __init__(self, sub, client_id, client_secret, user_agent):
         self.subreddit = sub
-        self.user_agent = user_agent
         self.client_id = client_id
         self.client_secret = client_secret
+        self.user_agent = user_agent
 
     def get_image(self):
         """
@@ -21,7 +21,8 @@ class Subreddit:
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
 
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers, auth=client_auth)
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
+                               auth=client_auth)
         meme = json.loads(request.content)
         randompost = random.randint(0, meme["data"]["dist"] - 1)
 
@@ -34,6 +35,7 @@ class Subreddit:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
         try:
             request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
                                    auth=client_auth)
