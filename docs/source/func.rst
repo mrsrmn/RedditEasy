@@ -12,7 +12,7 @@ A List of Classes
 * Parameter: subreddit (str) - The name of the subreddit
 * Parameter: client_id (str) - Your client ID
 * Parameter: client_secret (str) - Your client secret
-* Parameter: user_agent (str) - Your user agent (ex: ClientName/0.1 by YourUsername")
+* Parameter: user_agent (str) - Your user agent
 
 .. code-block::
   :linenos:
@@ -20,11 +20,15 @@ A List of Classes
   User()
 
 * Parameter: user (str) - The name of the user
+* Parameter: client_id (str) - Your client ID
+* Parameter: client_secret (str) - Your client secret
+* Parameter: user_agent (str) - Your user agent
 
 
 To get your client ID, client secret and user agent go to:
 https://www.reddit.com/prefs/apps
 and create an app
+
 
 class: Subreddit()
 ---------------------

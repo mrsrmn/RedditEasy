@@ -5,14 +5,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Functions &#8212; RedditEasy 0.1.5 documentation</title>
+    <title>Functions &#8212; RedditEasy 2.0.0 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="License" href="license.html" />
@@ -42,13 +41,22 @@
 </td></tr></table></div>
 <ul class="simple">
 <li><p>Parameter: subreddit (str) - The name of the subreddit</p></li>
+<li><p>Parameter: client_id (str) - Your client ID</p></li>
+<li><p>Parameter: client_secret (str) - Your client secret</p></li>
+<li><p>Parameter: user_agent (str) - Your user agent</p></li>
 </ul>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">User</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
 <li><p>Parameter: user (str) - The name of the user</p></li>
+<li><p>Parameter: client_id (str) - Your client ID</p></li>
+<li><p>Parameter: client_secret (str) - Your client secret</p></li>
+<li><p>Parameter: user_agent (str) - Your user agent</p></li>
 </ul>
+<p>To get your client ID, client secret and user agent go to:
+<a class="reference external" href="https://www.reddit.com/prefs/apps">https://www.reddit.com/prefs/apps</a>
+and create an app</p>
 </div>
 <div class="section" id="class-subreddit">
 <h2>class: Subreddit()<a class="headerlink" href="#class-subreddit" title="Permalink to this headline">¶</a></h2>
@@ -80,8 +88,9 @@
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">spoiler</span></code>: This will return True or False if the post is spoiler or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair in a JSON format</p>
-<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair in a JSON format</p>
+<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">subreddit_subscribers</span></code> The number of people in the subreddit</p>
 </div></blockquote>
 </li>
 </ul>
@@ -106,8 +115,9 @@
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">spoiler</span></code>: This will return True or False if the post is spoiler or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair in a JSON format</p>
-<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair in a JSON format</p>
+<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">subreddit_subscribers</span></code> The number of people in the subreddit</p>
 </div></blockquote>
 </li>
 </ul>
@@ -132,8 +142,9 @@
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">spoiler</span></code>: This will return True or False if the post is spoiler or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair in a JSON format</p>
-<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair in a JSON format</p>
+<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">subreddit_subscribers</span></code> The number of people in the subreddit</p>
 </div></blockquote>
 </li>
 </ul>
@@ -161,8 +172,8 @@
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">spoiler</span></code>: This will return True or False if the post is spoiler or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair in a JSON format</p>
-<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair in a JSON format</p>
+<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
 </div></blockquote>
 </li>
 </ul>
@@ -187,8 +198,8 @@
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">spoiler</span></code>: This will return True or False if the post is spoiler or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair in a JSON format</p>
-<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair in a JSON format</p>
+<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
 </div></blockquote>
 </li>
 </ul>
@@ -213,8 +224,8 @@
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">spoiler</span></code>: This will return True or False if the post is spoiler or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair in a JSON format</p>
-<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair in a JSON format</p>
+<p><code class="docutils literal notranslate"><span class="pre">post_flair</span></code>: This will return the post’s flair</p>
+<p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
 </div></blockquote>
 </li>
 </ul>
@@ -281,10 +292,10 @@
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2020, MakufonSkifto.
+      &copy;2020 - 2021, MakufonSkifto.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.3.1</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.4.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
