@@ -1,7 +1,4 @@
 .idea
 .env
-build/
 dist/
 redditeasy.egg-info
-make.bat
-Makefile
