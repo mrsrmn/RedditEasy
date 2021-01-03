@@ -9,7 +9,7 @@ setuptools.setup(
     version="2.0.0",
     author="MakufonSkifto",
     author_email="emirsurmen@gmail.com",
-    license="MIT",
+    license="GNU General Public License v3",
     description="RedditEasy is an API wrapper for the Reddit JSON API",
     long_description=long_description,
     long_description_content_type="text/markdown",
