@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="redditeasy",
-    version="2.1.0",
+    version="2.2.0",
     author="MakufonSkifto",
     author_email="emirsurmen@gmail.com",
     description="RedditEasy is an API wrapper for the Reddit JSON API",
