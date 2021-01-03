@@ -82,12 +82,14 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            if not media:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+                if contenttext == "":
+                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
             elif media:
                 contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
 
             return Reddit(
                 content=contenttext,
@@ -154,8 +156,10 @@ class Subreddit:
             elif spoiler == "false":
                 spoiler = False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+            if not media:
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                if contenttext == "":
+                    contenttext = meme["data"]["children"][randompost]["data"]["url"]
             elif media:
                 contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
