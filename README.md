@@ -24,7 +24,19 @@ Docs can be found [here](https://redditeasy.readthedocs.io/en/latest/)
 ```python
 import redditeasy
 
-post = redditeasy.Subreddit("dankmemes")
+"""
+To get your client ID, client secret and user agent go to:
+https://www.reddit.com/prefs/apps
+and create an app
+"""
+
+
+post = redditeasy.Subreddit(sub="dankmemes",   #Subreddit name
+                            client_id="",      #Your client ID
+                            client_secret="",  #Your client secret
+                            user_agent=""      #Your user agent (ex: ClientName/0.1 by YourUsername")
+                            )
+
 postoutput = post.get_post()
 
 print(f"Posts Title: {postoutput.title}\n"

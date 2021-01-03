@@ -7,8 +7,8 @@ import requests.auth
 
 
 class Subreddit:
-    def __init__(self, sub, client_id, client_secret, user_agent):
-        self.subreddit = sub
+    def __init__(self, subreddit, client_id, client_secret, user_agent):
+        self.subreddit = subreddit
         self.client_id = client_id
         self.client_secret = client_secret
         self.user_agent = user_agent

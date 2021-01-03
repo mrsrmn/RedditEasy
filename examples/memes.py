@@ -7,10 +7,10 @@ and create an app
 """
 
 
-post = redditeasy.Subreddit(sub="dankmemes",   #Subreddit name
-                            client_id="",      #Your client ID
-                            client_secret="",  #Your client secret
-                            user_agent=""      #Your user agent (ex: ClientName/0.1 by YourUsername")
+post = redditeasy.Subreddit(subreddit="dankmemes",   #Subreddit name
+                            client_id="",            #Your client ID
+                            client_secret="",        #Your client secret
+                            user_agent=""            #Your user agent (ex: ClientName/0.1 by YourUsername")
                             )
 
 postoutput = post.get_post()
