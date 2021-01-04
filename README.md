@@ -60,4 +60,4 @@ More examples are in the [examples folder](https://github.com/MakufonSkifto/Redd
 
 The module will raise ``KeyError`` if the given user / subreddit is not found
 
-The module will raise ``RequestError`` if there was an error with the request. Traceback will show the details about the error
+The module will raise ``redditeasy.exceptions.RequestError``  if there was an error with the request. Traceback will show the details about the error
