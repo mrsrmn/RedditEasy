@@ -8,7 +8,6 @@ setuptools.setup(
     name="redditeasy",
     version="2.5.0",
     author="MakufonSkifto",
-    author_email="emirsurmen@gmail.com",
     description="RedditEasy is an API wrapper for the Reddit JSON API",
     long_description=long_description,
     long_description_content_type="text/markdown",
