@@ -37,10 +37,11 @@ class Subreddit:
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
 
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
+                               auth=client_auth)
+        meme = json.loads(request.content)
+
         try:
-            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -100,9 +101,6 @@ class Subreddit:
             )
         except KeyError:
             try:
-                request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
-                                       auth=client_auth)
-                meme = json.loads(request.content)
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -172,10 +170,11 @@ class Subreddit:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
+                               auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -244,9 +243,6 @@ class Subreddit:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -322,10 +318,11 @@ class Subreddit:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
+                               auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -394,9 +391,6 @@ class Subreddit:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -472,10 +466,11 @@ class Subreddit:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
+                               auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -544,9 +539,6 @@ class Subreddit:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)

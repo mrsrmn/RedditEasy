@@ -21,9 +21,10 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -84,9 +85,6 @@ class User:
             )
         except KeyError:
             try:
-                request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers,
-                                       auth=client_auth)
-                meme = json.loads(request.content)
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -156,9 +154,10 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -216,8 +215,6 @@ class User:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -282,9 +279,10 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -342,8 +340,6 @@ class User:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -408,10 +404,10 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json",
-                                   headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -469,9 +465,6 @@ class User:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
