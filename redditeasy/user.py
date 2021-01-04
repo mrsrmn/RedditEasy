@@ -45,25 +45,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -118,25 +106,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -198,25 +174,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -269,25 +233,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -348,25 +300,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -419,25 +359,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -499,25 +427,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -571,25 +487,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if media == "null":
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
