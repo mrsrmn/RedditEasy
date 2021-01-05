@@ -75,13 +75,16 @@ With client info
         f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 
 
-To get your client ID, client secret and user agent go to
-https://www.reddit.com/prefs/apps
-and create an app
-
-For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
-
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_
+
+How to get your Reddit API Client info
+------------------------------------------
+
+To get your Reddit API client info go to
+https://www.reddit.com/prefs/apps
+and create a script.
+
+![](https://i.imgur.com/Ri13AQu.png)
 
 Errors
 -------------

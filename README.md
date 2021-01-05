@@ -75,11 +75,13 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 ```
 
+More examples are in the [examples folder](https://github.com/MakufonSkifto/RedditEasy/tree/main/examples)
+
+
+## How to get Reddit API client info
 To get your Reddit API client info go to
 https://www.reddit.com/prefs/apps
 and create a script.
-
-More examples are in the [examples folder](https://github.com/MakufonSkifto/RedditEasy/tree/main/examples)
 
 ![](https://i.imgur.com/Ri13AQu.png)
 
