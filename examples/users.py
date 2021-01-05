@@ -4,6 +4,8 @@ import redditeasy
 To get your client ID, client secret and user agent go to:
 https://www.reddit.com/prefs/apps
 and create an app
+
+For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
 """
 
 post = redditeasy.User(user="gallowboob",  #Username

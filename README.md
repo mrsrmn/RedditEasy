@@ -23,7 +23,7 @@ Docs can be found [here](https://redditeasy.readthedocs.io/en/latest/)
 <span style="font-size:larger;">THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: `client_id=`, `client_secret`,
 and `user_agent`.</span>
 
-### Without client info
+### Without Reddit API client info
 This method is not suggested as it may be slow and throw errors more often
 
 ```python
@@ -48,7 +48,7 @@ print(f"Posts Title: {postoutput.title}\n"
 
 ```
 
-### With client info
+### With Reddit API client info
 
 ```python
 import redditeasy
@@ -73,15 +73,15 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Post Flair: {postoutput.post_flair}\n"
       f"User Flair: {postoutput.author_flair}\n"
       f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
-
 ```
 
-To get your client ID, client secret and user agent go to
+To get your Reddit API client info go to
 https://www.reddit.com/prefs/apps
-and create an app
-
+and create a script.
 
 More examples are in the [examples folder](https://github.com/MakufonSkifto/RedditEasy/tree/main/examples)
+
+![](https://i.imgur.com/Ri13AQu.png)
 
 ## Errors
 
