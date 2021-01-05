@@ -20,6 +20,35 @@ OR
 Docs can be found [here](https://redditeasy.readthedocs.io/en/latest/)
 
 ## Usage
+<span style="font-size:larger;">THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: `client_id=`, `client_secret`,
+and `user_agent`.</span>
+
+### Without client info
+This method is not suggested as it may be slow and throw errors more often
+
+```python
+import redditeasy
+
+post = redditeasy.Subreddit(subreddit="dankmemes")   #Subreddit name
+
+postoutput = post.get_post()
+
+print(f"Posts Title: {postoutput.title}\n"
+      f"Posts Content: {postoutput.content}\n"
+      f"Posts Author: u/{postoutput.author}\n"
+      f"Posts URL: {postoutput.post_url}\n"
+      f"Spoiler?: {postoutput.spoiler}\n"
+      f"Post Created At: {postoutput.created_at}\n"
+      f"Posts Upvote Count: {postoutput.score}\n"
+      f"Posts Award Count: {postoutput.total_awards}\n"
+      f"NSFW?: {postoutput.nsfw}\n"
+      f"Post Flair: {postoutput.post_flair}\n"
+      f"User Flair: {postoutput.author_flair}\n"
+      f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
+
+```
+
+### With client info
 
 ```python
 import redditeasy
@@ -53,6 +82,7 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 
 ```
+
 
 More examples are in the [examples folder](https://github.com/MakufonSkifto/RedditEasy/tree/main/examples)
 
