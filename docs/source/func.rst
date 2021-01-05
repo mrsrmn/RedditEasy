@@ -10,9 +10,9 @@ A List of Classes
   Subreddit()
 
 * Parameter: subreddit (str) - The name of the subreddit
-* Parameter: client_id (str) - Your client ID
-* Parameter: client_secret (str) - Your client secret
-* Parameter: user_agent (str) - Your user agent
+* Parameter: client_id (str, Optional) - Your client ID
+* Parameter: client_secret (str, Optional) - Your client secret
+* Parameter: user_agent (str, Optional) - Your user agent
 
 .. code-block::
   :linenos:
@@ -20,10 +20,13 @@ A List of Classes
   User()
 
 * Parameter: user (str) - The name of the user
-* Parameter: client_id (str) - Your client ID
-* Parameter: client_secret (str) - Your client secret
-* Parameter: user_agent (str) - Your user agent
+* Parameter: client_id (str, Optional) - Your client ID
+* Parameter: client_secret (str, Optional) - Your client secret
+* Parameter: user_agent (str, Optional) - Your user agent
 
+
+THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: ``client_id=``, ``client_secret``,
+and ``user_agent``.
 
 To get your client ID, client secret and user agent go to:
 https://www.reddit.com/prefs/apps
