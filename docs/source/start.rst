@@ -14,6 +14,41 @@ OR
 Usage
 -------------
 
+Without client info
+''''''''''''''''''
+This method is not suggested as it may be slow and throw errors more often
+
+.. code-block:: python
+  :linenos:
+
+  import redditeasy
+
+  """
+  To get your client ID, client secret and user agent go to:
+  https://www.reddit.com/prefs/apps
+  and create an app
+  """
+
+
+  post = redditeasy.Subreddit(subreddit="dankmemes")   #Subreddit name
+  postoutput = post.get_post()
+
+  print(f"Posts Title: {postoutput.title}\n"
+        f"Posts Content: {postoutput.content}\n"
+        f"Posts Author: u/{postoutput.author}\n"
+        f"Posts URL: {postoutput.post_url}\n"
+        f"Spoiler?: {postoutput.spoiler}\n"
+        f"Post Created At: {postoutput.created_at}\n"
+        f"Posts Upvote Count: {postoutput.score}\n"
+        f"Posts Award Count: {postoutput.total_awards}\n"
+        f"NSFW?: {postoutput.nsfw}\n"
+        f"Post Flair: {postoutput.post_flair}\n"
+        f"User Flair: {postoutput.author_flair}\n"
+        f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
+
+
+With client info
+'''''''''''''''''
 .. code-block:: python
   :linenos:
 
@@ -46,6 +81,10 @@ Usage
         f"User Flair: {postoutput.author_flair}\n"
         f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 
+
+To get your client ID, client secret and user agent go to
+https://www.reddit.com/prefs/apps
+and create an app
 
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_
 
