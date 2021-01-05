@@ -1,10 +1,12 @@
 import requests
-import json
+import ujson as json
+import requests.auth
+
 import random
+import datetime
+
 from .reddit import Reddit
 from .exceptions import RequestError
-import datetime
-import requests.auth
 from .client import Client
 
 

@@ -1,4 +1,3 @@
-
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -13,10 +12,12 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/MakufonSkifto/RedditEasy",
     packages=setuptools.find_packages(),
-    install_requires=["requests"],
+    install_requires=["requests", "ujson"],
     classifiers=[
-        "Programming Language :: Python :: 3.8 Python :: 3.9",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
     ],
-    python_requires='>=3.6',
+    keywords="reddit api",
+    python_requires='>=3.0',
 )
