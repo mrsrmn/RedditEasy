@@ -54,13 +54,6 @@ With client info
 
   import redditeasy
 
-  """
-  To get your client ID, client secret and user agent go to:
-  https://www.reddit.com/prefs/apps
-  and create an app
-  """
-
-
   post = redditeasy.Subreddit(subreddit="dankmemes",   #Subreddit name
                               client_id="",            #Your client ID
                               client_secret="",        #Your client secret

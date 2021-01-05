@@ -53,13 +53,6 @@ print(f"Posts Title: {postoutput.title}\n"
 ```python
 import redditeasy
 
-"""
-To get your client ID, client secret and user agent go to:
-https://www.reddit.com/prefs/apps
-and create an app
-"""
-
-
 post = redditeasy.Subreddit(subreddit="dankmemes",   #Subreddit name
                             client_id="",            #Your client ID
                             client_secret="",        #Your client secret
@@ -82,6 +75,10 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 
 ```
+
+To get your client ID, client secret and user agent go to
+https://www.reddit.com/prefs/apps
+and create an app
 
 
 More examples are in the [examples folder](https://github.com/MakufonSkifto/RedditEasy/tree/main/examples)
