@@ -12,7 +12,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/MakufonSkifto/RedditEasy",
     packages=setuptools.find_packages(),
-    install_requires=["requests", "ujson"],
+    install_requires=["requests", "ujson", "python-dotenv"],
     classifiers=[
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
