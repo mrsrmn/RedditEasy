@@ -54,13 +54,6 @@ With client info
 
   import redditeasy
 
-  """
-  To get your client ID, client secret and user agent go to:
-  https://www.reddit.com/prefs/apps
-  and create an app
-  """
-
-
   post = redditeasy.Subreddit(subreddit="dankmemes",   #Subreddit name
                               client_id="",            #Your client ID
                               client_secret="",        #Your client secret
@@ -82,11 +75,18 @@ With client info
         f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
 
 
-To get your client ID, client secret and user agent go to
-https://www.reddit.com/prefs/apps
-and create an app
-
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_
+
+Getting Reddit API Client info
+------------------------------------------
+
+To get your Reddit API client info go to
+https://www.reddit.com/prefs/apps
+and create a script.
+
+.. image:: https://i.imgur.com/Ri13AQu.png
+  :width: 400
+  :alt: Alternative text
 
 Errors
 -------------
