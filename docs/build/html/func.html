@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Functions &#8212; RedditEasy 2.5.0 documentation</title>
+    <title>Functions &#8212; RedditEasy 2.6.0 documentation</title>
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -41,32 +41,27 @@
 </td></tr></table></div>
 <ul class="simple">
 <li><p>Parameter: subreddit (str) - The name of the subreddit</p></li>
-<li><p>Parameter: client_id (str) - Your client ID</p></li>
-<li><p>Parameter: client_secret (str) - Your client secret</p></li>
-<li><p>Parameter: user_agent (str) - Your user agent</p></li>
+<li><p>Parameter: client_id (str, Optional) - Your client ID</p></li>
+<li><p>Parameter: client_secret (str, Optional) - Your client secret</p></li>
+<li><p>Parameter: user_agent (str, Optional) - Your user agent</p></li>
 </ul>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">User</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>
 <ul class="simple">
 <li><p>Parameter: user (str) - The name of the user</p></li>
-<li><p>Parameter: client_id (str) - Your client ID</p></li>
-<li><p>Parameter: client_secret (str) - Your client secret</p></li>
-<li><p>Parameter: user_agent (str) - Your user agent</p></li>
+<li><p>Parameter: client_id (str, Optional) - Your client ID</p></li>
+<li><p>Parameter: client_secret (str, Optional) - Your client secret</p></li>
+<li><p>Parameter: user_agent (str, Optional) - Your user agent</p></li>
 </ul>
+<p>THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF <strong>AT LEAST ONE</strong> OF THESE ARE NOT GIVEN: <code class="docutils literal notranslate"><span class="pre">client_id=</span></code>, <code class="docutils literal notranslate"><span class="pre">client_secret</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">user_agent</span></code>.</p>
 <p>To get your client ID, client secret and user agent go to:
 <a class="reference external" href="https://www.reddit.com/prefs/apps">https://www.reddit.com/prefs/apps</a>
 and create an app</p>
 </div>
 <div class="section" id="class-subreddit">
 <h2>class: Subreddit()<a class="headerlink" href="#class-subreddit" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_image</span><span class="p">()</span>
-</pre></div>
-</td></tr></table></div>
-<ul class="simple">
-<li><p>Parameter: None</p></li>
-<li><p>Returns: (str) Post content of the randomly selected post from the subreddit</p></li>
-</ul>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">get_post</span><span class="p">()</span>
 </pre></div>
 </td></tr></table></div>

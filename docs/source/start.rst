@@ -15,7 +15,7 @@ Usage
 -------------
 
 Without client info
-''''''''''''''''''
+''''''''''''''''''''''''''''''''''
 This method is not suggested as it may be slow and throw errors more often
 
 .. code-block:: python
@@ -48,7 +48,7 @@ This method is not suggested as it may be slow and throw errors more often
 
 
 With client info
-'''''''''''''''''
+'''''''''''''''''''''''
 .. code-block:: python
   :linenos:
 
