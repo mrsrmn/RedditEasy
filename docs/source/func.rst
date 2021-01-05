@@ -33,14 +33,6 @@ and create an app
 class: Subreddit()
 ---------------------
 
-.. code-block::
-  :linenos:
-
-  get_image()
-
-* Parameter: None
-
-* Returns: (str) Post content of the randomly selected post from the subreddit
 
 .. code-block::
   :linenos:

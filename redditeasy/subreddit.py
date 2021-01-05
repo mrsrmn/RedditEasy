@@ -5,41 +5,36 @@ from .reddit import Reddit
 from .exceptions import RequestError
 import datetime
 import requests.auth
+from .client import Client
 
 
 class Subreddit:
-    def __init__(self, subreddit, client_id, client_secret, user_agent):
+    def __init__(self, subreddit, client_id=None, client_secret=None, user_agent=None):
         self.subreddit = subreddit
         self.client_id = client_id
         self.client_secret = client_secret
         self.user_agent = user_agent
-
-    def get_image(self):
-        """
-        :return: (str) The image URL of a random post
-        """
-
-        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
-        headers = {"User-Agent": self.user_agent}
-
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
-                               auth=client_auth)
-        meme = json.loads(request.content)
-        randompost = random.randint(0, meme["data"]["dist"] - 1)
-
-        return meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
 
     def get_post(self):
         """
         :return: (str) Info about the randomly selected post from the subreddit (hot)
         """
 
-        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
-        headers = {"User-Agent": self.user_agent}
+        if self.client_id is None or self.client_secret is None or self.user_agent is None:
+            client_auth = requests.auth.HTTPBasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
+            headers = {"User-Agent": Client.USER_AGENT.name}
 
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
-                               auth=client_auth)
-        meme = json.loads(request.content)
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
+
+        else:
+            client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+            headers = {"User-Agent": self.user_agent}
+
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/hot.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
 
         try:
 
@@ -168,12 +163,22 @@ class Subreddit:
          of all time)
         """
 
-        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
-        headers = {"User-Agent": self.user_agent}
+        if self.client_id is None or self.client_secret is None or self.user_agent is None:
+            client_auth = requests.auth.HTTPBasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
+            headers = {"User-Agent": Client.USER_AGENT.name}
 
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
-                               auth=client_auth)
-        meme = json.loads(request.content)
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
+
+        else:
+            client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+            headers = {"User-Agent": self.user_agent}
+
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/top.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
+
         try:
 
             try:
@@ -300,12 +305,22 @@ class Subreddit:
         :return: (str) Info about the randomly selected post (new)
         """
 
-        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
-        headers = {"User-Agent": self.user_agent}
+        if self.client_id is None or self.client_secret is None or self.user_agent is None:
+            client_auth = requests.auth.HTTPBasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
+            headers = {"User-Agent": Client.USER_AGENT.name}
 
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
-                               auth=client_auth)
-        meme = json.loads(request.content)
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
+
+        else:
+            client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+            headers = {"User-Agent": self.user_agent}
+
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/new.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
+
         try:
 
             try:
@@ -433,12 +448,22 @@ class Subreddit:
         :return: (str) Info about the randomly selected post (new)
         """
 
-        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
-        headers = {"User-Agent": self.user_agent}
+        if self.client_id is None or self.client_secret is None or self.user_agent is None:
+            client_auth = requests.auth.HTTPBasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
+            headers = {"User-Agent": Client.USER_AGENT.name}
 
-        request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
-                               auth=client_auth)
-        meme = json.loads(request.content)
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
+
+        else:
+            client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+            headers = {"User-Agent": self.user_agent}
+
+            request = requests.get(f"https://www.reddit.com/r/{self.subreddit}/controversial.json", headers=headers,
+                                   auth=client_auth)
+            meme = json.loads(request.content)
+
         try:
 
             try:

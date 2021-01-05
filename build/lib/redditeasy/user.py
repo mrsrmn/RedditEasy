@@ -4,6 +4,7 @@ import random
 from .reddit import Reddit
 import datetime
 import requests.auth
+from .exceptions import RequestError
 
 
 class User:
@@ -20,9 +21,10 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -45,25 +47,13 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -94,76 +84,67 @@ class User:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/hot.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
-
             try:
-                randompost = random.randint(0, meme["data"]["dist"] - 1)
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
-            except IndexError:
-                randompost = 0
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            pinned = meme["data"]["children"][randompost]["data"]["pinned"]
-            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
-            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
-            media = meme["data"]["children"][randompost]["data"]["media"]
-            s = meme["data"]["children"][randompost]["data"]["created"]
-            updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+                try:
+                    randompost = random.randint(0, meme["data"]["dist"] - 1)
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+                except IndexError:
+                    randompost = 0
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
-            except IndexError:
-                flair_author = None
-                flair_post = None
+                pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+                stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+                spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
+                media = meme["data"]["children"][randompost]["data"]["media"]
+                s = meme["data"]["children"][randompost]["data"]["created"]
+                updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+                try:
+                    flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                    flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
+                except IndexError:
+                    flair_author = None
+                    flair_post = None
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+                nsfw = True if nsfw == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+                pinned = True if pinned == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+                stickied = True if stickied == "true" else False
 
-            if not media:
-                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
-            elif media:
-                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
-            else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                spoiler = True if spoiler == "true" else False
 
-            return Reddit(
-                content=contenttext,
-                title=meme["data"]["children"][randompost]["data"]["title"],
-                upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
-                total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
-                score=meme["data"]["children"][randompost]["data"]["score"],
-                downvotes=meme["data"]["children"][randompost]["data"]["downs"],
-                nsfw=nsfw,
-                pinned=pinned,
-                created_at=updated,
-                author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
-                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
-                stickied=stickied,
-                spoiler=spoiler,
-                author_flair=flair_author,
-                post_flair=flair_post,
-                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
-            )
+                if not media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    if contenttext == "":
+                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                elif media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+                else:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
+                return Reddit(
+                    content=contenttext,
+                    title=meme["data"]["children"][randompost]["data"]["title"],
+                    upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
+                    total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
+                    score=meme["data"]["children"][randompost]["data"]["score"],
+                    downvotes=meme["data"]["children"][randompost]["data"]["downs"],
+                    nsfw=nsfw,
+                    pinned=pinned,
+                    created_at=updated,
+                    author=meme["data"]["children"][randompost]["data"]["author"],
+                    post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                        .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
+                    stickied=stickied,
+                    spoiler=spoiler,
+                    author_flair=flair_author,
+                    post_flair=flair_post,
+                    subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
+                )
+            except KeyError:
+                raise RequestError(meme["message"])
 
     def get_top_post(self):
         """
@@ -173,9 +154,10 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -198,32 +180,22 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            if not media:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+                if contenttext == "":
+                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
             elif media:
                 contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
 
             return Reddit(
                 content=contenttext,
@@ -245,76 +217,67 @@ class User:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/top.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
-
             try:
-                randompost = random.randint(0, meme["data"]["dist"] - 1)
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
-            except IndexError:
-                randompost = 0
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            pinned = meme["data"]["children"][randompost]["data"]["pinned"]
-            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
-            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
-            media = meme["data"]["children"][randompost]["data"]["media"]
-            s = meme["data"]["children"][randompost]["data"]["created"]
-            updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+                try:
+                    randompost = random.randint(0, meme["data"]["dist"] - 1)
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+                except IndexError:
+                    randompost = 0
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
-            except IndexError:
-                flair_author = None
-                flair_post = None
+                pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+                stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+                spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
+                media = meme["data"]["children"][randompost]["data"]["media"]
+                s = meme["data"]["children"][randompost]["data"]["created"]
+                updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+                try:
+                    flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                    flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
+                except IndexError:
+                    flair_author = None
+                    flair_post = None
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+                nsfw = True if nsfw == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+                pinned = True if pinned == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+                stickied = True if stickied == "true" else False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
-            elif media:
-                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
-            else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                spoiler = True if spoiler == "true" else False
 
-            return Reddit(
-                content=contenttext,
-                title=meme["data"]["children"][randompost]["data"]["title"],
-                upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
-                total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
-                score=meme["data"]["children"][randompost]["data"]["score"],
-                downvotes=meme["data"]["children"][randompost]["data"]["downs"],
-                nsfw=nsfw,
-                pinned=pinned,
-                created_at=updated,
-                author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
-                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
-                stickied=stickied,
-                spoiler=spoiler,
-                author_flair=flair_author,
-                post_flair=flair_post,
-                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
-            )
+                if not media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    if contenttext == "":
+                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                elif media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+                else:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
+                return Reddit(
+                    content=contenttext,
+                    title=meme["data"]["children"][randompost]["data"]["title"],
+                    upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
+                    total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
+                    score=meme["data"]["children"][randompost]["data"]["score"],
+                    downvotes=meme["data"]["children"][randompost]["data"]["downs"],
+                    nsfw=nsfw,
+                    pinned=pinned,
+                    created_at=updated,
+                    author=meme["data"]["children"][randompost]["data"]["author"],
+                    post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                        .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
+                    stickied=stickied,
+                    spoiler=spoiler,
+                    author_flair=flair_author,
+                    post_flair=flair_post,
+                    subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
+                )
+            except KeyError:
+                raise RequestError(meme["message"])
 
     def get_new_post(self):
         """
@@ -323,9 +286,10 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -348,32 +312,22 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            if not media:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+                if contenttext == "":
+                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
             elif media:
                 contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
 
             return Reddit(
                 content=contenttext,
@@ -395,76 +349,67 @@ class User:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/new.json", headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
-
             try:
-                randompost = random.randint(0, meme["data"]["dist"] - 1)
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
-            except IndexError:
-                randompost = 0
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            pinned = meme["data"]["children"][randompost]["data"]["pinned"]
-            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
-            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
-            media = meme["data"]["children"][randompost]["data"]["media"]
-            s = meme["data"]["children"][randompost]["data"]["created"]
-            updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+                try:
+                    randompost = random.randint(0, meme["data"]["dist"] - 1)
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+                except IndexError:
+                    randompost = 0
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
-            except IndexError:
-                flair_author = None
-                flair_post = None
+                pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+                stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+                spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
+                media = meme["data"]["children"][randompost]["data"]["media"]
+                s = meme["data"]["children"][randompost]["data"]["created"]
+                updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+                try:
+                    flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                    flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
+                except IndexError:
+                    flair_author = None
+                    flair_post = None
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+                nsfw = True if nsfw == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+                pinned = True if pinned == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+                stickied = True if stickied == "true" else False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
-            elif media:
-                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
-            else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                spoiler = True if spoiler == "true" else False
 
-            return Reddit(
-                content=contenttext,
-                title=meme["data"]["children"][randompost]["data"]["title"],
-                upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
-                total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
-                score=meme["data"]["children"][randompost]["data"]["score"],
-                downvotes=meme["data"]["children"][randompost]["data"]["downs"],
-                nsfw=nsfw,
-                pinned=pinned,
-                created_at=updated,
-                author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
-                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
-                stickied=stickied,
-                spoiler=spoiler,
-                author_flair=flair_author,
-                post_flair=flair_post,
-                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
-            )
+                if not media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    if contenttext == "":
+                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                elif media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+                else:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
+                return Reddit(
+                    content=contenttext,
+                    title=meme["data"]["children"][randompost]["data"]["title"],
+                    upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
+                    total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
+                    score=meme["data"]["children"][randompost]["data"]["score"],
+                    downvotes=meme["data"]["children"][randompost]["data"]["downs"],
+                    nsfw=nsfw,
+                    pinned=pinned,
+                    created_at=updated,
+                    author=meme["data"]["children"][randompost]["data"]["author"],
+                    post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                        .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
+                    stickied=stickied,
+                    spoiler=spoiler,
+                    author_flair=flair_author,
+                    post_flair=flair_post,
+                    subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
+                )
+            except KeyError:
+                raise RequestError(meme["message"])
 
     def get_controversial_post(self):
         """
@@ -473,10 +418,11 @@ class User:
 
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
+
+        request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json",
+                               headers=headers, auth=client_auth)
+        meme = json.loads(request.content)
         try:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json",
-                                   headers=headers, auth=client_auth)
-            meme = json.loads(request.content)
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
@@ -499,32 +445,22 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+            nsfw = True if nsfw == "true" else False
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+            pinned = True if pinned == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+            stickied = True if stickied == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+            spoiler = True if spoiler == "true" else False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+            if not media:
+                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
+                if contenttext == "":
+                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
             elif media:
                 contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
             else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
 
             return Reddit(
                 content=contenttext,
@@ -546,74 +482,64 @@ class User:
                 subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
             )
         except KeyError:
-            request = requests.get(f"https://www.reddit.com/u/{self.user}/controversial.json", headers=headers,
-                                   auth=client_auth)
-            meme = json.loads(request.content)
-
             try:
-                randompost = random.randint(0, meme["data"]["dist"] - 1)
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
-            except IndexError:
-                randompost = 0
-                nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            pinned = meme["data"]["children"][randompost]["data"]["pinned"]
-            stickied = meme["data"]["children"][randompost]["data"]["stickied"]
-            spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
-            s = meme["data"]["children"][randompost]["data"]["created"]
-            media = meme["data"]["children"][randompost]["data"]["media"]
-            updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+                try:
+                    randompost = random.randint(0, meme["data"]["dist"] - 1)
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
+                except IndexError:
+                    randompost = 0
+                    nsfw = meme["data"]["children"][randompost]["data"]["over_18"]
 
-            try:
-                flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
-                flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
-            except IndexError:
-                flair_author = None
-                flair_post = None
+                pinned = meme["data"]["children"][randompost]["data"]["pinned"]
+                stickied = meme["data"]["children"][randompost]["data"]["stickied"]
+                spoiler = meme["data"]["children"][randompost]["data"]["spoiler"]
+                media = meme["data"]["children"][randompost]["data"]["media"]
+                s = meme["data"]["children"][randompost]["data"]["created"]
+                updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-            if nsfw == "true":
-                nsfw = True
-            elif nsfw == "false":
-                nsfw = False
+                try:
+                    flair_author = meme["data"]["children"][randompost]["data"]["author_flair_text"]
+                    flair_post = meme["data"]["children"][randompost]["data"]["link_flair_text"]
+                except IndexError:
+                    flair_author = None
+                    flair_post = None
 
-            if pinned == "true":
-                pinned = True
-            elif pinned == "false":
-                pinned = False
+                nsfw = True if nsfw == "true" else False
 
-            if stickied == "true":
-                stickied = True
-            elif stickied == "false":
-                stickied = False
+                pinned = True if pinned == "true" else False
 
-            if spoiler == "true":
-                spoiler = True
-            elif spoiler == "false":
-                spoiler = False
+                stickied = True if stickied == "true" else False
 
-            if media == "null":
-                contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
-            elif media:
-                contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
-            else:
-                contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                spoiler = True if spoiler == "true" else False
 
-            return Reddit(
-                content=contenttext,
-                title=meme["data"]["children"][randompost]["data"]["title"],
-                upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
-                total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
-                score=meme["data"]["children"][randompost]["data"]["score"],
-                downvotes=meme["data"]["children"][randompost]["data"]["downs"],
-                nsfw=nsfw,
-                pinned=pinned,
-                created_at=updated,
-                author=meme["data"]["children"][randompost]["data"]["author"],
-                post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
-                         .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
-                stickied=stickied,
-                spoiler=spoiler,
-                author_flair=flair_author,
-                post_flair=flair_post,
-                subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
-            )
+                if not media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    if contenttext == "":
+                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                elif media:
+                    contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+                else:
+                    contenttext = meme["data"]["children"][randompost]["data"]["url"]
+
+                return Reddit(
+                    content=contenttext,
+                    title=meme["data"]["children"][randompost]["data"]["title"],
+                    upvote_ratio=meme["data"]["children"][randompost]["data"]["upvote_ratio"],
+                    total_awards=meme["data"]["children"][randompost]["data"]["total_awards_received"],
+                    score=meme["data"]["children"][randompost]["data"]["score"],
+                    downvotes=meme["data"]["children"][randompost]["data"]["downs"],
+                    nsfw=nsfw,
+                    pinned=pinned,
+                    created_at=updated,
+                    author=meme["data"]["children"][randompost]["data"]["author"],
+                    post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
+                        .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
+                    stickied=stickied,
+                    spoiler=spoiler,
+                    author_flair=flair_author,
+                    post_flair=flair_post,
+                    subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
+                )
+            except KeyError:
+                raise RequestError(meme["message"])
