@@ -1,5 +1,5 @@
 import requests
-import ujson as json
+import json
 import requests.auth
 
 import random
