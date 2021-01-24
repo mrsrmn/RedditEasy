@@ -78,7 +78,6 @@ class User:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
@@ -131,7 +130,6 @@ class User:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
@@ -207,7 +205,6 @@ class User:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
@@ -260,7 +257,6 @@ class User:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
@@ -335,7 +331,6 @@ class User:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
@@ -388,7 +383,6 @@ class User:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
@@ -463,7 +457,6 @@ class User:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
@@ -516,7 +509,6 @@ class User:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}"
