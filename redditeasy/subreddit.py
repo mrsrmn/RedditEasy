@@ -61,14 +61,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
-
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
@@ -121,13 +113,6 @@ class Subreddit:
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -204,13 +189,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -263,14 +241,6 @@ class Subreddit:
                     flair_post = None
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
-
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -346,13 +316,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -406,14 +369,6 @@ class Subreddit:
                     flair_post = None
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
-
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -489,14 +444,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
-
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
@@ -548,14 +495,6 @@ class Subreddit:
                     flair_post = None
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
-
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]

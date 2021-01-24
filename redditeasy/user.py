@@ -60,13 +60,6 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -120,13 +113,6 @@ class User:
                     flair_author = None
                     flair_post = None
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -203,13 +189,6 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -263,13 +242,6 @@ class User:
                     flair_author = None
                     flair_post = None
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -345,13 +317,6 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -405,13 +370,6 @@ class User:
                     flair_author = None
                     flair_post = None
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -487,13 +445,6 @@ class User:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -547,13 +498,6 @@ class User:
                     flair_author = None
                     flair_post = None
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
