@@ -64,8 +64,6 @@ class: Subreddit()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``pinned``: This will return True or False if the post is pinned or not
-
    ``created_at``: The time the randomly selected post got created
 
    ``author``: The author of the randomly selected post
@@ -106,8 +104,6 @@ class: Subreddit()
    ``downvotes``: The downvote count of the randomly selected post
 
    ``nsfw``: This will return True or False if the post is NSFW or not
-
-   ``pinned``: This will return True or False if the post is pinned or not
 
    ``created_at``: The time the randomly selected post got created
 
@@ -151,8 +147,6 @@ class: Subreddit()
    ``downvotes``: The downvote count of the randomly selected post
 
    ``nsfw``: This will return True or False if the post is NSFW or not
-
-   ``pinned``: This will return True or False if the post is pinned or not
 
    ``created_at``: The time the randomly selected post got created
 
@@ -199,8 +193,6 @@ class: User()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``pinned``: This will return True or False if the post is pinned or not
-
    ``created_at``: The time the randomly selected post got created
 
    ``author``: The author of the randomly selected post
@@ -242,8 +234,6 @@ class: User()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``pinned``: This will return True or False if the post is pinned or not
-
    ``created_at``: The time the randomly selected post got created
 
    ``author``: The author of the randomly selected post
@@ -284,8 +274,6 @@ class: User()
    ``downvotes``: The downvote count of the randomly selected post
 
    ``nsfw``: This will return True or False if the post is NSFW or not
-
-   ``pinned``: This will return True or False if the post is pinned or not
 
    ``created_at``: The time the randomly selected post got created
 
