@@ -61,14 +61,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
-
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
@@ -86,7 +78,6 @@ class Subreddit:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
@@ -121,13 +112,6 @@ class Subreddit:
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
 
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
@@ -146,7 +130,6 @@ class Subreddit:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
@@ -204,13 +187,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -229,7 +205,6 @@ class Subreddit:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
@@ -264,14 +239,6 @@ class Subreddit:
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
-
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
@@ -289,7 +256,6 @@ class Subreddit:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
@@ -346,13 +312,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
 
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
@@ -371,7 +330,6 @@ class Subreddit:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
@@ -407,14 +365,6 @@ class Subreddit:
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
-
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
@@ -432,7 +382,6 @@ class Subreddit:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
@@ -489,14 +438,6 @@ class Subreddit:
                 flair_author = None
                 flair_post = None
 
-            nsfw = True if nsfw == "true" else False
-
-            pinned = True if pinned == "true" else False
-
-            stickied = True if stickied == "true" else False
-
-            spoiler = True if spoiler == "true" else False
-
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
@@ -514,7 +455,6 @@ class Subreddit:
                 score=meme["data"]["children"][randompost]["data"]["score"],
                 downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                 nsfw=nsfw,
-                pinned=pinned,
                 created_at=updated,
                 author=meme["data"]["children"][randompost]["data"]["author"],
                 post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
@@ -549,14 +489,6 @@ class Subreddit:
 
                 updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-                nsfw = True if nsfw == "true" else False
-
-                pinned = True if pinned == "true" else False
-
-                stickied = True if stickied == "true" else False
-
-                spoiler = True if spoiler == "true" else False
-
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
@@ -574,7 +506,6 @@ class Subreddit:
                     score=meme["data"]["children"][randompost]["data"]["score"],
                     downvotes=meme["data"]["children"][randompost]["data"]["downs"],
                     nsfw=nsfw,
-                    pinned=pinned,
                     created_at=updated,
                     author=meme["data"]["children"][randompost]["data"]["author"],
                     post_url=f"https://reddit.com{meme['data']['children'][randompost]['data']['permalink']}",
