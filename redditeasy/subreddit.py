@@ -64,7 +64,10 @@ class Subreddit:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -119,7 +122,10 @@ class Subreddit:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -198,7 +204,11 @@ class Subreddit:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"][
+                            "url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -252,7 +262,10 @@ class Subreddit:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -330,7 +343,11 @@ class Subreddit:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"][
+                            "url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -385,7 +402,10 @@ class Subreddit:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -462,7 +482,11 @@ class Subreddit:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"][
+                            "url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -516,7 +540,10 @@ class Subreddit:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -541,7 +568,7 @@ class Subreddit:
                     spoiler=spoiler,
                     author_flair=flair_author,
                     post_flair=flair_post,
-                    subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"]
+                    subreddit_subscribers=meme["data"]["children"][randompost]["data"]["subreddit_subscribers"],
                 )
             except KeyError:
                 raise RequestError(meme["message"])

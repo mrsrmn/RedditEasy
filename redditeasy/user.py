@@ -64,7 +64,11 @@ class User:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"][
+                            "url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -119,7 +123,10 @@ class User:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -198,7 +205,11 @@ class User:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"][
+                            "url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -253,7 +264,10 @@ class User:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -331,7 +345,11 @@ class User:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"][
+                            "url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -386,7 +404,10 @@ class User:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -464,7 +485,11 @@ class User:
             if not media:
                 contenttext = meme["data"]["children"][randompost]["data"]["selftext"]
                 if contenttext == "":
-                    contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
+                    try:
+                        contenttext = contenttext = meme["data"]["children"][randompost]["data"][
+                            "url_overridden_by_dest"]
+                    except KeyError:
+                        contenttext = None
             elif media:
                 try:
                     contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
@@ -519,7 +544,10 @@ class User:
                 if not media:
                     contenttext = meme["data"]["children"][randompost]["data"]["url_overridden_by_dest"]
                     if contenttext == "":
-                        contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        try:
+                            contenttext = contenttext = meme["data"]["children"][randompost]["data"]["url"]
+                        except KeyError:
+                            contenttext = None
                 elif media:
                     try:
                         contenttext = meme["data"]["children"][randompost]["data"]["media"]["oembed"]["thumbnail_url"]
