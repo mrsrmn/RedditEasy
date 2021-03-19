@@ -79,9 +79,9 @@ More examples are in the `examples folder <https://github.com/MakufonSkifto/Redd
 
 Async RedditEasy
 ------------------------------------------
-Yes, there is an async version of redditeasy. To use it, you need to use the Async classes. Those are ``AsyncSubreddit`` and ``AsyncUser``
+Yes, there is an async version of redditeasy. To use it, you need to use the Async classes. Which are ``AsyncSubreddit`` and ``AsyncUser``
 
-Here is a small example on using it: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_redditeasy.py
+Here is a small example on using it: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_meme.py
 
 You can and should use this in a discord.py bot. The normal classes could cause a `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_
 
