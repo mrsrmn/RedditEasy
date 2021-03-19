@@ -7,7 +7,8 @@ setuptools.setup(
     name="redditeasy",
     version="2.9.0",
     author="MakufonSkifto",
-    description="RedditEasy is an API wrapper for the Reddit JSON API with both normal and async options",
+    description="RedditEasy is an API wrapper for the Reddit JSON API that supports "
+                "both asynchronous and synchronous programs.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/MakufonSkifto/RedditEasy",

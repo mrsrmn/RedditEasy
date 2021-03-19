@@ -5,7 +5,7 @@
 
 Welcome to RedditEasy's documentation!
 ======================================
-RedditEasy is an API wrapper for the Reddit JSON API
+RedditEasy is an API wrapper for the Reddit JSON API that supports both asynchronous and synchronous projects.
 
 GitHub: https://github.com/MakufonSkifto/RedditEasy
 
