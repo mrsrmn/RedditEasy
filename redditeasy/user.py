@@ -43,13 +43,13 @@ class User:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             stickied = post[randompost]["data"]["stickied"]
@@ -106,13 +106,13 @@ class User:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
@@ -192,13 +192,13 @@ class User:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             stickied = post[randompost]["data"]["stickied"]
@@ -255,13 +255,13 @@ class User:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
@@ -340,13 +340,13 @@ class User:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             media = post[randompost]["data"]["media"]
@@ -403,13 +403,13 @@ class User:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
@@ -488,13 +488,13 @@ class User:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             stickied = post[randompost]["data"]["stickied"]
@@ -550,13 +550,13 @@ class User:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
@@ -645,13 +645,13 @@ class AsyncUser:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             stickied = post[randompost]["data"]["stickied"]
@@ -707,13 +707,13 @@ class AsyncUser:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
@@ -788,13 +788,13 @@ class AsyncUser:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             stickied = post[randompost]["data"]["stickied"]
@@ -850,13 +850,13 @@ class AsyncUser:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
@@ -930,13 +930,13 @@ class AsyncUser:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             media = post[randompost]["data"]["media"]
@@ -992,13 +992,13 @@ class AsyncUser:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
@@ -1072,13 +1072,13 @@ class AsyncUser:
 
             try:
                 randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
             except IndexError:
                 randompost = 0
-                if post[randompost]["data"]["pinned"]:
-                    post[randompost] = +1
+                if post[randompost]["data"]["stickied"]:
+                    randompost += 1
                 nsfw = post[randompost]["data"]["over_18"]
 
             stickied = post[randompost]["data"]["stickied"]
@@ -1134,13 +1134,13 @@ class AsyncUser:
 
                 try:
                     randompost = random.randint(0, meme["data"]["dist"] - 1)
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
                 except IndexError:
                     randompost = 0
-                    if post[randompost]["data"]["pinned"]:
-                        post[randompost] = +1
+                    if post[randompost]["data"]["stickied"]:
+                        randompost += 1
                     nsfw = post[randompost]["data"]["over_18"]
 
                 stickied = post[randompost]["data"]["stickied"]
