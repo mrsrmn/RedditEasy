@@ -7,7 +7,7 @@ A List of Classes
 .. code-block::
   :linenos:
 
-  Subreddit()
+  Subreddit() / AsyncSubreddit()
 
 * Parameter: subreddit (str) - The name of the subreddit
 * Parameter: client_id (str, Optional) - Your client ID
@@ -17,13 +17,14 @@ A List of Classes
 .. code-block::
   :linenos:
 
-  User()
+  User() / AsyncUser()
 
 * Parameter: user (str) - The name of the user
 * Parameter: client_id (str, Optional) - Your client ID
 * Parameter: client_secret (str, Optional) - Your client secret
 * Parameter: user_agent (str, Optional) - Your user agent
 
+Please note that the async classes of RedditEasy **will not** work outside an async function whatsoever.
 
 THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: ``client_id=``, ``client_secret``,
 and ``user_agent``.
@@ -35,7 +36,7 @@ and create an app
 For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
 
 
-class: Subreddit()
+class: Subreddit() / AsyncSubreddit()
 ---------------------
 
 
@@ -165,7 +166,7 @@ class: Subreddit()
    ``subreddit_subscribers`` The number of people in the subreddit
 
 
-class: User()
+class: User() / AsyncUser()
 ---------------------
 
 .. code-block::

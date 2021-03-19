@@ -77,6 +77,16 @@ With client info
 
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_
 
+Async RedditEasy
+------------------------------------------
+Yes, there is an async version of redditeasy. To use it, you need to use the Async classes. Those are ``AsyncSubreddit`` and ``AsyncUser``
+
+Here is a small example on using it: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_redditeasy.py
+
+You can and should use this in a discord.py bot. The normal classes could cause a `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_
+
+Please note that the async classes of RedditEasy **will not** work outside an async function whatsoever
+
 Getting Reddit API Client info
 ------------------------------------------
 

@@ -5,7 +5,7 @@
 
 # RedditEasy
 
-RedditEasy is an API wrapper for the Reddit JSON API
+RedditEasy is an API wrapper for the Reddit JSON API with both normal and async options
 
 ## Install
 To install RedditEasy, do:
@@ -18,6 +18,17 @@ OR
 
 ## Documentation
 Docs can be found [here](https://redditeasy.readthedocs.io/en/latest/)
+
+
+## Async RedditEasy
+Yes, there is an async version of redditeasy. To use it, you need to use the Async classes. Whose are `AsyncSubreddit` and `AsyncUser`
+
+Here is a small example on using it: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_redditeasy.py
+
+You can and should use this in a discord.py bot. The normal classes could cause a [blocking](https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean)
+
+This **will not** work outside an async function whatsoever.
+
 
 ## Usage
 <span style="font-size:larger;">THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: `client_id=`, `client_secret`,
