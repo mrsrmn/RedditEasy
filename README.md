@@ -96,7 +96,7 @@ and create a script.
 
 ![](https://i.imgur.com/Ri13AQu.png)
 
-(You don't have to fill "redirect_url")
+(You don't have to fill "redirect_uri")
 ## Errors
 
 The module will raise ``KeyError`` if the given user / subreddit is not found
