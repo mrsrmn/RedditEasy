@@ -9,6 +9,8 @@ A List of Classes
 
   Subreddit() / AsyncSubreddit()
 
+This class is for getting posts from a subreddit
+
 * Parameter: subreddit (str) - The name of the subreddit
 * Parameter: client_id (str, Optional) - Your client ID
 * Parameter: client_secret (str, Optional) - Your client secret
@@ -19,6 +21,8 @@ A List of Classes
 
   User() / AsyncUser()
 
+This class is for getting posts from a user
+
 * Parameter: user (str) - The name of the user
 * Parameter: client_id (str, Optional) - Your client ID
 * Parameter: client_secret (str, Optional) - Your client secret
@@ -26,7 +30,11 @@ A List of Classes
 
 Please note that the async classes of RedditEasy **will not** work outside an async function whatsoever.
 
-THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: ``client_id=``, ``client_secret``,
+
+You can and should use the async classes in a discord.py bot. The normal classes could cause a  `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_ in a discord.py bot.
+
+
+THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: ``client_id``, ``client_secret``,
 and ``user_agent``.
 
 To get your client ID, client secret and user agent go to:

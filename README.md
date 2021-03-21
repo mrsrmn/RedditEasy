@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/github/license/MakufonSkifto/redditeasy)](LICENSE.md)
 [![GitHub stars](https://img.shields.io/github/stars/MakufonSkifto/redditeasy)](https://github.com/ExpDev07/coronavirus-tracker-api/stargazers) 
 [![PyPI version](https://badge.fury.io/py/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
-
+[![Monthly Downloads](https://img.shields.io/pypi/dm/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
 # RedditEasy
 
 RedditEasy is an API wrapper for the Reddit JSON API with both normal and async options
@@ -25,13 +25,13 @@ Yes, there is an async version of redditeasy. To use it, you need to use the Asy
 
 Here is a small example on using it: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_meme.py
 
-You can and should use this in a discord.py bot. The normal classes could cause a [blocking](https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean)
+You can and should use this in a discord.py bot. The normal classes could cause a [blocking](https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean) in a discord.py bot.
 
 This **will not** work outside an async function whatsoever.
 
 
 ## Usage
-<span style="font-size:larger;">THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: `client_id=`, `client_secret`,
+<span style="font-size:larger;">THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: `client_id`, `client_secret`,
 and `user_agent`.</span>
 
 ### Without Reddit API client info
@@ -103,4 +103,4 @@ The module will raise ``KeyError`` if the given user / subreddit is not found
 
 The module will raise ``redditeasy.exceptions.RequestError``  if there was an error with the request. Traceback will show the details about the error
 
-The module will raise ``ValueError`` is the given user / subreddit is empty
+The module will raise ``ValueError`` if the given user / subreddit is empty
