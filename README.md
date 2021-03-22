@@ -1,5 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/redditeasy/badge/?version=latest)](https://redditeasy.readthedocs.io/en/latest/?badge=latest)
-[![License](https://img.shields.io/github/license/MakufonSkifto/redditeasy)](LICENSE.md)
+[![License](https://img.shields.io/github/license/MakufonSkifto/redditeasy)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/MakufonSkifto/redditeasy)](https://github.com/ExpDev07/coronavirus-tracker-api/stargazers) 
 [![PyPI version](https://badge.fury.io/py/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
 [![Monthly Downloads](https://img.shields.io/pypi/dm/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
