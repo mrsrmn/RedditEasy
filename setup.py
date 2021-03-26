@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="redditeasy",
-    version="3.1.0",
+    version="3.2.0",
     author="MakufonSkifto",
     description="RedditEasy is an API wrapper for the Reddit JSON API that supports "
                 "both asynchronous and synchronous programs.",
