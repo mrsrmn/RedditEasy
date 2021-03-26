@@ -26,6 +26,11 @@ def get_request(client_id, client_secret, headers, type, slash, rfor):
     return json.loads(request.content)
 
 
+def check_for_api_error(response: dict):
+    if "message" in list(response.keys()):
+        raise RequestError(f"{response['error']}: {response['message']}")
+
+
 #Subreddit Posts
 
 def _get_post(self, type, slash, rfor):
@@ -40,6 +45,7 @@ def _get_post(self, type, slash, rfor):
                            slash=slash)
 
     try:
+        check_for_api_error(meme)
         post = meme["data"]["children"]
 
         try:
@@ -100,69 +106,69 @@ def _get_post(self, type, slash, rfor):
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
         )
     except KeyError:
+        check_for_api_error(meme)
+        post = meme["data"]["children"]
+
         try:
-            post = meme["data"]["children"]
-            try:
-                randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["stickied"]:
-                    randompost += 1
-                nsfw = post[randompost]["data"]["over_18"]
-            except IndexError:
-                randompost = 0
-                if post[randompost]["data"]["stickied"]:
-                    randompost += 1
-                nsfw = post[randompost]["data"]["over_18"]
+            randompost = random.randint(0, meme["data"]["dist"] - 1)
+            if post[randompost]["data"]["stickied"]:
+                randompost += 1
+            nsfw = post[randompost]["data"]["over_18"]
+        except IndexError:
+            randompost = 0
+            if post[randompost]["data"]["stickied"]:
+                randompost += 1
+            nsfw = post[randompost]["data"]["over_18"]
 
-            stickied = post[randompost]["data"]["stickied"]
-            spoiler = post[randompost]["data"]["spoiler"]
-            media = post[randompost]["data"]["media"]
-            s = post[randompost]["data"]["created"]
+        stickied = post[randompost]["data"]["stickied"]
+        spoiler = post[randompost]["data"]["spoiler"]
+        media = post[randompost]["data"]["media"]
+        s = post[randompost]["data"]["created"]
 
-            try:
-                flair_author = post[randompost]["data"]["author_flair_text"]
-                flair_post = post[randompost]["data"]["link_flair_text"]
-            except IndexError:
-                flair_author = None
-                flair_post = None
+        try:
+            flair_author = post[randompost]["data"]["author_flair_text"]
+            flair_post = post[randompost]["data"]["link_flair_text"]
+        except IndexError:
+            flair_author = None
+            flair_post = None
 
-            updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
+        updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-            if not media:
-                contenttext = post[randompost]["data"]["url_overridden_by_dest"]
-                if contenttext == "":
-                    try:
-                        contenttext = post[randompost]["data"]["url"]
-                    except KeyError:
-                        contenttext = None
-            elif media:
+        if not media:
+            contenttext = post[randompost]["data"]["url_overridden_by_dest"]
+            if contenttext == "":
                 try:
-                    contenttext = post[randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+                    contenttext = post[randompost]["data"]["url"]
                 except KeyError:
-                    contenttext = post[randompost]["data"]["secure_media_embed"][
-                        "media_domain_url"]
-            else:
-                contenttext = post[randompost]["data"]["url"]
+                    contenttext = None
+        elif media:
+            try:
+                contenttext = post[randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+            except KeyError:
+                contenttext = post[randompost]["data"]["secure_media_embed"][
+                    "media_domain_url"]
+        else:
+            contenttext = post[randompost]["data"]["url"]
 
-            return Reddit(
-                content=contenttext,
-                title=post[randompost]["data"]["title"],
-                upvote_ratio=post[randompost]["data"]["upvote_ratio"],
-                total_awards=post[randompost]["data"]["total_awards_received"],
-                score=post[randompost]["data"]["score"],
-                downvotes=post[randompost]["data"]["downs"],
-                nsfw=nsfw,
-                created_at=updated,
-                author=post[randompost]["data"]["author"],
-                post_url=f"https://reddit.com{post[randompost]['data']['permalink']}"
-                    .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
-                stickied=stickied,
-                spoiler=spoiler,
-                author_flair=flair_author,
-                post_flair=flair_post,
-                subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
-            )
-        except KeyError:
-            raise RequestError(meme["message"])
+
+        return Reddit(
+            content=contenttext,
+            title=post[randompost]["data"]["title"],
+            upvote_ratio=post[randompost]["data"]["upvote_ratio"],
+            total_awards=post[randompost]["data"]["total_awards_received"],
+            score=post[randompost]["data"]["score"],
+            downvotes=post[randompost]["data"]["downs"],
+            nsfw=nsfw,
+            created_at=updated,
+            author=post[randompost]["data"]["author"],
+            post_url=f"https://reddit.com{post[randompost]['data']['permalink']}"
+                .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
+            stickied=stickied,
+            spoiler=spoiler,
+            author_flair=flair_author,
+            post_flair=flair_post,
+            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
+        )
 
 
 async def _get_async_post(self, type, rfor, slash):
@@ -181,6 +187,7 @@ async def _get_async_post(self, type, rfor, slash):
                                    slash=slash)
 
     try:
+        check_for_api_error(meme)
         post = meme["data"]["children"]
 
         try:
@@ -241,70 +248,68 @@ async def _get_async_post(self, type, rfor, slash):
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
         )
     except KeyError:
+        check_for_api_error(meme)
+        post = meme["data"]["children"]
+
         try:
-            post = meme["data"]["children"]
+            randompost = random.randint(0, meme["data"]["dist"] - 1)
+            if post[randompost]["data"]["stickied"]:
+                randompost += 1
+            nsfw = post[randompost]["data"]["over_18"]
+        except IndexError:
+            randompost = 0
+            if post[randompost]["data"]["stickied"]:
+                randompost += 1
+            nsfw = post[randompost]["data"]["over_18"]
 
-            try:
-                randompost = random.randint(0, meme["data"]["dist"] - 1)
-                if post[randompost]["data"]["stickied"]:
-                    randompost += 1
-                nsfw = post[randompost]["data"]["over_18"]
-            except IndexError:
-                randompost = 0
-                if post[randompost]["data"]["stickied"]:
-                    randompost += 1
-                nsfw = post[randompost]["data"]["over_18"]
+        stickied = post[randompost]["data"]["stickied"]
+        spoiler = post[randompost]["data"]["spoiler"]
+        media = post[randompost]["data"]["media"]
+        s = post[randompost]["data"]["created"]
 
-            stickied = post[randompost]["data"]["stickied"]
-            spoiler = post[randompost]["data"]["spoiler"]
-            media = post[randompost]["data"]["media"]
-            s = post[randompost]["data"]["created"]
+        try:
+            flair_author = post[randompost]["data"]["author_flair_text"]
+            flair_post = post[randompost]["data"]["link_flair_text"]
+        except IndexError:
+            flair_author = None
+            flair_post = None
 
-            try:
-                flair_author = post[randompost]["data"]["author_flair_text"]
-                flair_post = post[randompost]["data"]["link_flair_text"]
-            except IndexError:
-                flair_author = None
-                flair_post = None
+        updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
 
-            updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
-
-            if not media:
-                contenttext = post[randompost]["data"]["url_overridden_by_dest"]
-                if contenttext == "":
-                    try:
-                        contenttext = post[randompost]["data"]["url"]
-                    except KeyError:
-                        contenttext = None
-            elif media:
+        if not media:
+            contenttext = post[randompost]["data"]["url_overridden_by_dest"]
+            if contenttext == "":
                 try:
-                    contenttext = post[randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+                    contenttext = post[randompost]["data"]["url"]
                 except KeyError:
-                    contenttext = post[randompost]["data"]["secure_media_embed"][
-                        "media_domain_url"]
-            else:
-                contenttext = post[randompost]["data"]["url"]
+                    contenttext = None
+        elif media:
+            try:
+                contenttext = post[randompost]["data"]["media"]["oembed"]["thumbnail_url"]
+            except KeyError:
+                contenttext = post[randompost]["data"]["secure_media_embed"][
+                    "media_domain_url"]
+        else:
+            contenttext = post[randompost]["data"]["url"]
 
-            return Reddit(
-                content=contenttext,
-                title=post[randompost]["data"]["title"],
-                upvote_ratio=post[randompost]["data"]["upvote_ratio"],
-                total_awards=post[randompost]["data"]["total_awards_received"],
-                score=post[randompost]["data"]["score"],
-                downvotes=post[randompost]["data"]["downs"],
-                nsfw=nsfw,
-                created_at=updated,
-                author=post[randompost]["data"]["author"],
-                post_url=f"https://reddit.com{post[randompost]['data']['permalink']}"
-                    .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
-                stickied=stickied,
-                spoiler=spoiler,
-                author_flair=flair_author,
-                post_flair=flair_post,
-                subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
-            )
-        except KeyError:
-            raise RequestError(meme["message"])
+        return Reddit(
+            content=contenttext,
+            title=post[randompost]["data"]["title"],
+            upvote_ratio=post[randompost]["data"]["upvote_ratio"],
+            total_awards=post[randompost]["data"]["total_awards_received"],
+            score=post[randompost]["data"]["score"],
+            downvotes=post[randompost]["data"]["downs"],
+            nsfw=nsfw,
+            created_at=updated,
+            author=post[randompost]["data"]["author"],
+            post_url=f"https://reddit.com{post[randompost]['data']['permalink']}"
+                .replace("https://reddit.com/r/u_", " https://reddit.com/u/"),
+            stickied=stickied,
+            spoiler=spoiler,
+            author_flair=flair_author,
+            post_flair=flair_post,
+            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
+        )
 
 
 # Base classes
