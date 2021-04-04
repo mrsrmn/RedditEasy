@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="RedditEasy",
+    name="redditeasy",
     version="3.2.1",
     author="MakufonSkifto",
     description="RedditEasy is an API wrapper for getting posts using the Reddit JSON API with both normal and"

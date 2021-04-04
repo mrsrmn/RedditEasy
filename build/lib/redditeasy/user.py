@@ -10,6 +10,7 @@ class User(UserBase):
         """
         :return: (str) Info about the randomly selected post from the user
         """
+
         return _get_post(self, type="hot", rfor=self.user, slash="u")
 
     def get_top_post(self):
