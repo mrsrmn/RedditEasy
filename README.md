@@ -5,7 +5,7 @@
 [![Monthly Downloads](https://img.shields.io/pypi/dm/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
 # RedditEasy
 
-RedditEasy is an API wrapper for the Reddit JSON API with both normal and async options
+RedditEasy is an API wrapper for getting posts using the Reddit JSON API with both normal and async options
 
 ## Install
 To install RedditEasy, do:

@@ -28,10 +28,9 @@ def get_request(client_id, client_secret, headers, type, slash, rfor):
 
 def check_for_api_error(response: dict):
     if "message" in list(response.keys()):
-        raise RequestError(f"{response['error']}: {response['message']}")
+        raise RequestError(f"{response['error']} {response['message']}")
 
 
-#Subreddit Posts
 
 def _get_post(self, type, slash, rfor):
     if self.client_id is None or self.client_secret is None or self.user_agent is None:

@@ -1,7 +1,6 @@
 class Reddit:
-    def __init__(self, content, title, upvote_ratio,
-                 total_awards, score, downvotes, created_at, nsfw, author, post_url, stickied, spoiler,
-                 post_flair, author_flair, subreddit_subscribers):
+    def __init__(self, content, title, upvote_ratio, total_awards, score, downvotes, created_at, nsfw, author, post_url,
+                 stickied, spoiler, post_flair, author_flair, subreddit_subscribers):
         self.content = content
         self.title = title
         self.upvote_ratio = upvote_ratio
