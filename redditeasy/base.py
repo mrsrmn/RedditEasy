@@ -66,9 +66,12 @@ def _get_post(self, type, slash, rfor):
 
         try:
             flair_author = post[randompost]["data"]["author_flair_text"]
-            flair_post = post[randompost]["data"]["link_flair_text"]
         except IndexError:
             flair_author = None
+
+        try:
+            flair_post = post[randompost]["data"]["link_flair_text"]
+        except IndexError:
             flair_post = None
 
         if not media:
@@ -102,7 +105,8 @@ def _get_post(self, type, slash, rfor):
             spoiler=spoiler,
             author_flair=flair_author,
             post_flair=flair_post,
-            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
+            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
+            comment_count=post[randompost]["data"]["num_comments"]
         )
     except KeyError:
         check_for_api_error(meme)
@@ -126,9 +130,12 @@ def _get_post(self, type, slash, rfor):
 
         try:
             flair_author = post[randompost]["data"]["author_flair_text"]
-            flair_post = post[randompost]["data"]["link_flair_text"]
         except IndexError:
             flair_author = None
+
+        try:
+            flair_post = post[randompost]["data"]["link_flair_text"]
+        except IndexError:
             flair_post = None
 
         updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -166,7 +173,8 @@ def _get_post(self, type, slash, rfor):
             spoiler=spoiler,
             author_flair=flair_author,
             post_flair=flair_post,
-            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
+            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
+            comment_count=post[randompost]["data"]["num_comments"]
         )
 
 
@@ -208,9 +216,12 @@ async def _get_async_post(self, type, rfor, slash):
 
         try:
             flair_author = post[randompost]["data"]["author_flair_text"]
-            flair_post = post[randompost]["data"]["link_flair_text"]
         except IndexError:
             flair_author = None
+
+        try:
+            flair_post = post[randompost]["data"]["link_flair_text"]
+        except IndexError:
             flair_post = None
 
         if not media:
@@ -244,7 +255,8 @@ async def _get_async_post(self, type, rfor, slash):
             spoiler=spoiler,
             author_flair=flair_author,
             post_flair=flair_post,
-            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
+            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
+            comment_count=post[randompost]["data"]["num_comments"]
         )
     except KeyError:
         check_for_api_error(meme)
@@ -268,9 +280,12 @@ async def _get_async_post(self, type, rfor, slash):
 
         try:
             flair_author = post[randompost]["data"]["author_flair_text"]
-            flair_post = post[randompost]["data"]["link_flair_text"]
         except IndexError:
             flair_author = None
+
+        try:
+            flair_post = post[randompost]["data"]["link_flair_text"]
+        except IndexError:
             flair_post = None
 
         updated = datetime.datetime.fromtimestamp(s).strftime("%d-%m-%Y %I:%M:%S UTC")
@@ -307,7 +322,8 @@ async def _get_async_post(self, type, rfor, slash):
             spoiler=spoiler,
             author_flair=flair_author,
             post_flair=flair_post,
-            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"]
+            subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
+            comment_count=post[randompost]["data"]["num_comments"]
         )
 
 

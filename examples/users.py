@@ -27,4 +27,5 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Posts Award Count: {postoutput.total_awards}\n"
       f"NSFW?: {postoutput.nsfw}\n"
       f"Post Flair: {postoutput.post_flair}\n"
-      f"User Flair: {postoutput.author_flair}")
+      f"User Flair: {postoutput.author_flair}\n"
+      f"Comment count: {postoutput.comment_count}")

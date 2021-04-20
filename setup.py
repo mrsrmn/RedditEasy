@@ -5,13 +5,18 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="redditeasy",
-    version="3.2.1",
+    version="3.3.0",
     author="MakufonSkifto",
     description="RedditEasy is an API wrapper for getting posts using the Reddit JSON API with both normal and"
                 " async options",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/MakufonSkifto/RedditEasy",
+    url="https://redditeasy.readthedocs.io/en/latest/",
+    project_urls={
+        "Documentation": "https://redditeasy.readthedocs.io/en/latest/",
+        "Issue tracker": "https://github.com/MakufonSkifto/RedditEasy/issues",
+        "Source": "https://github.com/MakufonSkifto/RedditEasy"
+    },
     packages=setuptools.find_packages(),
     install_requires=["requests", "python-dotenv", "aiohttp"],
     classifiers=[
