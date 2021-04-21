@@ -1,4 +1,4 @@
-from .base import _get_post, _get_async_post, UserBase
+from .base import get_post, get_async_post, UserBase
 
 
 class User(UserBase):
@@ -11,7 +11,7 @@ class User(UserBase):
         :return: (str) Info about the randomly selected post from the user
         """
 
-        return _get_post(self, type="hot", rfor=self.user, slash="u")
+        return get_post(self, rtype="hot", rfor=self.user, slash="u")
 
     def get_top_post(self):
         """
@@ -19,21 +19,21 @@ class User(UserBase):
          of all time)
         """
 
-        return _get_post(self, type="top", rfor=self.user, slash="u")
+        return get_post(self, rtype="top", rfor=self.user, slash="u")
 
     def get_new_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return _get_post(self, type="new", rfor=self.user, slash="u")
+        return get_post(self, rtype="new", rfor=self.user, slash="u")
 
     def get_controversial_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return _get_post(self, type="controversial", rfor=self.user, slash="u")
+        return get_post(self, rtype="controversial", rfor=self.user, slash="u")
 
 
 class AsyncUser(UserBase):
@@ -46,7 +46,7 @@ class AsyncUser(UserBase):
         :return: (str) Info about the randomly selected post from the user
         """
 
-        return await _get_async_post(self, type="hot", rfor=self.user, slash="u")
+        return await get_async_post(self, rtype="hot", rfor=self.user, slash="u")
 
     async def get_top_post(self):
         """
@@ -54,18 +54,18 @@ class AsyncUser(UserBase):
          of all time)
         """
 
-        return await _get_async_post(self, type="top", rfor=self.user, slash="u")
+        return await get_async_post(self, rtype="top", rfor=self.user, slash="u")
 
     async def get_new_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return await _get_async_post(self, type="new", rfor=self.user, slash="u")
+        return await get_async_post(self, rtype="new", rfor=self.user, slash="u")
 
     async def get_controversial_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return await _get_async_post(self, type="controversial", rfor=self.user, slash="u")
+        return await get_async_post(self, rtype="controversial", rfor=self.user, slash="u")

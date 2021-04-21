@@ -3,25 +3,27 @@ import json
 import requests.auth
 import aiohttp
 
-import random
+from random import SystemRandom
 import datetime
 
 from .reddit import Reddit
 from .exceptions import RequestError
 from .client import Client
 
+cryptogen = SystemRandom()
 
-async def async_request(async_headers, async_client_auth, type, rfor, slash):
+
+async def async_request(async_headers, async_client_auth, rtype, rfor, slash):
     async with aiohttp.ClientSession() as cs:
-        async with cs.get(f"https://reddit.com/{slash}/{rfor}/{type}.json", headers=async_headers,
+        async with cs.get(f"https://reddit.com/{slash}/{rfor}/{rtype}.json", headers=async_headers,
                           auth=async_client_auth) as r:
             content = await r.json()
             return content
 
 
-def get_request(client_id, client_secret, headers, type, slash, rfor):
+def get_request(client_id, client_secret, headers, rtype, slash, rfor):
     client_auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
-    request = requests.get(f"https://www.reddit.com/{slash}/{rfor}/{type}.json", headers=headers,
+    request = requests.get(f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json", headers=headers,
                            auth=client_auth)
     return json.loads(request.content)
 
@@ -32,15 +34,15 @@ def check_for_api_error(response: dict):
 
 
 
-def _get_post(self, type, slash, rfor):
+def get_post(self, rtype, slash, rfor):
     if self.client_id is None or self.client_secret is None or self.user_agent is None:
         headers = {"User-Agent": Client.USER_AGENT.name}
-        meme = get_request(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name, headers, type=type, rfor=rfor,
+        meme = get_request(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name, headers, rtype=rtype, rfor=rfor,
                            slash=slash)
 
     else:
         headers = {"User-Agent": self.user_agent}
-        meme = get_request(self.client_id, self.client_secret, headers, type=type, rfor=rfor,
+        meme = get_request(self.client_id, self.client_secret, headers, rtype=rtype, rfor=rfor,
                            slash=slash)
 
     try:
@@ -48,7 +50,7 @@ def _get_post(self, type, slash, rfor):
         post = meme["data"]["children"]
 
         try:
-            randompost = random.randint(0, meme["data"]["dist"] - 1)
+            randompost = cryptogen.randint(0, meme["data"]["dist"] - 1)
             if post[randompost]["data"]["stickied"]:
                 randompost += 1
             nsfw = post[randompost]["data"]["over_18"]
@@ -113,7 +115,7 @@ def _get_post(self, type, slash, rfor):
         post = meme["data"]["children"]
 
         try:
-            randompost = random.randint(0, meme["data"]["dist"] - 1)
+            randompost = cryptogen.randint(0, meme["data"]["dist"] - 1)
             if post[randompost]["data"]["stickied"]:
                 randompost += 1
             nsfw = post[randompost]["data"]["over_18"]
@@ -178,19 +180,19 @@ def _get_post(self, type, slash, rfor):
         )
 
 
-async def _get_async_post(self, type, rfor, slash):
+async def get_async_post(self, rtype, rfor, slash):
     if self.client_id is None or self.client_secret is None or self.user_agent is None:
         client_auth = aiohttp.BasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
         headers = {"User-Agent": Client.USER_AGENT.name}
 
-        meme = await async_request(async_headers=headers, async_client_auth=client_auth, type=type, rfor=rfor,
+        meme = await async_request(async_headers=headers, async_client_auth=client_auth, rtype=rtype, rfor=rfor,
                                    slash=slash)
 
     else:
         client_auth = aiohttp.BasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
 
-        meme = await async_request(async_headers=headers, async_client_auth=client_auth, type=type, rfor=rfor,
+        meme = await async_request(async_headers=headers, async_client_auth=client_auth, rtype=rtype, rfor=rfor,
                                    slash=slash)
 
     try:
@@ -198,7 +200,7 @@ async def _get_async_post(self, type, rfor, slash):
         post = meme["data"]["children"]
 
         try:
-            randompost = random.randint(0, meme["data"]["dist"] - 1)
+            randompost = cryptogen.randint(0, meme["data"]["dist"] - 1)
             if post[randompost]["data"]["stickied"]:
                 randompost += 1
             nsfw = post[randompost]["data"]["over_18"]
@@ -263,7 +265,7 @@ async def _get_async_post(self, type, rfor, slash):
         post = meme["data"]["children"]
 
         try:
-            randompost = random.randint(0, meme["data"]["dist"] - 1)
+            randompost = cryptogen.randint(0, meme["data"]["dist"] - 1)
             if post[randompost]["data"]["stickied"]:
                 randompost += 1
             nsfw = post[randompost]["data"]["over_18"]
@@ -339,7 +341,7 @@ class SubredditBase:
 
 
 class UserBase:
-    def __init__(self, user_agent, user, client_id, client_secret):
+    def __init__(self, user, client_id=None, client_secret=None, user_agent=None):
         self.user = user
         self.user_agent = user_agent
         self.client_id = client_id

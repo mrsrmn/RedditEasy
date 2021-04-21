@@ -1,4 +1,4 @@
-from .base import _get_post, _get_async_post, SubredditBase
+from .base import get_post, get_async_post, SubredditBase
 
 
 class Subreddit(SubredditBase):
@@ -11,7 +11,7 @@ class Subreddit(SubredditBase):
         :return: (str) Info about the randomly selected post from the subreddit (hot)
         """
 
-        return _get_post(self, type="hot", rfor=self.subreddit, slash="r")
+        return get_post(self, rtype="hot", rfor=self.subreddit, slash="r")
 
     def get_top_post(self):
         """
@@ -19,21 +19,21 @@ class Subreddit(SubredditBase):
          of all time)
         """
 
-        return _get_post(self, type="top", rfor=self.subreddit, slash="r")
+        return get_post(self, rtype="top", rfor=self.subreddit, slash="r")
 
     def get_new_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return _get_post(self, type="new", rfor=self.subreddit, slash="r")
+        return get_post(self, rtype="new", rfor=self.subreddit, slash="r")
 
     def get_controversial_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return _get_post(self, type="controversial", rfor=self.subreddit, slash="r")
+        return get_post(self, rtype="controversial", rfor=self.subreddit, slash="r")
 
 
 class AsyncSubreddit(SubredditBase):
@@ -46,7 +46,7 @@ class AsyncSubreddit(SubredditBase):
         :return: (str) Info about the randomly selected post from the subreddit (hot)
         """
 
-        return await _get_async_post(self, type="hot", rfor=self.subreddit, slash="r")
+        return await get_async_post(self, rtype="hot", rfor=self.subreddit, slash="r")
 
     async def get_top_post(self):
         """
@@ -54,18 +54,18 @@ class AsyncSubreddit(SubredditBase):
          of all time)
         """
 
-        return await _get_async_post(self, type="top", rfor=self.subreddit, slash="r")
+        return await get_async_post(self, rtype="top", rfor=self.subreddit, slash="r")
 
     async def get_new_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return await _get_async_post(self, type="new", rfor=self.subreddit, slash="r")
+        return await get_async_post(self, rtype="new", rfor=self.subreddit, slash="r")
 
     async def get_controversial_post(self):
         """
         :return: (str) Info about the randomly selected post (new)
         """
 
-        return await _get_async_post(self, type="controversial", rfor=self.subreddit, slash="r")
+        return await get_async_post(self, rtype="controversial", rfor=self.subreddit, slash="r")

@@ -1,15 +1,12 @@
 import redditeasy
 import asyncio
 
-"""
-To get your Reddit API client info go to
-https://www.reddit.com/prefs/apps
-and create an app
+# To get your Reddit API client info go to
+# https://www.reddit.com/prefs/apps
+# and create an app
 
-For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
-
-Please note that the async classes of RedditEasy will not work outside an async function whatsoever
-"""
+# For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
+# Please note that the async classes of RedditEasy will not work outside an async function whatsoever
 
 
 async def meme(subreddit):

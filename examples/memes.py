@@ -1,18 +1,16 @@
 import redditeasy
 
-"""
-To get your Reddit API client info go to
-https://www.reddit.com/prefs/apps
-and create an app
+# To get your Reddit API client info go to
+# https://www.reddit.com/prefs/apps
+# and create an app
 
-For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
-"""
+# For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
 
 
-post = redditeasy.Subreddit(subreddit="dankmemes",   #Subreddit name
-                            client_id="",            #Your client ID
-                            client_secret="",        #Your client secret
-                            user_agent=""            #Your user agent (ex: ClientName/0.1 by YourUsername")
+post = redditeasy.Subreddit(subreddit="dankmemes",   # Subreddit name
+                            client_id="",            # Your client ID
+                            client_secret="",        # Your client secret
+                            user_agent=""            # Your user agent (ex: ClientName/0.1 by YourUsername")
                             )
 
 postoutput = post.get_post()
