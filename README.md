@@ -3,6 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/MakufonSkifto/redditeasy)](https://github.com/ExpDev07/coronavirus-tracker-api/stargazers) 
 [![PyPI version](https://badge.fury.io/py/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
 [![Monthly Downloads](https://img.shields.io/pypi/dm/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/22632d363d7747acbbcf357c5b6795c4)](https://www.codacy.com/gh/MakufonSkifto/RedditEasy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MakufonSkifto/RedditEasy&amp;utm_campaign=Badge_Grade)
 # RedditEasy
 
 RedditEasy is an API wrapper for getting posts using the Reddit JSON API with both normal and async options
