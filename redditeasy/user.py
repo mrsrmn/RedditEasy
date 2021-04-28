@@ -15,22 +15,22 @@ class User(UserBase):
 
     def get_top_post(self):
         """
-        :return: (str) Info about the randomly selected post (This will return the TOP POST OF TODAY, not the top post
-         of all time)
+        :return: (str) Info about the randomly selected post from the user (This will return the TOP POST OF TODAY,
+         not the top post of all time)
         """
 
         return get_post(self, rtype="top", rfor=self.user, slash="u")
 
     def get_new_post(self):
         """
-        :return: (str) Info about the randomly selected post (new)
+        :return: (str) Info about the randomly selected post from the user (new)
         """
 
         return get_post(self, rtype="new", rfor=self.user, slash="u")
 
     def get_controversial_post(self):
         """
-        :return: (str) Info about the randomly selected post (new)
+        :return: (str) Info about the randomly selected post from the user (new)
         """
 
         return get_post(self, rtype="controversial", rfor=self.user, slash="u")
@@ -50,22 +50,22 @@ class AsyncUser(UserBase):
 
     async def get_top_post(self):
         """
-        :return: (str) Info about the randomly selected post (This will return the TOP POST OF TODAY, not the top post
-         of all time)
+        :return: (str) Info about the randomly selected post from the user (This will return the TOP POST OF TODAY,
+         not the top post of all time)
         """
 
         return await get_async_post(self, rtype="top", rfor=self.user, slash="u")
 
     async def get_new_post(self):
         """
-        :return: (str) Info about the randomly selected post (new)
+        :return: (str) Info about the randomly selected post from the user (new)
         """
 
         return await get_async_post(self, rtype="new", rfor=self.user, slash="u")
 
     async def get_controversial_post(self):
         """
-        :return: (str) Info about the randomly selected post (new)
+        :return: (str) Info about the randomly selected post from the user (new)
         """
 
         return await get_async_post(self, rtype="controversial", rfor=self.user, slash="u")

@@ -4,10 +4,9 @@ Functions
 A List of Classes
 -----------------
 
-.. code-block::
-  :linenos:
 
-  Subreddit() / AsyncSubreddit()
+Subreddit() / AsyncSubreddit()
+''''''''''''''''''''''''''''''''''
 
 This class is for getting posts from a subreddit
 
@@ -16,10 +15,13 @@ This class is for getting posts from a subreddit
 * Parameter: client_secret (str, Optional) - Your client secret
 * Parameter: user_agent (str, Optional) - Your user agent
 
-.. code-block::
-  :linenos:
 
-  User() / AsyncUser()
+.. raw:: html
+
+   <hr>
+
+User() / AsyncUser()
+''''''''''''''''''''''''''''''''''
 
 This class is for getting posts from a user
 
@@ -28,30 +30,18 @@ This class is for getting posts from a user
 * Parameter: client_secret (str, Optional) - Your client secret
 * Parameter: user_agent (str, Optional) - Your user agent
 
-Please note that the async classes of RedditEasy **will not** work outside an async function whatsoever.
 
+.. raw:: html
 
-You can and should use the async classes in a discord.py bot. The normal classes could cause a  `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_ in a discord.py bot.
-
-
-THE MODULE WILL USE ITS OWN DEFAULT CLIENT INFO IF **AT LEAST ONE** OF THESE ARE NOT GIVEN: ``client_id``, ``client_secret``,
-and ``user_agent``.
-
-To get your client ID, client secret and user agent go to:
-https://www.reddit.com/prefs/apps
-and create an app
-
-For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
+   <hr>
 
 
 class: Subreddit() / AsyncSubreddit()
 ---------------------
 
 
-.. code-block::
-  :linenos:
-
-  get_post()
+``get_post()``
+''''''''''''''''''''''''''''''''''
 
 * Parameter: None
 
@@ -89,14 +79,23 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_subscribers`` The number of people in the subreddit
 
-.. code-block::
-  :linenos:
+   ``comment_count`` The number comments in the post
 
-  get_new_post()
+   ``is_media`` This will return True or False if the post has some kind of media in it or not
+
+   ``subreddit_name`` This will return the subreddit name
+
+
+.. raw:: html
+
+   <hr>
+
+``get_new_post()``
+''''''''''''''''''''''''''''''''''
 
 * Parameter: None
 
-* Returns: (str) Info about the randomly selected post (new)
+* Returns: (str) Info about the randomly selected post from the subreddit (new)
 
 * Attributes:
 
@@ -130,16 +129,74 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_subscribers`` The number of people in the subreddit
 
+   ``comment_count`` The number comments in the post
+
+   ``is_media`` This will return True or False if the post has some kind of media in it or not
+
+   ``subreddit_name`` This will return the subreddit name
 
 
-.. code-block::
-  :linenos:
+.. raw:: html
 
-  get_controversial_post()
+   <hr>
+
+
+``get_top_post()``
+''''''''''''''''''''''''''''''''''
 
 * Parameter: None
 
-* Returns: (str) Info about the randomly selected post (new)
+* Returns: (str) Info about the randomly selected post from the subreddit (This will return the TOP POST OF TODAY)
+
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``created_at``: The time the randomly selected post got created
+
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
+
+   ``post_flair``: This will return the post's flair
+
+   ``author_flair``: This will return the post's author's flair
+
+   ``subreddit_subscribers`` The number of people in the subreddit
+
+   ``comment_count`` The number comments in the post
+
+   ``is_media`` This will return True or False if the post has some kind of media in it or not
+
+   ``subreddit_name`` This will return the subreddit name
+
+
+.. raw:: html
+
+   <hr>
+
+``get_controversial_post()``
+''''''''''''''''''''''''''''''''''
+
+* Parameter: None
+
+* Returns: (str) Info about the randomly selected post from the subreddit (controversial)
 
 * Attributes:
 
@@ -173,14 +230,22 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_subscribers`` The number of people in the subreddit
 
+   ``comment_count`` The number comments in the post
+
+   ``is_media`` This will return True or False if the post has some kind of media in it or not
+
+   ``subreddit_name`` This will return the subreddit name
+
+
+.. raw:: html
+
+   <hr>
 
 class: User() / AsyncUser()
 ---------------------
 
-.. code-block::
-  :linenos:
-
-  get_post()
+``get_post()``
+''''''''''''''''''''''''''''''''''
 
 * Parameter: None
 
@@ -216,16 +281,21 @@ class: User() / AsyncUser()
 
    ``author_flair``: This will return the post's author's flair 
 
+   ``comment_count`` The number comments in the post
+
+   ``is_media`` This will return True or False if the post has some kind of media in it or not
 
 
-.. code-block::
-  :linenos:
+.. raw:: html
 
-  get_new_post()
+   <hr>
+
+``get_new_post()``
+''''''''''''''''''''''''''''''''''
 
 * Parameter: None
 
-* Returns: (str) Info about the randomly selected post (new)
+* Returns: (str) Info about the randomly selected post from the user (new)
 
 * Attributes:
 
@@ -255,18 +325,23 @@ class: User() / AsyncUser()
 
    ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair 
+   ``author_flair``: This will return the post's author's flair
+
+   ``comment_count`` The number comments in the post
+
+   ``is_media`` This will return True or False if the post has some kind of media in it or not
 
 
+.. raw:: html
 
-.. code-block::
-  :linenos:
+   <hr>
 
-  get_controversial_post()
+``get_top_post()``
+''''''''''''''''''''''''''''''''''
 
 * Parameter: None
 
-* Returns: (str) Info about the randomly selected post (new)
+* Returns: (str) Info about the randomly selected post from the user (This will return the TOP POST OF TODAY)
 
 * Attributes:
 
@@ -296,4 +371,54 @@ class: User() / AsyncUser()
 
    ``post_flair``: This will return the post's flair
 
-   ``author_flair``: This will return the post's author's flair 
+   ``author_flair``: This will return the post's author's flair
+
+   ``comment_count`` The number comments in the post
+
+   ``is_media`` This will return True or False if the post has some kind of media in it or not
+
+
+.. raw:: html
+
+   <hr>
+
+``get_controversial_post()``
+''''''''''''''''''''''''''''''''''
+
+* Parameter: None
+
+* Returns: (str) Info about the randomly selected post from the user (controversial)
+
+* Attributes:
+
+   ``content``: The content of the randomly selected post
+
+   ``title``: The title of the randomly selected post
+
+   ``upvote_ratio``: The upvote ratio of the randomly selected post
+
+   ``total_awards``: The number of awards in the randomly selected post
+
+   ``score``: The upvote count of the randomly selected post
+
+   ``downvotes``: The downvote count of the randomly selected post
+
+   ``nsfw``: This will return True or False if the post is NSFW or not
+
+   ``created_at``: The time the randomly selected post got created
+
+   ``author``: The author of the randomly selected post
+
+   ``post_url``: The URL to the randomly selected post
+
+   ``stickied``: This will return True or False if the post is stickied or not
+
+   ``spoiler``: This will return True or False if the post is spoiler or not
+
+   ``post_flair``: This will return the post's flair
+
+   ``author_flair``: This will return the post's author's flair
+
+   ``comment_count`` The number comments in the post
+
+   ``is_media`` This will return True or False if the post has some kind of media in it or not

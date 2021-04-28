@@ -45,8 +45,8 @@ def get_post(self, rtype, slash, rfor):
         meme = get_request(self.client_id, self.client_secret, headers, rtype=rtype, rfor=rfor,
                            slash=slash)
 
+    check_for_api_error(meme)
     try:
-        check_for_api_error(meme)
         post = meme["data"]["children"]
 
         try:
@@ -91,6 +91,8 @@ def get_post(self, rtype, slash, rfor):
         else:
             contenttext = post[randompost]["data"]["url_overridden_by_dest"]
 
+        is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
+
         return Reddit(
             content=contenttext,
             title=post[randompost]["data"]["title"],
@@ -108,10 +110,11 @@ def get_post(self, rtype, slash, rfor):
             author_flair=flair_author,
             post_flair=flair_post,
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
-            comment_count=post[randompost]["data"]["num_comments"]
+            comment_count=post[randompost]["data"]["num_comments"],
+            is_media=is_media,
+            subreddit_name=post[randompost]["data"]["subreddit"]
         )
     except KeyError:
-        check_for_api_error(meme)
         post = meme["data"]["children"]
 
         try:
@@ -158,6 +161,7 @@ def get_post(self, rtype, slash, rfor):
         else:
             contenttext = post[randompost]["data"]["url"]
 
+        is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
 
         return Reddit(
             content=contenttext,
@@ -176,7 +180,9 @@ def get_post(self, rtype, slash, rfor):
             author_flair=flair_author,
             post_flair=flair_post,
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
-            comment_count=post[randompost]["data"]["num_comments"]
+            comment_count=post[randompost]["data"]["num_comments"],
+            is_media=is_media,
+            subreddit_name=post[randompost]["data"]["subreddit"]
         )
 
 
@@ -195,8 +201,8 @@ async def get_async_post(self, rtype, rfor, slash):
         meme = await async_request(async_headers=headers, async_client_auth=client_auth, rtype=rtype, rfor=rfor,
                                    slash=slash)
 
+    check_for_api_error(meme)
     try:
-        check_for_api_error(meme)
         post = meme["data"]["children"]
 
         try:
@@ -241,6 +247,8 @@ async def get_async_post(self, rtype, rfor, slash):
         else:
             contenttext = post[randompost]["data"]["url_overridden_by_dest"]
 
+        is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
+
         return Reddit(
             content=contenttext,
             title=post[randompost]["data"]["title"],
@@ -258,10 +266,11 @@ async def get_async_post(self, rtype, rfor, slash):
             author_flair=flair_author,
             post_flair=flair_post,
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
-            comment_count=post[randompost]["data"]["num_comments"]
+            comment_count=post[randompost]["data"]["num_comments"],
+            is_media=is_media,
+            subreddit_name=post[randompost]["data"]["subreddit"]
         )
     except KeyError:
-        check_for_api_error(meme)
         post = meme["data"]["children"]
 
         try:
@@ -308,6 +317,8 @@ async def get_async_post(self, rtype, rfor, slash):
         else:
             contenttext = post[randompost]["data"]["url"]
 
+        is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
+
         return Reddit(
             content=contenttext,
             title=post[randompost]["data"]["title"],
@@ -325,7 +336,9 @@ async def get_async_post(self, rtype, rfor, slash):
             author_flair=flair_author,
             post_flair=flair_post,
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
-            comment_count=post[randompost]["data"]["num_comments"]
+            comment_count=post[randompost]["data"]["num_comments"],
+            is_media=is_media,
+            subreddit_name=post[randompost]["data"]["subreddit"]
         )
 
 

@@ -11,8 +11,22 @@ OR
 
 ``python -m pip install redditeasy``
 
+
+Async RedditEasy
+-----------------
+Yes, there is an async version of RedditEasy. To use it, you need to use the Async classes. Which are ``AsyncSubreddit`` and ``AsyncUser``
+
+Here is a small example on using ``AsyncSubreddit``: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_meme.py
+
+You can and should use this in a discord.py bot. The normal classes could cause a `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_ in an async program.
+
+This **will not** work outside an async function whatsoever.
+
 Usage
 -------------
+
+The module will use its own default client info if **AT LEAST ONE** of these are not given: ``client_id``, ``client_secret`` and ``user_agent``.
+
 
 Without client info
 ''''''''''''''''''''''''''''''''''
@@ -22,13 +36,6 @@ This method is not suggested as it may be slow and throw errors more often
   :linenos:
 
   import redditeasy
-
-  """
-  To get your client ID, client secret and user agent go to:
-  https://www.reddit.com/prefs/apps
-  and create an app
-  """
-
 
   post = redditeasy.Subreddit(subreddit="dankmemes")   #Subreddit name
   postoutput = post.get_post()
@@ -44,15 +51,24 @@ This method is not suggested as it may be slow and throw errors more often
         f"NSFW?: {postoutput.nsfw}\n"
         f"Post Flair: {postoutput.post_flair}\n"
         f"User Flair: {postoutput.author_flair}\n"
-        f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
+        f"Subreddit Subscribers: {postoutput.subreddit_subscribers}\n"
+        f"Comment count: {postoutput.comment_count}\n"
+        f"Is Media?: {postoutput.is_media}\n"
+        f"Subreddit Name: {postoutput.subreddit_name}")
 
 
 With client info
-'''''''''''''''''''''''
+''''''''''''''''''''''''''''''''''
 .. code-block:: python
   :linenos:
 
   import redditeasy
+
+  # To get your Reddit API client info go to
+  # https://www.reddit.com/prefs/apps
+  # and create an app
+
+  # For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
 
   post = redditeasy.Subreddit(subreddit="dankmemes",   #Subreddit name
                               client_id="",            #Your client ID
@@ -72,20 +88,14 @@ With client info
         f"NSFW?: {postoutput.nsfw}\n"
         f"Post Flair: {postoutput.post_flair}\n"
         f"User Flair: {postoutput.author_flair}\n"
-        f"Subreddit Subscribers: {postoutput.subreddit_subscribers}")
+        f"Subreddit Subscribers: {postoutput.subreddit_subscribers}\n"
+        f"Comment count: {postoutput.comment_count}\n"
+        f"Is Media?: {postoutput.is_media}\n"
+        f"Subreddit Name: {postoutput.subreddit_name}")
 
 
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_
 
-Async RedditEasy
-------------------------------------------
-Yes, there is an async version of redditeasy. To use it, you need to use the Async classes. Which are ``AsyncSubreddit`` and ``AsyncUser``
-
-Here is a small example on using it: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_meme.py
-
-You can and should use this in a discord.py bot. The normal classes could cause a `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_
-
-Please note that the async classes of RedditEasy **will not** work outside an async function whatsoever
 
 Getting Reddit API Client info
 ------------------------------------------
@@ -98,10 +108,17 @@ and create a script.
   :width: 400
   :alt: Alternative text
 
+(You don't have to fill "redirect_uri")
+
+Operating Systems
+-------------
+
+All of RedditEasy's versions were tested in ``Windows``, ``Linux (Ubuntu)`` and ``MacOS``
+
 Errors
 -------------
 The module will raise ``KeyError`` if the given user / subreddit is not found
 
 The module will raise ``redditeasy.exceptions.RequestError`` if there was an error with the request. Traceback will show the details about the error
 
-The module will raise ``ValueError`` if the given user / subreddit is not empty
+The module will raise ``ValueError`` if the given user / subreddit is empty

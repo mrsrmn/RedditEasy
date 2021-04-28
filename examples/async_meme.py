@@ -8,6 +8,8 @@ import asyncio
 # For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
 # Please note that the async classes of RedditEasy will not work outside an async function whatsoever
 
+# This example does not work in Python <3.7, see this: https://stackoverflow.com/a/52796732/12920146
+
 
 async def meme(subreddit):
     post = redditeasy.AsyncSubreddit(subreddit=subreddit,  # Subreddit name
@@ -30,7 +32,9 @@ async def meme(subreddit):
           f"Post Flair: {postoutput.post_flair}\n"
           f"User Flair: {postoutput.author_flair}\n"
           f"Subreddit Subscribers: {postoutput.subreddit_subscribers}\n"
-          f"Comment count: {postoutput.comment_count}")
+          f"Comment count: {postoutput.comment_count}\n"
+          f"Is Media?: {postoutput.is_media}\n"
+          f"Subreddit Name: r/{postoutput.subreddit_name}")
 
 
 asyncio.run(meme("dankmemes"))
