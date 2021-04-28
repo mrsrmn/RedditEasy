@@ -21,10 +21,8 @@ async def async_request(async_headers, async_client_auth, rtype, rfor, slash):
             return content
 
 
-def get_request(client_id, client_secret, headers, rtype, slash, rfor):
-    client_auth = requests.auth.HTTPBasicAuth(client_id, client_secret)
-    request = requests.get(f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json", headers=headers,
-                           auth=client_auth)
+def get_request(client_auth, headers, rtype, slash, rfor):
+    request = requests.get(f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json", headers=headers, auth=client_auth)
     return json.loads(request.content)
 
 
@@ -37,13 +35,13 @@ def check_for_api_error(response: dict):
 def get_post(self, rtype, slash, rfor):
     if self.client_id is None or self.client_secret is None or self.user_agent is None:
         headers = {"User-Agent": Client.USER_AGENT.name}
-        meme = get_request(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name, headers, rtype=rtype, rfor=rfor,
-                           slash=slash)
+        client_auth = requests.auth.HTTPBasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
 
     else:
         headers = {"User-Agent": self.user_agent}
-        meme = get_request(self.client_id, self.client_secret, headers, rtype=rtype, rfor=rfor,
-                           slash=slash)
+        client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
+
+    meme = get_request(client_auth, headers, rtype=rtype, rfor=rfor, slash=slash)
 
     check_for_api_error(meme)
     try:
@@ -191,16 +189,13 @@ async def get_async_post(self, rtype, rfor, slash):
         client_auth = aiohttp.BasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
         headers = {"User-Agent": Client.USER_AGENT.name}
 
-        meme = await async_request(async_headers=headers, async_client_auth=client_auth, rtype=rtype, rfor=rfor,
-                                   slash=slash)
 
     else:
         client_auth = aiohttp.BasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
 
-        meme = await async_request(async_headers=headers, async_client_auth=client_auth, rtype=rtype, rfor=rfor,
-                                   slash=slash)
-
+    meme = await async_request(async_headers=headers, async_client_auth=client_auth, rtype=rtype, rfor=rfor,
+                               slash=slash)
     check_for_api_error(meme)
     try:
         post = meme["data"]["children"]

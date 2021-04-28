@@ -2,7 +2,8 @@ from enum import Enum
 from dotenv import load_dotenv
 import os
 
-load_dotenv(".env")
+direct = os.path.dirname(__file__)
+load_dotenv(os.path.join(direct, ".env"))
 
 
 class Client(Enum):
