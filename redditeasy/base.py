@@ -7,7 +7,7 @@ from random import SystemRandom
 import datetime
 
 from .reddit import Reddit
-from .exceptions import RequestError
+from .exceptions import RequestError, EmptyResult
 from .client import Client
 
 cryptogen = SystemRandom()
@@ -57,6 +57,8 @@ def get_post(self, rtype, slash, rfor):
             if post[randompost]["data"]["stickied"]:
                 randompost += 1
             nsfw = post[randompost]["data"]["over_18"]
+        except ValueError:
+            raise EmptyResult("The given user / subreddit is empty")
 
         stickied = post[randompost]["data"]["stickied"]
         spoiler = post[randompost]["data"]["spoiler"]

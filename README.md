@@ -108,8 +108,6 @@ All of RedditEasy's versions were tested in `Windows`, `Linux (Ubuntu)` and `Mac
 
 ## Errors
 
-The module will raise ``KeyError`` if the given user / subreddit is not found
-
 The module will raise ``redditeasy.exceptions.RequestError``  if there was an error with the request. Traceback will show the details about the error
 
 The module will raise ``ValueError`` if the given user / subreddit is empty
