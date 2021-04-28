@@ -189,7 +189,6 @@ async def get_async_post(self, rtype, rfor, slash):
         client_auth = aiohttp.BasicAuth(Client.CLIENT_ID.name, Client.CLIENT_SECRET.name)
         headers = {"User-Agent": Client.USER_AGENT.name}
 
-
     else:
         client_auth = aiohttp.BasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
