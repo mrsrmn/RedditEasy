@@ -121,3 +121,9 @@ Errors
 The module will raise ``redditeasy.exceptions.RequestError`` if there was an error with the request. Traceback will show the details about the error
 
 The module will raise ``redditeasy.exceptions.EmptyResult`` if the given user / subreddit is empty
+
+
+Issues
+-------------
+
+If you have any issues with RedditEasy, please report them via the `issue tracker <https://github.com/MakufonSkifto/RedditEasy/issues>`_
