@@ -13,10 +13,10 @@ from .client import Client
 cryptogen = SystemRandom()
 
 
-async def async_request(async_headers, async_client_auth, rtype, rfor, slash):
+async def async_request(headers, client_auth, rtype, rfor, slash):
     async with aiohttp.ClientSession() as cs:
-        async with cs.get(f"https://reddit.com/{slash}/{rfor}/{rtype}.json", headers=async_headers,
-                          auth=async_client_auth) as r:
+        async with cs.get(f"https://reddit.com/{slash}/{rfor}/{rtype}.json", headers=headers,
+                          auth=client_auth) as r:
             content = await r.json()
             return content
 
@@ -42,8 +42,8 @@ def get_post(self, rtype, slash, rfor):
         client_auth = requests.auth.HTTPBasicAuth(self.client_id, self.client_secret)
 
     meme = get_request(client_auth, headers, rtype=rtype, rfor=rfor, slash=slash)
-
     check_for_api_error(meme)
+
     try:
         post = meme["data"]["children"]
 
@@ -194,9 +194,9 @@ async def get_async_post(self, rtype, rfor, slash):
         client_auth = aiohttp.BasicAuth(self.client_id, self.client_secret)
         headers = {"User-Agent": self.user_agent}
 
-    meme = await async_request(async_headers=headers, async_client_auth=client_auth, rtype=rtype, rfor=rfor,
-                               slash=slash)
+    meme = await async_request(headers=headers, client_auth=client_auth, rtype=rtype, rfor=rfor, slash=slash)
     check_for_api_error(meme)
+
     try:
         post = meme["data"]["children"]
 
