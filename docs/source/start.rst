@@ -54,7 +54,8 @@ This method is not suggested as it may be slow and throw errors more often
         f"Subreddit Subscribers: {postoutput.subreddit_subscribers}\n"
         f"Comment count: {postoutput.comment_count}\n"
         f"Is Media?: {postoutput.is_media}\n"
-        f"Subreddit Name: {postoutput.subreddit_name}")
+        f"Subreddit Name: r/{postoutput.subreddit_name}\n"
+        f"Content Type: {postoutput.content_type}")
 
 
 With client info
@@ -91,7 +92,8 @@ With client info
         f"Subreddit Subscribers: {postoutput.subreddit_subscribers}\n"
         f"Comment count: {postoutput.comment_count}\n"
         f"Is Media?: {postoutput.is_media}\n"
-        f"Subreddit Name: {postoutput.subreddit_name}")
+        f"Subreddit Name: r/{postoutput.subreddit_name}\n"
+        f"Content Type: {postoutput.content_type}")
 
 
 More examples are in the `examples folder <https://github.com/MakufonSkifto/RedditEasy/tree/main/examples>`_

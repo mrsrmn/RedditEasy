@@ -85,6 +85,8 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_name`` This will return the subreddit name
 
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+
 
 .. raw:: html
 
@@ -134,6 +136,8 @@ class: Subreddit() / AsyncSubreddit()
    ``is_media`` This will return True or False if the post has some kind of media in it or not
 
    ``subreddit_name`` This will return the subreddit name
+
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
 
 
 .. raw:: html
@@ -186,6 +190,8 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_name`` This will return the subreddit name
 
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+
 
 .. raw:: html
 
@@ -236,6 +242,8 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_name`` This will return the subreddit name
 
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+
 
 .. raw:: html
 
@@ -285,6 +293,8 @@ class: User() / AsyncUser()
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
 
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+
 
 .. raw:: html
 
@@ -330,6 +340,8 @@ class: User() / AsyncUser()
    ``comment_count`` The number comments in the post
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
+
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
 
 
 .. raw:: html
@@ -377,6 +389,8 @@ class: User() / AsyncUser()
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
 
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+
 
 .. raw:: html
 
@@ -422,3 +436,5 @@ class: User() / AsyncUser()
    ``comment_count`` The number comments in the post
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
+
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"

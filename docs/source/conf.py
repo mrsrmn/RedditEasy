@@ -22,7 +22,7 @@ copyright = '2020 - 2021, MakufonSkifto'
 author = 'MakufonSkifto'
 
 # The full version, including alpha/beta/rc tags
-release = '3.4.0'
+release = '3.5.0'
 
 
 # -- General configuration ---------------------------------------------------

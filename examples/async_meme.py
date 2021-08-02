@@ -34,7 +34,8 @@ async def meme(subreddit):
           f"Subreddit Subscribers: {postoutput.subreddit_subscribers}\n"
           f"Comment count: {postoutput.comment_count}\n"
           f"Is Media?: {postoutput.is_media}\n"
-          f"Subreddit Name: r/{postoutput.subreddit_name}")
+          f"Subreddit Name: r/{postoutput.subreddit_name}\n"
+          f"Content Type: {postoutput.content_type}")
 
 
 asyncio.run(meme("dankmemes"))

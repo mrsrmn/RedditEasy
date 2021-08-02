@@ -2,50 +2,46 @@
 <html class="no-js">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Functions" href="func.html" /><link rel="prev" title="Welcome to RedditEasy’s documentation!" href="index.html" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Functions" href="func.html" /><link rel="prev" title="Welcome to RedditEasy’s documentation!" href="index.html" />
 
-    <meta name="generator" content="sphinx-3.4.1, furo 2021.04.11.beta34"/>
-        <title>Getting Started - RedditEasy 3.4.0 documentation</title>
-      <link rel="stylesheet" href="_static/styles/furo.css?digest=59ab60ac09ea94ccfe6deddff6d715cce948a6fc">
-    <link rel="stylesheet" href="_static/pygments.css">
-    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css">
+    <meta name="generator" content="sphinx-4.1.2, furo 2021.07.31.beta41"/>
+        <title>Getting Started - RedditEasy 3.5.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=daa650a7760fac3eee23aa959745d2c866b74cb3" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=93475b62d1c3bc01323a0eefdc14a62d77b12690" />
+    
     
 
 
 <style>
-  :root {
+  body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
   
   }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
   @media (prefers-color-scheme: dark) {
-    :root {
+    body:not([data-theme="light"]) {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
   
     }
   }
-
-  /* For allowing end-user-specific overrides */
-  .override-light {
-    --color-code-background: #f8f8f8;
-  --color-code-foreground: black;
-  
-  }
-  .override-dark {
-    --color-code-background: #202020;
-  --color-code-foreground: #d0d0d0;
-  
-  }
-</style><link rel="stylesheet" href="_static/styles/furo-extensions.css?digest=d391b54134226e4196576da3bdb6dddb7e05ba2b"></head>
-  <body dir="">
+</style>
+    <link media="(prefers-color-scheme: dark)" rel="stylesheet" href="_static/pygments_dark.css"></head>
+  <body>
     
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
       <line x1="4" y1="6" x2="20" y2="6" />
       <line x1="10" y1="12" x2="20" y2="12" />
       <line x1="6" y1="18" x2="20" y2="18" />
@@ -53,9 +49,8 @@
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
       <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -63,18 +58,57 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-      class="feather feather-chevron-right">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
     </svg>
   </symbol>
 </svg>
 
 <input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
 <input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
-<label class="overlay sidebar-overlay" for="__navigation"></label>
-<label class="overlay toc-overlay" for="__toc"></label>
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 
 
@@ -82,14 +116,24 @@
   <header class="mobile-header">
     <div class="header-left">
       <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
         <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">RedditEasy 3.4.0 documentation</div></a>
+      <a href="index.html"><div class="brand">RedditEasy 3.5.0 documentation</div></a>
     </div>
     <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
       <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
     </div>
@@ -100,13 +144,14 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">RedditEasy 3.4.0 documentation</span>
+  <span class="sidebar-brand-text">RedditEasy 3.5.0 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="search.html">
-  <input class="sidebar-search" placeholder=Search name="q">
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
-</form><div class="sidebar-scroll"><div class="sidebar-tree">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="func.html">Functions</a></li>
@@ -119,164 +164,129 @@
       
     </div>
   </aside>
-  <main class="main">
+  <div class="main">
     <div class="content">
       <article role="main">
-        <label class="toc-overlay-icon toc-content-icon" for="__toc">
-          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
-        </label>
-        <div class="section" id="getting-started">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <section id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="install">
+<section id="install">
 <h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
 <p>To install RedditEasy, do:</p>
 <p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">redditeasy</span></code></p>
 <p>OR</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">redditeasy</span></code></p>
-</div>
-<div class="section" id="async-redditeasy">
+</section>
+<section id="async-redditeasy">
 <h2>Async RedditEasy<a class="headerlink" href="#async-redditeasy" title="Permalink to this headline">¶</a></h2>
 <p>Yes, there is an async version of RedditEasy. To use it, you need to use the Async classes. Which are <code class="docutils literal notranslate"><span class="pre">AsyncSubreddit</span></code> and <code class="docutils literal notranslate"><span class="pre">AsyncUser</span></code></p>
 <p>Here is a small example on using <code class="docutils literal notranslate"><span class="pre">AsyncSubreddit</span></code>: <a class="reference external" href="https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_meme.py">https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_meme.py</a></p>
 <p>You can and should use this in a discord.py bot. The normal classes could cause a <a class="reference external" href="https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean">blocking</a> in an async program.</p>
 <p>This <strong>will not</strong> work outside an async function whatsoever.</p>
-</div>
-<div class="section" id="usage">
+</section>
+<section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
 <p>The module will use its own default client info if <strong>AT LEAST ONE</strong> of these are not given: <code class="docutils literal notranslate"><span class="pre">client_id</span></code>, <code class="docutils literal notranslate"><span class="pre">client_secret</span></code> and <code class="docutils literal notranslate"><span class="pre">user_agent</span></code>.</p>
-<div class="section" id="without-client-info">
+<section id="without-client-info">
 <h3>Without client info<a class="headerlink" href="#without-client-info" title="Permalink to this headline">¶</a></h3>
 <p>This method is not suggested as it may be slow and throw errors more often</p>
-<div class="highlight-python notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">redditeasy</span>
-
-<span class="n">post</span> <span class="o">=</span> <span class="n">redditeasy</span><span class="o">.</span><span class="n">Subreddit</span><span class="p">(</span><span class="n">subreddit</span><span class="o">=</span><span class="s2">"dankmemes"</span><span class="p">)</span>   <span class="c1">#Subreddit name</span>
-<span class="n">postoutput</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">get_post</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Posts Title: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Content: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Author: u/</span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts URL: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Spoiler?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">spoiler</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Post Created At: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Upvote Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Award Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">total_awards</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"NSFW?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">nsfw</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Post Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"User Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Subreddit Subscribers: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_subscribers</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Comment count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">comment_count</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Is Media?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">is_media</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Subreddit Name: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">redditeasy</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">post</span> <span class="o">=</span> <span class="n">redditeasy</span><span class="o">.</span><span class="n">Subreddit</span><span class="p">(</span><span class="n">subreddit</span><span class="o">=</span><span class="s2">"dankmemes"</span><span class="p">)</span>   <span class="c1">#Subreddit name</span>
+<span class="linenos"> 4</span><span class="n">postoutput</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">get_post</span><span class="p">()</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Posts Title: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos"> 7</span>      <span class="sa">f</span><span class="s2">"Posts Content: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos"> 8</span>      <span class="sa">f</span><span class="s2">"Posts Author: u/</span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos"> 9</span>      <span class="sa">f</span><span class="s2">"Posts URL: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">10</span>      <span class="sa">f</span><span class="s2">"Spoiler?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">spoiler</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">11</span>      <span class="sa">f</span><span class="s2">"Post Created At: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">12</span>      <span class="sa">f</span><span class="s2">"Posts Upvote Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">13</span>      <span class="sa">f</span><span class="s2">"Posts Award Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">total_awards</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">14</span>      <span class="sa">f</span><span class="s2">"NSFW?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">nsfw</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">15</span>      <span class="sa">f</span><span class="s2">"Post Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">16</span>      <span class="sa">f</span><span class="s2">"User Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">17</span>      <span class="sa">f</span><span class="s2">"Subreddit Subscribers: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_subscribers</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">18</span>      <span class="sa">f</span><span class="s2">"Comment count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">comment_count</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">19</span>      <span class="sa">f</span><span class="s2">"Is Media?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">is_media</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">20</span>      <span class="sa">f</span><span class="s2">"Subreddit Name: r/</span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_name</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">21</span>      <span class="sa">f</span><span class="s2">"Content Type: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content_type</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div></div>
 </div>
-<div class="section" id="with-client-info">
+</section>
+<section id="with-client-info">
 <h3>With client info<a class="headerlink" href="#with-client-info" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-python notranslate"><div class="table-wrapper"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">redditeasy</span>
-
-<span class="c1"># To get your Reddit API client info go to</span>
-<span class="c1"># https://www.reddit.com/prefs/apps</span>
-<span class="c1"># and create an app</span>
-
-<span class="c1"># For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png</span>
-
-<span class="n">post</span> <span class="o">=</span> <span class="n">redditeasy</span><span class="o">.</span><span class="n">Subreddit</span><span class="p">(</span><span class="n">subreddit</span><span class="o">=</span><span class="s2">"dankmemes"</span><span class="p">,</span>   <span class="c1">#Subreddit name</span>
-                            <span class="n">client_id</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>            <span class="c1">#Your client ID</span>
-                            <span class="n">client_secret</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>        <span class="c1">#Your client secret</span>
-                            <span class="n">user_agent</span><span class="o">=</span><span class="s2">""</span>            <span class="c1">#Your user agent (ex: ClientName/0.1 by YourUsername")</span>
-                            <span class="p">)</span>
-<span class="n">postoutput</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">get_post</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Posts Title: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Content: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Author: u/</span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts URL: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Spoiler?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">spoiler</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Post Created At: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Upvote Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Posts Award Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">total_awards</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"NSFW?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">nsfw</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Post Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"User Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Subreddit Subscribers: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_subscribers</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Comment count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">comment_count</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Is Media?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">is_media</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
-      <span class="sa">f</span><span class="s2">"Subreddit Name: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">redditeasy</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># To get your Reddit API client info go to</span>
+<span class="linenos"> 4</span><span class="c1"># https://www.reddit.com/prefs/apps</span>
+<span class="linenos"> 5</span><span class="c1"># and create an app</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="c1"># For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">post</span> <span class="o">=</span> <span class="n">redditeasy</span><span class="o">.</span><span class="n">Subreddit</span><span class="p">(</span><span class="n">subreddit</span><span class="o">=</span><span class="s2">"dankmemes"</span><span class="p">,</span>   <span class="c1">#Subreddit name</span>
+<span class="linenos">10</span>                            <span class="n">client_id</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>            <span class="c1">#Your client ID</span>
+<span class="linenos">11</span>                            <span class="n">client_secret</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>        <span class="c1">#Your client secret</span>
+<span class="linenos">12</span>                            <span class="n">user_agent</span><span class="o">=</span><span class="s2">""</span>            <span class="c1">#Your user agent (ex: ClientName/0.1 by YourUsername")</span>
+<span class="linenos">13</span>                            <span class="p">)</span>
+<span class="linenos">14</span><span class="n">postoutput</span> <span class="o">=</span> <span class="n">post</span><span class="o">.</span><span class="n">get_post</span><span class="p">()</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Posts Title: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">17</span>      <span class="sa">f</span><span class="s2">"Posts Content: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">18</span>      <span class="sa">f</span><span class="s2">"Posts Author: u/</span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">19</span>      <span class="sa">f</span><span class="s2">"Posts URL: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_url</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">20</span>      <span class="sa">f</span><span class="s2">"Spoiler?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">spoiler</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">21</span>      <span class="sa">f</span><span class="s2">"Post Created At: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">created_at</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">22</span>      <span class="sa">f</span><span class="s2">"Posts Upvote Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">23</span>      <span class="sa">f</span><span class="s2">"Posts Award Count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">total_awards</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">24</span>      <span class="sa">f</span><span class="s2">"NSFW?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">nsfw</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">25</span>      <span class="sa">f</span><span class="s2">"Post Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">post_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">26</span>      <span class="sa">f</span><span class="s2">"User Flair: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">author_flair</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">27</span>      <span class="sa">f</span><span class="s2">"Subreddit Subscribers: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_subscribers</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">28</span>      <span class="sa">f</span><span class="s2">"Comment count: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">comment_count</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">29</span>      <span class="sa">f</span><span class="s2">"Is Media?: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">is_media</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">30</span>      <span class="sa">f</span><span class="s2">"Subreddit Name: r/</span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">subreddit_name</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+<span class="linenos">31</span>      <span class="sa">f</span><span class="s2">"Content Type: </span><span class="si">{</span><span class="n">postoutput</span><span class="o">.</span><span class="n">content_type</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
-</td></tr></table></div></div>
+</div>
 <p>More examples are in the <a class="reference external" href="https://github.com/MakufonSkifto/RedditEasy/tree/main/examples">examples folder</a></p>
-</div>
-</div>
-<div class="section" id="getting-reddit-api-client-info">
+</section>
+</section>
+<section id="getting-reddit-api-client-info">
 <h2>Getting Reddit API Client info<a class="headerlink" href="#getting-reddit-api-client-info" title="Permalink to this headline">¶</a></h2>
 <p>To get your Reddit API client info go to
 <a class="reference external" href="https://www.reddit.com/prefs/apps">https://www.reddit.com/prefs/apps</a>
 and create a script.</p>
 <a class="reference internal image-reference" href="https://i.imgur.com/Ri13AQu.png"><img alt="Alternative text" src="https://i.imgur.com/Ri13AQu.png" style="width: 400px;"/></a>
 <p>(You don’t have to fill “redirect_uri”)</p>
-</div>
-<div class="section" id="operating-systems">
+</section>
+<section id="operating-systems">
 <h2>Operating Systems<a class="headerlink" href="#operating-systems" title="Permalink to this headline">¶</a></h2>
 <p>All of RedditEasy’s versions were tested in <code class="docutils literal notranslate"><span class="pre">Windows</span></code>, <code class="docutils literal notranslate"><span class="pre">Linux</span> <span class="pre">(Ubuntu)</span></code> and <code class="docutils literal notranslate"><span class="pre">MacOS</span></code></p>
-</div>
-<div class="section" id="errors">
+</section>
+<section id="errors">
 <h2>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h2>
 <p>The module will raise <code class="docutils literal notranslate"><span class="pre">redditeasy.exceptions.RequestError</span></code> if there was an error with the request. Traceback will show the details about the error</p>
 <p>The module will raise <code class="docutils literal notranslate"><span class="pre">redditeasy.exceptions.EmptyResult</span></code> if the given user / subreddit is empty</p>
-</div>
-<div class="section" id="issues">
+</section>
+<section id="issues">
 <h2>Issues<a class="headerlink" href="#issues" title="Permalink to this headline">¶</a></h2>
 <p>If you have any issues with RedditEasy, please report them via the <a class="reference external" href="https://github.com/MakufonSkifto/RedditEasy/issues">issue tracker</a></p>
-</div>
-</div>
+</section>
+</section>
 
       </article>
       <footer>
@@ -354,11 +364,11 @@ and create a script.</p>
       
       
     </aside>
-  </main>
-</div>
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/main.js?digest=e931d09b2a40c1bb82b542effe772014573baf67"></script></body>
+    <script src="_static/scripts/main.js"></script>
+    </body>
 </html>

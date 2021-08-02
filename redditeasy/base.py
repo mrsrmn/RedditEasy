@@ -1,3 +1,5 @@
+import re
+
 import requests
 import json
 import requests.auth
@@ -93,6 +95,22 @@ def get_post(self, rtype, slash, rfor):
 
         is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
 
+        regex_url = re.compile(r'^(?:http|ftp)s?://')
+
+        regex_url_image = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jpg|gif|png))(?:\?([^#]*))?(?:#(.*))?')
+        regex_url_video = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:mov|mp4))(?:\?([^#]*))?(?:#(.*))?')
+
+        if re.match(regex_url_image, contenttext):
+            content_type = "Image"
+        elif re.match(regex_url_video, contenttext):
+            content_type = "Video"
+        elif re.match(regex_url, contenttext):
+            content_type = "URL"
+        else:
+            content_type = "Text"
+
         return Reddit(
             content=contenttext,
             title=post[randompost]["data"]["title"],
@@ -112,7 +130,8 @@ def get_post(self, rtype, slash, rfor):
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
             comment_count=post[randompost]["data"]["num_comments"],
             is_media=is_media,
-            subreddit_name=post[randompost]["data"]["subreddit"]
+            subreddit_name=post[randompost]["data"]["subreddit"],
+            content_type=content_type
         )
     except KeyError:
         post = meme["data"]["children"]
@@ -163,6 +182,23 @@ def get_post(self, rtype, slash, rfor):
 
         is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
 
+        regex_url = re.compile(r'^(?:http|ftp)s?://')
+
+        regex_url_image = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jpg|gif|png))(?:\?([^#]*))?(?:#(.*))?')
+        regex_url_video = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:mov|mp4))(?:\?([^#]*))?(?:#(.*))?')
+
+        if re.match(regex_url_image, contenttext):
+            content_type = "Image"
+        elif re.match(regex_url_video, contenttext):
+            content_type = "Video"
+        elif re.match(regex_url, contenttext):
+            content_type = "URL"
+        else:
+            content_type = "Text"
+
+
         return Reddit(
             content=contenttext,
             title=post[randompost]["data"]["title"],
@@ -182,7 +218,8 @@ def get_post(self, rtype, slash, rfor):
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
             comment_count=post[randompost]["data"]["num_comments"],
             is_media=is_media,
-            subreddit_name=post[randompost]["data"]["subreddit"]
+            subreddit_name=post[randompost]["data"]["subreddit"],
+            content_type=content_type
         )
 
 
@@ -245,6 +282,23 @@ async def get_async_post(self, rtype, rfor, slash):
 
         is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
 
+        regex_url = re.compile(r'^(?:http|ftp)s?://')
+
+        regex_url_image = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jpg|gif|png))(?:\?([^#]*))?(?:#(.*))?')
+        regex_url_video = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:mov|mp4))(?:\?([^#]*))?(?:#(.*))?')
+
+        if re.match(regex_url_image, contenttext):
+            content_type = "Image"
+        elif re.match(regex_url_video, contenttext):
+            content_type = "Video"
+        elif re.match(regex_url, contenttext):
+            content_type = "URL"
+        else:
+            content_type = "Text"
+
+
         return Reddit(
             content=contenttext,
             title=post[randompost]["data"]["title"],
@@ -264,7 +318,8 @@ async def get_async_post(self, rtype, rfor, slash):
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
             comment_count=post[randompost]["data"]["num_comments"],
             is_media=is_media,
-            subreddit_name=post[randompost]["data"]["subreddit"]
+            subreddit_name=post[randompost]["data"]["subreddit"],
+            content_type=content_type
         )
     except KeyError:
         post = meme["data"]["children"]
@@ -315,6 +370,22 @@ async def get_async_post(self, rtype, rfor, slash):
 
         is_media = True if not post[randompost]["data"]["domain"].startswith("self") else False
 
+        regex_url = re.compile(r'^(?:http|ftp)s?://')
+
+        regex_url_image = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:jpg|gif|png))(?:\?([^#]*))?(?:#(.*))?')
+        regex_url_video = re.compile(
+            r'(?:([^:/?#]+):)?(?://([^/?#]*))?([^?#]*\.(?:mov|mp4))(?:\?([^#]*))?(?:#(.*))?')
+
+        if re.match(regex_url_image, contenttext):
+            content_type = "Image"
+        elif re.match(regex_url_video, contenttext):
+            content_type = "Video"
+        elif re.match(regex_url, contenttext):
+            content_type = "URL"
+        else:
+            content_type = "Text"
+
         return Reddit(
             content=contenttext,
             title=post[randompost]["data"]["title"],
@@ -334,7 +405,8 @@ async def get_async_post(self, rtype, rfor, slash):
             subreddit_subscribers=post[randompost]["data"]["subreddit_subscribers"],
             comment_count=post[randompost]["data"]["num_comments"],
             is_media=is_media,
-            subreddit_name=post[randompost]["data"]["subreddit"]
+            subreddit_name=post[randompost]["data"]["subreddit"],
+            content_type=content_type
         )
 
 

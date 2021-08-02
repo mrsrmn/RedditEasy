@@ -27,4 +27,5 @@ print(f"Posts Title: {postoutput.title}\n"
       f"Post Flair: {postoutput.post_flair}\n"
       f"User Flair: {postoutput.author_flair}\n"
       f"Comment count: {postoutput.comment_count}\n"
-      f"Is Media?: {postoutput.is_media}\n")
+      f"Is Media?: {postoutput.is_media}\n"
+      f"Content Type: {postoutput.content_type}")
