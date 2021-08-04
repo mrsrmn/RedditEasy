@@ -26,13 +26,9 @@ def get_request(client_auth, headers, rtype, slash, rfor):
     return json.loads(request.content)
 
 
-def check_for_api_error(response: dict):
-    try:
-        if "message" in list(response.keys()):
-            raise RequestError(f"{response['error']} {response['message']}")
-    except AttributeError:
-        if "message" in list(response[0].keys()):
-            raise RequestError(f"{response['error']} {response['message']}")
+def check_for_api_error(response):
+    if "message" in list(response.keys() if type(response) != list else response[0].keys()):
+        raise RequestError(f"{response['error']} {response['message']}")
 
 
 
