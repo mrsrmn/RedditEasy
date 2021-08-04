@@ -631,7 +631,7 @@ to attach them to the start of each source file to most effectively
 state the exclusion of warranty; and each file should have at least
 the "copyright" line and a pointer to where the full notice is found.
 
-    RedditEasy is an API wrapper for the Reddit JSON API with both normal and async options
+    RedditEasy is an API wrapper for the Reddit JSON API with both sync and async options
     Copyright (C) 2020-2021 MakufonSkifto
 
     This program is free software: you can redistribute it and/or modify
