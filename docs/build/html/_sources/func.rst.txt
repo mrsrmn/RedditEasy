@@ -10,7 +10,6 @@ Subreddit() / AsyncSubreddit()
 
 This class is for getting posts from a subreddit
 
-* Parameter: subreddit (str) - The name of the subreddit
 * Parameter: client_id (str, Optional) - Your client ID
 * Parameter: client_secret (str, Optional) - Your client secret
 * Parameter: user_agent (str, Optional) - Your user agent
@@ -25,7 +24,6 @@ User() / AsyncUser()
 
 This class is for getting posts from a user
 
-* Parameter: user (str) - The name of the user
 * Parameter: client_id (str, Optional) - Your client ID
 * Parameter: client_secret (str, Optional) - Your client secret
 * Parameter: user_agent (str, Optional) - Your user agent
@@ -43,13 +41,13 @@ class: Subreddit() / AsyncSubreddit()
 ``get_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -95,13 +93,13 @@ class: Subreddit() / AsyncSubreddit()
 ``get_new_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit (new)
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -148,13 +146,13 @@ class: Subreddit() / AsyncSubreddit()
 ``get_top_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit (This will return the TOP POST OF TODAY)
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -200,13 +198,13 @@ class: Subreddit() / AsyncSubreddit()
 ``get_controversial_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit (controversial)
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -255,13 +253,13 @@ class: User() / AsyncUser()
 ``get_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -303,13 +301,13 @@ class: User() / AsyncUser()
 ``get_new_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user (new)
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -351,13 +349,13 @@ class: User() / AsyncUser()
 ``get_top_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user (This will return the TOP POST OF TODAY)
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -399,13 +397,13 @@ class: User() / AsyncUser()
 ``get_controversial_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user (controversial)
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post (Returns a JSON if the ``content_type`` is "Gallery")
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
