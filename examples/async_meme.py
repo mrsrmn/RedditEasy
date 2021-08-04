@@ -13,13 +13,12 @@ import asyncio
 
 
 async def meme(subreddit):
-    post = redditeasy.AsyncSubreddit(subreddit=subreddit,  # Subreddit name
-                                     client_id="",         # Your client ID
+    post = redditeasy.AsyncSubreddit(client_id="",         # Your client ID
                                      client_secret="",     # Your client secret
                                      user_agent=""         # Your user agent (ex: ClientName/0.1 by YourUsername")
                                      )
 
-    postoutput = await post.get_post()
+    postoutput = await post.get_post(subreddit=subreddit)
 
     # Formatted version of created_at
     formatted_time = datetime.datetime.fromtimestamp(postoutput.created_at).strftime("%d/%m/%Y %I:%M:%S UTC")

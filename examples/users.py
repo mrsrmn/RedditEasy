@@ -8,13 +8,12 @@ import datetime
 # For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
 
 
-post = redditeasy.User(user="gallowboob",  # Username
-                       client_id="",       # Your client ID
+post = redditeasy.User(client_id="",       # Your client ID
                        client_secret="",   # Your client secret
                        user_agent=""       # Your user agent (ex: ClientName/0.1 by YourUsername")
                        )
 
-postoutput = post.get_post()
+postoutput = post.get_post(user="gallowboob")
 
 # Formatted version of created_at
 formatted_time = datetime.datetime.fromtimestamp(postoutput.created_at).strftime("%d/%m/%Y %I:%M:%S UTC")
