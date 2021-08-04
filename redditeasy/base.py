@@ -4,7 +4,6 @@ import requests
 import json
 import requests.auth
 import aiohttp
-
 from random import SystemRandom
 
 from .reddit import Reddit
@@ -28,8 +27,12 @@ def get_request(client_auth, headers, rtype, slash, rfor):
 
 
 def check_for_api_error(response: dict):
-    if "message" in list(response.keys()):
-        raise RequestError(f"{response['error']} {response['message']}")
+    try:
+        if "message" in list(response.keys()):
+            raise RequestError(f"{response['error']} {response['message']}")
+    except AttributeError:
+        if "message" in list(response[0].keys()):
+            raise RequestError(f"{response['error']} {response['message']}")
 
 
 
