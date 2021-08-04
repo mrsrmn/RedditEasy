@@ -8,6 +8,8 @@ Version 3.6.0
 * Added gallery support
 * Added "Gallery" to ``created_at``
 * ``content`` now returns a JSON dict if the ``content_type`` is "Gallery"
+* Removed "subreddit", "user" from Subreddit, User and put it in ``get_post()`` as parameter
+
 
 
 Version 3.5.0

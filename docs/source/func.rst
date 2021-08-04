@@ -10,7 +10,6 @@ Subreddit() / AsyncSubreddit()
 
 This class is for getting posts from a subreddit
 
-* Parameter: subreddit (str) - The name of the subreddit
 * Parameter: client_id (str, Optional) - Your client ID
 * Parameter: client_secret (str, Optional) - Your client secret
 * Parameter: user_agent (str, Optional) - Your user agent
@@ -25,7 +24,6 @@ User() / AsyncUser()
 
 This class is for getting posts from a user
 
-* Parameter: user (str) - The name of the user
 * Parameter: client_id (str, Optional) - Your client ID
 * Parameter: client_secret (str, Optional) - Your client secret
 * Parameter: user_agent (str, Optional) - Your user agent
@@ -43,7 +41,7 @@ class: Subreddit() / AsyncSubreddit()
 ``get_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit
 
@@ -95,7 +93,7 @@ class: Subreddit() / AsyncSubreddit()
 ``get_new_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit (new)
 
@@ -148,7 +146,7 @@ class: Subreddit() / AsyncSubreddit()
 ``get_top_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit (This will return the TOP POST OF TODAY)
 
@@ -200,7 +198,7 @@ class: Subreddit() / AsyncSubreddit()
 ``get_controversial_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: subreddit (str) - The name of the subreddit
 
 * Returns: (str) Info about the randomly selected post from the subreddit (controversial)
 
@@ -255,7 +253,7 @@ class: User() / AsyncUser()
 ``get_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user
 
@@ -303,7 +301,7 @@ class: User() / AsyncUser()
 ``get_new_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user (new)
 
@@ -351,7 +349,7 @@ class: User() / AsyncUser()
 ``get_top_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user (This will return the TOP POST OF TODAY)
 
@@ -399,7 +397,7 @@ class: User() / AsyncUser()
 ``get_controversial_post()``
 ''''''''''''''''''''''''''''''''''
 
-* Parameter: None
+* Parameter: user (str) - The name of the user
 
 * Returns: (str) Info about the randomly selected post from the user (controversial)
 
