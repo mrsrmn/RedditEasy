@@ -486,16 +486,14 @@ async def get_async_post(self, rtype, rfor, slash):
 
 
 class SubredditBase:
-    def __init__(self, subreddit, client_id=None, client_secret=None, user_agent=None):
-        self.subreddit = subreddit
+    def __init__(self, client_id=None, client_secret=None, user_agent=None):
         self.client_id = client_id
         self.client_secret = client_secret
         self.user_agent = user_agent
 
 
 class UserBase:
-    def __init__(self, user, client_id=None, client_secret=None, user_agent=None):
-        self.user = user
+    def __init__(self, client_id=None, client_secret=None, user_agent=None):
         self.user_agent = user_agent
         self.client_id = client_id
         self.client_secret = client_secret
