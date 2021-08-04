@@ -87,14 +87,14 @@ def get_post(self, rtype, slash, rfor):
             media_metadata = None
 
         if media_metadata:
-            images_list = []
+            media_list = []
 
             for i in range(len(media_metadata)):
-                images_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
 
             contenttext = {
-                "imageCount": len(media_metadata),
-                "images": images_list,
+                "mediaCount": len(media_metadata),
+                "media": media_list,
                 "fullData": media_metadata
             }
         elif not media:
@@ -192,14 +192,14 @@ def get_post(self, rtype, slash, rfor):
             media_metadata = None
 
         if media_metadata:
-            images_list = []
+            media_list = []
 
             for i in range(len(media_metadata)):
-                images_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
 
             contenttext = {
-                "imageCount": len(media_metadata),
-                "images": images_list,
+                "mediaCount": len(media_metadata),
+                "media": media_list,
                 "fullData": media_metadata
             }
         elif not media:
@@ -311,14 +311,14 @@ async def get_async_post(self, rtype, rfor, slash):
             media_metadata = None
 
         if media_metadata:
-            images_list = []
+            media_list = []
 
             for i in range(len(media_metadata)):
-                images_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
 
             contenttext = {
-                "imageCount": len(media_metadata),
-                "images": images_list,
+                "mediaCount": len(media_metadata),
+                "media": media_list,
                 "fullData": media_metadata
             }
         elif not media:
@@ -416,14 +416,14 @@ async def get_async_post(self, rtype, rfor, slash):
             media_metadata = None
 
         if media_metadata:
-            images_list = []
+            media_list = []
 
             for i in range(len(media_metadata)):
-                images_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
 
             contenttext = {
-                "imageCount": len(media_metadata),
-                "images": images_list,
+                "mediaCount": len(media_metadata),
+                "media": media_list,
                 "fullData": media_metadata
             }
         elif not media:
