@@ -37,7 +37,7 @@ This class is for getting posts from a user
 
 
 class: Subreddit() / AsyncSubreddit()
----------------------
+--------------------------------------
 
 
 ``get_post()``
@@ -49,7 +49,7 @@ class: Subreddit() / AsyncSubreddit()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -63,7 +63,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -85,7 +85,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_name`` This will return the subreddit name
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"
 
 
 .. raw:: html
@@ -101,7 +101,7 @@ class: Subreddit() / AsyncSubreddit()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -115,7 +115,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -137,7 +137,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_name`` This will return the subreddit name
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"
 
 
 .. raw:: html
@@ -154,7 +154,7 @@ class: Subreddit() / AsyncSubreddit()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -168,7 +168,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -190,7 +190,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_name`` This will return the subreddit name
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"
 
 
 .. raw:: html
@@ -206,7 +206,7 @@ class: Subreddit() / AsyncSubreddit()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -220,7 +220,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -242,7 +242,7 @@ class: Subreddit() / AsyncSubreddit()
 
    ``subreddit_name`` This will return the subreddit name
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"
 
 
 .. raw:: html
@@ -250,7 +250,7 @@ class: Subreddit() / AsyncSubreddit()
    <hr>
 
 class: User() / AsyncUser()
----------------------
+-----------------------------
 
 ``get_post()``
 ''''''''''''''''''''''''''''''''''
@@ -261,7 +261,7 @@ class: User() / AsyncUser()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -275,7 +275,7 @@ class: User() / AsyncUser()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -293,7 +293,7 @@ class: User() / AsyncUser()
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"
 
 
 .. raw:: html
@@ -309,7 +309,7 @@ class: User() / AsyncUser()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -323,7 +323,7 @@ class: User() / AsyncUser()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -341,7 +341,7 @@ class: User() / AsyncUser()
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"
 
 
 .. raw:: html
@@ -357,7 +357,7 @@ class: User() / AsyncUser()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -371,7 +371,7 @@ class: User() / AsyncUser()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -389,7 +389,7 @@ class: User() / AsyncUser()
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"
 
 
 .. raw:: html
@@ -405,7 +405,7 @@ class: User() / AsyncUser()
 
 * Attributes:
 
-   ``content``: The content of the randomly selected post
+   ``content``: The content of the randomly selected post (Returns a JSON dict if the ``content_type`` is "Gallery")
 
    ``title``: The title of the randomly selected post
 
@@ -419,7 +419,7 @@ class: User() / AsyncUser()
 
    ``nsfw``: This will return True or False if the post is NSFW or not
 
-   ``created_at``: The time the randomly selected post got created
+   ``created_at``: The time the randomly selected post got created in UTC (epoch)
 
    ``author``: The author of the randomly selected post
 
@@ -437,4 +437,4 @@ class: User() / AsyncUser()
 
    ``is_media`` This will return True or False if the post has some kind of media in it or not
 
-   ``content_type`` This will return the posts content type. Types are: "Image", "Video" and "Text"
+   ``content_type`` This will return the posts content type. Types are: "Image", "Video", "Text", "URL" and "Gallery"

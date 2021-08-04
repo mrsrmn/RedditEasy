@@ -156,6 +156,7 @@
 <li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
 </div>
@@ -215,14 +216,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the subreddit</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -233,7 +234,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">subreddit_name</span></code> This will return the subreddit name</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
@@ -245,14 +246,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the subreddit (new)</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -263,7 +264,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">subreddit_name</span></code> This will return the subreddit name</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
@@ -275,14 +276,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the subreddit (This will return the TOP POST OF TODAY)</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -293,7 +294,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">subreddit_name</span></code> This will return the subreddit name</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
@@ -305,14 +306,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the subreddit (controversial)</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -323,7 +324,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
 <p><code class="docutils literal notranslate"><span class="pre">subreddit_name</span></code> This will return the subreddit name</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
@@ -338,14 +339,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the user</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -354,7 +355,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
@@ -366,14 +367,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the user (new)</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -382,7 +383,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
@@ -394,14 +395,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the user (This will return the TOP POST OF TODAY)</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -410,7 +411,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
@@ -422,14 +423,14 @@
 <li><p>Returns: (str) Info about the randomly selected post from the user (controversial)</p></li>
 <li><p>Attributes:</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post</p>
+<div><p><code class="docutils literal notranslate"><span class="pre">content</span></code>: The content of the randomly selected post (Returns a JSON if the <code class="docutils literal notranslate"><span class="pre">content_type</span></code> is “Gallery”)</p>
 <p><code class="docutils literal notranslate"><span class="pre">title</span></code>: The title of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">upvote_ratio</span></code>: The upvote ratio of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">total_awards</span></code>: The number of awards in the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">score</span></code>: The upvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">downvotes</span></code>: The downvote count of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">nsfw</span></code>: This will return True or False if the post is NSFW or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created</p>
+<p><code class="docutils literal notranslate"><span class="pre">created_at</span></code>: The time the randomly selected post got created in UTC (epoch)</p>
 <p><code class="docutils literal notranslate"><span class="pre">author</span></code>: The author of the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">post_url</span></code>: The URL to the randomly selected post</p>
 <p><code class="docutils literal notranslate"><span class="pre">stickied</span></code>: This will return True or False if the post is stickied or not</p>
@@ -438,7 +439,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">author_flair</span></code>: This will return the post’s author’s flair</p>
 <p><code class="docutils literal notranslate"><span class="pre">comment_count</span></code> The number comments in the post</p>
 <p><code class="docutils literal notranslate"><span class="pre">is_media</span></code> This will return True or False if the post has some kind of media in it or not</p>
-<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video” and “Text”</p>
+<p><code class="docutils literal notranslate"><span class="pre">content_type</span></code> This will return the posts content type. Types are: “Image”, “Video”, “Text”, “URL” and “Gallery”</p>
 </div></blockquote>
 </li>
 </ul>
