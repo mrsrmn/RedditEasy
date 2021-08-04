@@ -36,16 +36,28 @@ This method is not suggested as it may be slow and throw errors more often
   :linenos:
 
   import redditeasy
+  import datetime
 
-  post = redditeasy.Subreddit(subreddit="dankmemes")   #Subreddit name
+  # To get your Reddit API client info go to
+  # https://www.reddit.com/prefs/apps
+  # and create an app
+
+  # For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
+
+
+  post = redditeasy.Subreddit(subreddit="dankmemes")   # Subreddit name
+
   postoutput = post.get_post()
+
+  # Formatted version of created_at
+  formatted_time = datetime.datetime.fromtimestamp(postoutput.created_at).strftime("%d/%m/%Y %I:%M:%S UTC")
 
   print(f"Posts Title: {postoutput.title}\n"
         f"Posts Content: {postoutput.content}\n"
         f"Posts Author: u/{postoutput.author}\n"
         f"Posts URL: {postoutput.post_url}\n"
         f"Spoiler?: {postoutput.spoiler}\n"
-        f"Post Created At: {postoutput.created_at}\n"
+        f"Post Created At: {formatted_time}\n"
         f"Posts Upvote Count: {postoutput.score}\n"
         f"Posts Award Count: {postoutput.total_awards}\n"
         f"NSFW?: {postoutput.nsfw}\n"
@@ -64,6 +76,7 @@ With client info
   :linenos:
 
   import redditeasy
+  import datetime
 
   # To get your Reddit API client info go to
   # https://www.reddit.com/prefs/apps
@@ -71,19 +84,24 @@ With client info
 
   # For more detailed explanation, see this image: https://i.imgur.com/Ri13AQu.png
 
-  post = redditeasy.Subreddit(subreddit="dankmemes",   #Subreddit name
-                              client_id="",            #Your client ID
-                              client_secret="",        #Your client secret
-                              user_agent=""            #Your user agent (ex: ClientName/0.1 by YourUsername")
+
+  post = redditeasy.Subreddit(subreddit="dankmemes",   # Subreddit name
+                              client_id="",            # Your client ID
+                              client_secret="",        # Your client secret
+                              user_agent=""            # Your user agent (ex: ClientName/0.1 by YourUsername")
                               )
+
   postoutput = post.get_post()
+
+  # Formatted version of created_at
+  formatted_time = datetime.datetime.fromtimestamp(postoutput.created_at).strftime("%d/%m/%Y %I:%M:%S UTC")
 
   print(f"Posts Title: {postoutput.title}\n"
         f"Posts Content: {postoutput.content}\n"
         f"Posts Author: u/{postoutput.author}\n"
         f"Posts URL: {postoutput.post_url}\n"
         f"Spoiler?: {postoutput.spoiler}\n"
-        f"Post Created At: {postoutput.created_at}\n"
+        f"Post Created At: {formatted_time}\n"
         f"Posts Upvote Count: {postoutput.score}\n"
         f"Posts Award Count: {postoutput.total_awards}\n"
         f"NSFW?: {postoutput.nsfw}\n"
