@@ -2,3 +2,4 @@
 redditeasy/.env
 redditeasy.egg-info
 build
+dist
