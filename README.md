@@ -128,6 +128,10 @@ and create a script.
 
 (You don't have to fill "redirect_uri")
 
+## Changelog
+
+Changelog can be found [here](https://redditeasy.readthedocs.io/en/latest/changelog.html)
+
 ## Operating Systems
 
 All of RedditEasy's versions were tested in `Windows`, `Linux (Ubuntu)` and `MacOS`
