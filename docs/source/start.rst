@@ -11,6 +11,10 @@ OR
 
 ``python -m pip install redditeasy``
 
+OR (not recommended)
+
+``pip install git+https://github.com/MakufonSkifto/RedditEasy.git``
+
 
 Async RedditEasy
 -----------------

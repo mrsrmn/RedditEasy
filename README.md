@@ -18,6 +18,10 @@ OR
 
 ``python -m pip install redditeasy``
 
+OR (not recommended)
+
+``pip install git+https://github.com/MakufonSkifto/RedditEasy.git``
+
 ## Documentation
 Docs can be found [here](https://redditeasy.readthedocs.io/en/latest/)
 
