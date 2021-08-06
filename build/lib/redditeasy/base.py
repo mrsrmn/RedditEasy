@@ -87,9 +87,14 @@ def get_post(self, rtype, slash, rfor):
 
         if media_metadata:
             media_list = []
+            gallery_data = post[randompost]["data"]["gallery_data"]["items"]
 
             for i in range(len(media_metadata)):
-                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append({
+                    "id": list(media_metadata.keys())[i],
+                    "media": media_metadata[list(media_metadata.keys())[i]]["s"]["u"],
+                    "caption": gallery_data[i]["caption"] if "caption" in gallery_data[i] else None
+                })
 
             contenttext = {
                 "mediaCount": len(media_metadata),
@@ -192,9 +197,14 @@ def get_post(self, rtype, slash, rfor):
 
         if media_metadata:
             media_list = []
+            gallery_data = post[randompost]["data"]["gallery_data"]["items"]
 
             for i in range(len(media_metadata)):
-                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append({
+                    "id": list(media_metadata.keys())[i],
+                    "media": media_metadata[list(media_metadata.keys())[i]]["s"]["u"],
+                    "caption": gallery_data[i]["caption"] if "caption" in gallery_data[i] else None
+                })
 
             contenttext = {
                 "mediaCount": len(media_metadata),
@@ -311,9 +321,14 @@ async def get_async_post(self, rtype, rfor, slash):
 
         if media_metadata:
             media_list = []
+            gallery_data = post[randompost]["data"]["gallery_data"]["items"]
 
             for i in range(len(media_metadata)):
-                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append({
+                    "id": list(media_metadata.keys())[i],
+                    "media": media_metadata[list(media_metadata.keys())[i]]["s"]["u"],
+                    "caption": gallery_data[i]["caption"] if "caption" in gallery_data[i] else None
+                })
 
             contenttext = {
                 "mediaCount": len(media_metadata),
@@ -416,9 +431,14 @@ async def get_async_post(self, rtype, rfor, slash):
 
         if media_metadata:
             media_list = []
+            gallery_data = post[randompost]["data"]["gallery_data"]["items"]
 
             for i in range(len(media_metadata)):
-                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append({
+                    "id": list(media_metadata.keys())[i],
+                    "media": media_metadata[list(media_metadata.keys())[i]]["s"]["u"],
+                    "caption": gallery_data[i]["caption"] if "caption" in gallery_data[i] else None
+                })
 
             contenttext = {
                 "mediaCount": len(media_metadata),
