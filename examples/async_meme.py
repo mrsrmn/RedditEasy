@@ -18,7 +18,7 @@ async def meme(subreddit):
                                      user_agent=""         # Your user agent (ex: ClientName/0.1 by YourUsername")
                                      )
 
-    postoutput = await post.get_post(subreddit=subreddit)
+    postoutput = await post.get_post(subreddit=subreddit)  # Subreddit name
 
     # Formatted version of created_at
     formatted_time = datetime.datetime.fromtimestamp(postoutput.created_at).strftime("%d/%m/%Y %I:%M:%S UTC")
