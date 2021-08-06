@@ -22,7 +22,7 @@ async def async_request(headers, client_auth, rtype, rfor, slash):
 
 
 def get_request(client_auth, headers, rtype, slash, rfor):
-    request = requests.get(f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json", headers=headers, auth=client_auth)
+    request = requests.get(f"https://www.reddit.com/r/ennnnnnnnnnnnbbbbbby/comments/ox7739/the_person_who_made_this_is_going_to_the_deepest/.json", headers=headers, auth=client_auth)
     return json.loads(request.content)
 
 
@@ -87,9 +87,14 @@ def get_post(self, rtype, slash, rfor):
 
         if media_metadata:
             media_list = []
+            gallery_data = post[randompost]["data"]["gallery_data"]["items"]
 
             for i in range(len(media_metadata)):
-                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append({
+                    "id": list(media_metadata.keys())[i],
+                    "media": media_metadata[list(media_metadata.keys())[i]]["s"]["u"],
+                    "caption": gallery_data[i]["caption"] if "caption" in gallery_data[i] else None
+                })
 
             contenttext = {
                 "mediaCount": len(media_metadata),
@@ -192,9 +197,14 @@ def get_post(self, rtype, slash, rfor):
 
         if media_metadata:
             media_list = []
+            gallery_data = post[randompost]["data"]["gallery_data"]["items"]
 
             for i in range(len(media_metadata)):
-                media_list.append(media_metadata[list(media_metadata.keys())[i]]["s"]["u"])
+                media_list.append({
+                    "id": list(media_metadata.keys())[i],
+                    "media": media_metadata[list(media_metadata.keys())[i]]["s"]["u"],
+                    "caption": gallery_data[i]["caption"] if "caption" in gallery_data[i] else None
+                })
 
             contenttext = {
                 "mediaCount": len(media_metadata),

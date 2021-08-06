@@ -1,6 +1,11 @@
 Changelog
 ======================================
 
+Version 3.6.1
+--------------
+* Gallery content JSON key, "media", now returns a dict: https://hastebin.com/fukereyaqa
+
+
 Version 3.6.0
 ---------------
 
