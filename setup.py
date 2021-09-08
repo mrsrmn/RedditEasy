@@ -18,7 +18,7 @@ setuptools.setup(
         "Source": "https://github.com/MakufonSkifto/RedditEasy"
     },
     packages=setuptools.find_packages(),
-    install_requires=["requests", "python-dotenv", "aiohttp"],
+    install_requires=["requests", "python-dotenv", "aiohttp", "python-rapidjson"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
