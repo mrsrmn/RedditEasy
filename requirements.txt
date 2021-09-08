@@ -1,4 +1,4 @@
 requests
 aiohttp
 python-dotenv
-rapidjson
+python-rapidjson
