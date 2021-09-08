@@ -1,7 +1,7 @@
 import re
 
 import requests
-import json
+import rapidjson as json
 import requests.auth
 import aiohttp
 from random import SystemRandom
