@@ -4,9 +4,9 @@ from random import SystemRandom
 from redditeasy.classes.client_data import ClientData
 from redditeasy.classes.media import Media
 from redditeasy.classes.post import Post
-from redditeasy.exceptions.exceptions import EmptyResult
+from redditeasy.exceptions import EmptyResult
 from redditeasy.types.content_type import ContentType
-from .utils.utils import get_meme, check_for_api_error, async_request
+from redditeasy.utils import get_meme, check_for_api_error, async_request
 
 cryptogen = SystemRandom()
 
