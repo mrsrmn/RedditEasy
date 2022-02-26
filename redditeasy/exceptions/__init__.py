@@ -1,1 +1,1 @@
-from exceptions import EmptyResult, RequestError
+from .exceptions import EmptyResult, RequestError

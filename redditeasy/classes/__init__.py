@@ -1,3 +1,3 @@
-from client_data import ClientData
-from media import Media
-from post import Post
+from .client_data import ClientData
+from .media import Media
+from .post import Post
