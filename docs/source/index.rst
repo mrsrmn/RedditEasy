@@ -15,6 +15,6 @@ Indices and tables
    :maxdepth: 2
 
    start
-   func
+   api-reference
    license
    changelog

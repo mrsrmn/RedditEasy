@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="redditeasy",
-    version="3.6.3",
+    version="4.0.0",
     author="MakufonSkifto",
     description="RedditEasy is an API wrapper for getting posts using the Reddit JSON API with both sync and"
                 " async options",
@@ -18,7 +18,7 @@ setuptools.setup(
         "Source": "https://github.com/MakufonSkifto/RedditEasy"
     },
     packages=setuptools.find_packages(),
-    install_requires=["requests", "python-dotenv", "aiohttp", "python-rapidjson"],
+    install_requires=["urllib3", "aiohttp", "orjson"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",

@@ -17,12 +17,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'RedditEasy'
-copyright = '2020 - 2021, MakufonSkifto'
-author = 'MakufonSkifto'
+project = "RedditEasy"
+copyright = "2020 - 2022, MakufonSkifto"
+author = "MakufonSkifto"
 
 # The full version, including alpha/beta/rc tags
-release = '3.6.2'
+release = "4.0.0"
 
 
 # -- General configuration ---------------------------------------------------
@@ -31,6 +31,7 @@ release = '3.6.2'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "sphinx.ext.autodoc",
 ]
 
 # Add any paths that contain templates here, relative to this directory.

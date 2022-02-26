@@ -1,4 +1,3 @@
-requests
 aiohttp
-python-dotenv
-python-rapidjson
+urllib3
+orjson

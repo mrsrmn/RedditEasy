@@ -35,7 +35,6 @@ You can and should use this in a discord.py bot. The normal classes could cause 
 This **will not** work outside an async function whatsoever.
 
 ## Usage
-<span style="font-size:larger;">The module will use its own default client info if **AT LEAST ONE** of these are not given: `client_id`, `client_secret` and `user_agent`.</span>
 
 ### Without Reddit API client info
 This method is not suggested as it may be slow and throw errors more often

@@ -22,14 +22,12 @@ Yes, there is an async version of RedditEasy. To use it, you need to use the Asy
 
 Here is a small example on using ``AsyncSubreddit``: https://github.com/MakufonSkifto/RedditEasy/blob/main/examples/async_meme.py
 
-You can and should use this in a discord.py bot. The normal classes could cause a `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_ in an async program.
+You can and should use this in an async program (e.g. discord bot) The normal classes could cause a `blocking <https://discordpy.readthedocs.io/en/latest/faq.html#what-does-blocking-mean>`_ in an async program.
 
 This **will not** work outside an async function whatsoever.
 
 Usage
 -------------
-
-The module will use its own default client info if **AT LEAST ONE** of these are not given: ``client_id``, ``client_secret`` and ``user_agent``.
 
 
 Without client info
@@ -134,7 +132,7 @@ and create a script.
 (You don't have to fill "redirect_uri")
 
 Operating Systems
--------------
+------------------
 
 All of RedditEasy's versions were tested in ``Windows``, ``Linux (Ubuntu)`` and ``MacOS``
 

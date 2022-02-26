@@ -2,6 +2,16 @@ Changelog
 ======================================
 
 
+Version 4.0.0
+--------------
+Welcome to the all new version of RedditEasy!
+
+* Improved response times
+* Improved docs
+* Gallery content JSON key, "media", now returns a list of ``redditeasy.Media`` objects
+* ``content_type`` of ``Post`` now returns an ``redditeasy.ContentType`` object instead of ``str``
+
+
 Version 3.6.1
 --------------
 * RedditEasy works faster now
