@@ -4,7 +4,7 @@
 [![PyPI version](https://badge.fury.io/py/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
 [![Monthly Downloads](https://img.shields.io/pypi/dm/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/22632d363d7747acbbcf357c5b6795c4)](https://www.codacy.com/gh/MakufonSkifto/RedditEasy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MakufonSkifto/RedditEasy&amp;utm_campaign=Badge_Grade)
-[![Python Versions](https://img.shields.io/badge/Python-3%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue.svg)](https://img.shields.io/badge/Python-3%20%7C%203.5%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue.svg)
+[![Python Versions](https://img.shields.io/badge/Python-3%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue.svg)](https://img.shields.io/badge/Python-3%20%7C%203.5%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue.svg)
 # RedditEasy
 
 RedditEasy is an API wrapper for getting posts using the Reddit JSON API with both sync and async options
