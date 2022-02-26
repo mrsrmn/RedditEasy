@@ -6,7 +6,7 @@ from redditeasy.classes.media import Media
 from redditeasy.classes.post import Post
 from redditeasy.exceptions.exceptions import EmptyResult
 from redditeasy.types.content_type import ContentType
-from redditeasy.utils.utils import get_meme, check_for_api_error, async_request
+from .utils.utils import get_meme, check_for_api_error, async_request
 
 cryptogen = SystemRandom()
 
