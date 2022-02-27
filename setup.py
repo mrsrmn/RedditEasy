@@ -3,6 +3,18 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+
+def get_reqs() -> list:
+    file = open("requirements.txt", "r")
+
+    requirements = []
+    for line in file:
+        stripped_req = line.strip()
+        requirements.append(stripped_req)
+
+    return requirements
+
+
 setuptools.setup(
     name="redditeasy",
     version="4.0.0",
@@ -18,7 +30,7 @@ setuptools.setup(
         "Source": "https://github.com/MakufonSkifto/RedditEasy"
     },
     packages=setuptools.find_packages(),
-    install_requires=["urllib3", "aiohttp", "orjson"],
+    install_requires=get_reqs(),
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
