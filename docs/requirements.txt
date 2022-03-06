@@ -1,2 +1,5 @@
 six
 furo
+aiohttp
+urllib3
+orjson
