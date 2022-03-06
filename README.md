@@ -3,6 +3,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/MakufonSkifto/redditeasy)](https://github.com/ExpDev07/coronavirus-tracker-api/stargazers) 
 [![PyPI version](https://badge.fury.io/py/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
 [![Monthly Downloads](https://img.shields.io/pypi/dm/redditeasy.svg)](https://badge.fury.io/py/redditeasy)
+[![Downloads](https://pepy.tech/badge/redditeasy)](https://pepy.tech/project/redditeasy)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/22632d363d7747acbbcf357c5b6795c4)](https://www.codacy.com/gh/MakufonSkifto/RedditEasy/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=MakufonSkifto/RedditEasy&amp;utm_campaign=Badge_Grade)
 [![Python Versions](https://img.shields.io/badge/Python-3%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-blue.svg)](https://img.shields.io/badge/Python-3%20%7C%203.5%20%7C%203.6%20%7C%203.7%20%7C%203.8%20%7C%203.9-blue.svg)
 # RedditEasy
