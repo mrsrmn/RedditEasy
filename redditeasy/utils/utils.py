@@ -10,13 +10,13 @@ from redditeasy.exceptions.exceptions import RequestError
 async def async_request(rtype, rfor, slash, is_auth_provided, headers=None, client_auth=None):
     if is_auth_provided:
         async with aiohttp.ClientSession() as cs:
-            async with cs.get(f"https://reddit.com/{slash}/{rfor}/{rtype}.json", headers=headers,
+            async with cs.get(f"https://reddit.com/{slash}/{rfor}/{rtype}.json?limit=100", headers=headers,
                               auth=client_auth) as r:
                 content = await r.json()
                 return content
     else:
         async with aiohttp.ClientSession() as cs:
-            async with cs.get(f"https://reddit.com/{slash}/{rfor}/{rtype}.json") as r:
+            async with cs.get(f"https://reddit.com/{slash}/{rfor}/{rtype}.json?limit=100") as r:
                 content = await r.json()
                 return content
 
@@ -32,13 +32,13 @@ def get_meme(rtype, slash, rfor, is_auth_provided, client_data: ClientData = Non
 
         request = http.request(
             "GET",
-            f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json",
+            f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json?limit=100",
             headers=header,
         )
     else:
         request = http.request(
             "GET",
-            f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json",
+            f"https://www.reddit.com/{slash}/{rfor}/{rtype}.json?limit=100",
         )
 
     return json.loads(request.data.decode('utf-8'))
